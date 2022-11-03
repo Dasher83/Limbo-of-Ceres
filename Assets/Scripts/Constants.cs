@@ -8,6 +8,7 @@ namespace QuarkAcademyJam1Team1
         {
             public const float InitialMovementSpeed = 250f;
             public const float GravityScale = 0.5f;
+            public const float HorizontalPositionOffsetFactor = 0.2f;
         }
     }
 }
