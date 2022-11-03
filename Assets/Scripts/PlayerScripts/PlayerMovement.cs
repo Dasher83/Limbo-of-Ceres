@@ -11,8 +11,8 @@ namespace QuarkAcademyJam1Team1.PlayerScritps
         void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
-            _rb.gravityScale = Constants.Player.gravityScale;
-            _movementSpeed = Constants.Player.movementSpeed;
+            _rb.gravityScale = Constants.Player.GravityScale;
+            _movementSpeed = Constants.Player.InitialMovementSpeed;
         }
 
         void Update()
