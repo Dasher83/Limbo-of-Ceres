@@ -6,8 +6,9 @@ namespace QuarkAcademyJam1Team1
     {
         public static class Player
         {
-            public const float InitialMovementSpeed = 250f;
-            public const float GravityScale = 0.5f;
+            public const float InitialMovementSpeed = 50f;
+            public const float DecelerationSpeed = 0.25f;
+            public const float GravityScale = 1f;
             public const float HorizontalPositionOffsetFactor = 0.2f;
         }
     }
