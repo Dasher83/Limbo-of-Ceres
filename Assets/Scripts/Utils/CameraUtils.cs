@@ -14,5 +14,21 @@ namespace QuarkJam1Team1.Utils
                 new Vector3(cameraHeight * screenAspect, cameraHeight, 0));
             return bounds;
         }
+
+        public static float RightEdgeInRealWorldUnits
+        {
+            get
+            {
+                return Camera.main.orthographicSize * 2 * Camera.main.aspect;
+            }
+        }
+
+        public static float LeftEdgeInRealWorldUnits
+        {
+            get
+            {
+                return Camera.main.orthographicSize * 2 * Camera.main.aspect * -1;
+            }
+        }
     }
 }
