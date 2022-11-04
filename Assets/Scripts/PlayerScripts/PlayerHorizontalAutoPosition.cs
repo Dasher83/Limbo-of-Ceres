@@ -1,4 +1,4 @@
-using QuarkAcademyJam1Team1;
+using QuarkAcademyJam1Team1.Scripts.Shared;
 using QuarkJam1Team1.Utils;
 using UnityEngine;
 

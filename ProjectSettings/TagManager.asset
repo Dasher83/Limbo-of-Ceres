@@ -44,3 +44,6 @@ TagManager:
   - name: Background
     uniqueID: 2512531933
     locked: 0
+  - name: FloorAndCeiling
+    uniqueID: 2477903583
+    locked: 0

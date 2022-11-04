@@ -1,10 +1,13 @@
+using QuarkJam1Team1.Shared.Enums;
 using UnityEngine;
 
 namespace QuarkAcademyJam1Team1.Scripts.Utils 
 {
     public static class SpriteUtils
     {
-        public static void ResizeSpriteToScreen(GameObject target, float widthExtra = 0f, int fitToScreenWidth = 1, int fitToScreenHeight = 1)
+        public static void ResizeSpriteToScreen(
+            GameObject target, float offsetWidth = 0f, float fitToScreenWidth = 1f,
+            float fitToScreenHeight = 1f, SpriteResizeMode mode = SpriteResizeMode.SIMPLE)
         {
             SpriteRenderer spriteRenderer = target.GetComponent<SpriteRenderer>();
 
@@ -16,17 +19,42 @@ namespace QuarkAcademyJam1Team1.Scripts.Utils
             double worldScreenHeight = Camera.main.orthographicSize * 2.0;
             double worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
 
-            Vector3 newLocalScale = spriteRenderer.transform.localScale;
-            if (fitToScreenWidth != 0)
+            if(mode == SpriteResizeMode.SIMPLE)
             {
-                newLocalScale.x = (float)(worldScreenWidth / width / fitToScreenWidth) + widthExtra;
-            }
+                Vector3 newLocalScale = spriteRenderer.transform.localScale;
+                if (fitToScreenWidth != 0)
+                {
+                    newLocalScale.x = (float)(worldScreenWidth / width / fitToScreenWidth) + offsetWidth;
+                }
 
-            if (fitToScreenHeight != 0)
-            {
-                newLocalScale.y = (float)(worldScreenHeight / height / fitToScreenHeight);
+                if (fitToScreenHeight != 0)
+                {
+                    newLocalScale.y = (float)(worldScreenHeight / height / fitToScreenHeight);
+                }
+                spriteRenderer.transform.localScale = newLocalScale;
             }
-            spriteRenderer.transform.localScale = newLocalScale;
+            else if (mode == SpriteResizeMode.TILED)
+            {
+                Vector2 newSize = Vector2.zero;
+                if (fitToScreenWidth != 0)
+                {
+                    newSize.x = (float)(worldScreenWidth / width * fitToScreenWidth / 2) + offsetWidth;
+                }
+                else
+                {
+                    newSize.x = spriteRenderer.size.x;
+                }
+
+                if (fitToScreenHeight != 0)
+                {
+                    newSize.y = (float)(worldScreenHeight / height * fitToScreenHeight / 2);
+                }
+                else
+                {
+                    newSize.y = spriteRenderer.size.y;
+                }
+                spriteRenderer.size = newSize;
+            }
         }
     }
 }

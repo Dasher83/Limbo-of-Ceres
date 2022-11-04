@@ -1,3 +1,4 @@
+using QuarkAcademyJam1Team1.Scripts.Shared;
 using QuarkAcademyJam1Team1.Scripts.Utils;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Background
     {
         void Start()
         {
-            SpriteUtils.ResizeSpriteToScreen(target: gameObject, widthExtra: 0.01f);
+            SpriteUtils.ResizeSpriteToScreen(target: gameObject, offsetWidth: Constants.Background.OffsetWidth);
         }
     }
 }
