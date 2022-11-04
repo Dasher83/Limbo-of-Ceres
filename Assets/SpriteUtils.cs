@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class SpriteUtils
 {
-    public static void ResizeSpriteToScreen(GameObject target, int fitToScreenWidth = 1, int fitToScreenHeight = 1)
+    public static void ResizeSpriteToScreen(GameObject target, float widthExtra = 0f, int fitToScreenWidth = 1, int fitToScreenHeight = 1)
     {
         SpriteRenderer spriteRenderer = target.GetComponent<SpriteRenderer>();
 
@@ -17,7 +17,7 @@ public static class SpriteUtils
         Vector3 newLocalScale = spriteRenderer.transform.localScale;
         if (fitToScreenWidth != 0)
         {
-            newLocalScale.x = (float)(worldScreenWidth / width / fitToScreenWidth);
+            newLocalScale.x = (float)(worldScreenWidth / width / fitToScreenWidth) + widthExtra;
         }
 
         if (fitToScreenHeight != 0)

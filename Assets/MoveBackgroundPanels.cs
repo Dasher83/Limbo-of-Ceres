@@ -6,16 +6,28 @@ public class MoveBackgroundPanels : MonoBehaviour
     private GameObject _mainBackground;
     [SerializeField]
     private GameObject _secondaryBackground;
+    private float _leftEdge;
+    private float _rightEdge;
+
+    private void ResetPanel(GameObject panel)
+    {
+        if(panel.transform.position.x <= _rightEdge)
+        {
+            panel.transform.position = new Vector3(_leftEdge, 0, 0);
+        }
+    }
 
     private void Start()
     {
         _mainBackground.transform.position = Vector3.zero;
-        float newX = Camera.main.orthographicSize * 2 * Camera.main.aspect;
-        _secondaryBackground.transform.position = new Vector3(newX, 0, 0);
+        _leftEdge = Camera.main.orthographicSize * 2 * Camera.main.aspect;
+        _rightEdge = _leftEdge * -1;
+        _secondaryBackground.transform.position = new Vector3(_leftEdge, 0, 0);
     }
 
-    void Update()
+    private void Update()
     {
-        // TODO: Make them move through their rigidbodies
+        ResetPanel(_mainBackground);
+        ResetPanel(_secondaryBackground);
     }
 }
