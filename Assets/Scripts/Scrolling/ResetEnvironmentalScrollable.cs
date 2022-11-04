@@ -1,12 +1,13 @@
 using QuarkJam1Team1.Utils;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Background
+namespace QuarkAcademyJam1Team1.Scripts.Scrolling
 {
-    public class ResetBackgroundPanel : MonoBehaviour
+    public class ResetEnvironmentalScrollable : MonoBehaviour
     {
         private float leftEdge;
         private float rightEdge;
+        private Vector3 newPosition;
 
         private void Start()
         {
@@ -18,7 +19,9 @@ namespace QuarkAcademyJam1Team1.Scripts.Background
         {
             if (gameObject.transform.position.x <= leftEdge)
             {
-                gameObject.transform.position = new Vector3(rightEdge, 0, 0);
+                newPosition = gameObject.transform.position;
+                newPosition.x = rightEdge;
+                gameObject.transform.position = newPosition;
             }
         }
     }

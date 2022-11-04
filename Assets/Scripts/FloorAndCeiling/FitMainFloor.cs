@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace QuarkJam1Team1.Scripts.FloorAndCeiling
 {
-    public class FitFloor : MonoBehaviour
+    public class FitMainFloor : MonoBehaviour
     {
         private void Start()
         {

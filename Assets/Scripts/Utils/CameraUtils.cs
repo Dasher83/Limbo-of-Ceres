@@ -30,5 +30,21 @@ namespace QuarkJam1Team1.Utils
                 return Camera.main.orthographicSize * 2 * Camera.main.aspect * -1;
             }
         }
+
+        public static float UpperEdgeInRealWorldUnits
+        {
+            get
+            {
+                return Camera.main.orthographicSize;
+            }
+        }
+
+        public static float LowerEdgeInRealWorldUnits
+        {
+            get
+            {
+                return Camera.main.orthographicSize * -1;
+            }
+        }
     }
 }
