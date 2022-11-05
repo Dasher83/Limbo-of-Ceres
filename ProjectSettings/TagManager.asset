@@ -47,3 +47,6 @@ TagManager:
   - name: FloorAndCeiling
     uniqueID: 2477903583
     locked: 0
+  - name: Foreground
+    uniqueID: 3545159275
+    locked: 0
