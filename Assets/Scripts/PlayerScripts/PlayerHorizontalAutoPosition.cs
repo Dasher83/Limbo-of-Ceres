@@ -1,8 +1,8 @@
 using QuarkAcademyJam1Team1.Scripts.Shared;
-using QuarkJam1Team1.Utils;
+using QuarkAcademyJam1Team1.Scripts.Utils;
 using UnityEngine;
 
-namespace QuarkJam1Team1.PlayerScritps
+namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
 {
     public class PlayerHorizontalAutoPosition : MonoBehaviour
     {

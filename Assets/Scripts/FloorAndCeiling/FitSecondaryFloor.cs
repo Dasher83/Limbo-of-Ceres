@@ -1,10 +1,9 @@
 using QuarkAcademyJam1Team1.Scripts.Shared;
+using QuarkAcademyJam1Team1.Scripts.Shared.Enums;
 using QuarkAcademyJam1Team1.Scripts.Utils;
-using QuarkJam1Team1.Shared.Enums;
-using QuarkJam1Team1.Utils;
 using UnityEngine;
 
-namespace QuarkJam1Team1
+namespace QuarkAcademyJam1Team1.Scripts.FloorAndCeiling
 {
     public class FitSecondaryFloor : MonoBehaviour
     {

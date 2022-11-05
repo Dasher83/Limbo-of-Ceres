@@ -1,4 +1,4 @@
-namespace QuarkJam1Team1.Shared.Enums
+namespace QuarkAcademyJam1Team1.Scripts.Shared.Enums
 {
     public enum SpriteResizeMode
     {

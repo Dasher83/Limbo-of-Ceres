@@ -1,9 +1,7 @@
-using QuarkJam1Team1.Utils;
-using System.Collections;
-using System.Collections.Generic;
+using QuarkAcademyJam1Team1.Scripts.Utils;
 using UnityEngine;
 
-namespace QuarkJam1Team1
+namespace QuarkAcademyJam1Team1.Scripts.Background
 {
     public class PositionSecondaryBackground : MonoBehaviour
     {

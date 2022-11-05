@@ -1,7 +1,7 @@
 using QuarkAcademyJam1Team1.Scripts.Shared;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.PlayerScritps
+namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
 {
     public class PlayerMovement : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace QuarkJam1Team1.Utils
+namespace QuarkAcademyJam1Team1.Scripts.Utils
 {
     public static class CameraUtils
     {

@@ -1,7 +1,7 @@
-using QuarkJam1Team1.Shared.Enums;
+using QuarkAcademyJam1Team1.Scripts.Shared.Enums;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Utils 
+namespace QuarkAcademyJam1Team1.Scripts.Utils
 {
     public static class SpriteUtils
     {

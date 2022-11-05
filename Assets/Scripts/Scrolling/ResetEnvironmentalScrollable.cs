@@ -1,4 +1,4 @@
-using QuarkJam1Team1.Utils;
+using QuarkAcademyJam1Team1.Scripts.Utils;
 using UnityEngine;
 
 namespace QuarkAcademyJam1Team1.Scripts.Scrolling
