@@ -9,11 +9,9 @@ namespace QuarkAcademyJam1Team1.Scripts.FloorAndCeiling
     {
         private void Start()
         {
-            float lowerEdge;
             Vector3 floorNewPosition = Vector3.zero;
             SpriteUtils.ResizeSpriteToScreen(target: gameObject, fitToScreenHeight: Constants.FloorAndCeiling.HeightProportion, mode: SpriteResizeMode.TILED);
-            lowerEdge = (Camera.main.orthographicSize * -1) + (gameObject.GetComponent<SpriteRenderer>().size.y / 2);
-            floorNewPosition.y = lowerEdge;
+            floorNewPosition.y = CameraUtils.LowerEdgeInRealWorldUnits + (gameObject.GetComponent<SpriteRenderer>().size.y / 2);
             gameObject.transform.position = floorNewPosition;
         }
     }
