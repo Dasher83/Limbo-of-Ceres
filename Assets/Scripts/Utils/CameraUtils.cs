@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace QuarkJam1Team1.Utils
+namespace QuarkAcademyJam1Team1.Scripts.Utils
 {
     public static class CameraUtils
     {
@@ -13,6 +13,38 @@ namespace QuarkJam1Team1.Utils
                 camera.transform.position,
                 new Vector3(cameraHeight * screenAspect, cameraHeight, 0));
             return bounds;
+        }
+
+        public static float RightEdgeInRealWorldUnits
+        {
+            get
+            {
+                return Camera.main.orthographicSize * 2 * Camera.main.aspect;
+            }
+        }
+
+        public static float LeftEdgeInRealWorldUnits
+        {
+            get
+            {
+                return Camera.main.orthographicSize * 2 * Camera.main.aspect * -1;
+            }
+        }
+
+        public static float UpperEdgeInRealWorldUnits
+        {
+            get
+            {
+                return Camera.main.orthographicSize;
+            }
+        }
+
+        public static float LowerEdgeInRealWorldUnits
+        {
+            get
+            {
+                return Camera.main.orthographicSize * -1;
+            }
         }
     }
 }
