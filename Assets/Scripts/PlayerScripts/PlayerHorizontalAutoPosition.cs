@@ -11,7 +11,7 @@ namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
 
         private void Start()
         {
-            Bounds bounds = CameraUtils.OrthographicBounds();
+            Bounds bounds = CameraUtils.OrthographicBounds;
             Vector2 newPosition = _transform.position;
             newPosition.x = bounds.min.x + (bounds.size.x * Constants.Player.HorizontalPositionOffsetFactor);
             _transform.position = newPosition;
