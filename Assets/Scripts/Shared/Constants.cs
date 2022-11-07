@@ -8,6 +8,8 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
             public const float DecelerationSpeed = 0.3f;
             public const float GravityScale = 1.2f;
             public const float HorizontalPositionOffsetFactor = 0.2f;
+            public const int InitialLife = 3;
+            public const int MaxLives = 5;
         }
 
         public static class FloorAndCeiling
