@@ -11,7 +11,7 @@ namespace QuarkAcademyJam1Team1.Scripts.FloorAndCeiling
         {
             Vector3 ceilingNewPosition = Vector3.zero;
             SpriteUtils.ResizeSpriteToScreen(target: gameObject, fitToScreenHeight: Constants.FloorAndCeiling.HeightProportion, mode: SpriteResizeMode.TILED);
-            ceilingNewPosition.y = CameraUtils.UpperEdgeInRealWorldUnits - (gameObject.GetComponent<SpriteRenderer>().size.y / 2);
+            ceilingNewPosition.y = CameraUtils.OrthographicBounds.max.y - (gameObject.GetComponent<SpriteRenderer>().size.y / 2);
             gameObject.transform.position = ceilingNewPosition;
         }
     }

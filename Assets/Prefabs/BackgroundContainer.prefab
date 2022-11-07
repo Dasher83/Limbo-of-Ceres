@@ -64,7 +64,7 @@ Transform:
   m_GameObject: {fileID: 8247845236957717871}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 22.21, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7331543, y: 0.55, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8247845235840892232}
@@ -111,12 +111,12 @@ SpriteRenderer:
   m_SortingLayerID: -1782435363
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a07beeb7a77d4a4468c172888b1d858c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9a783039dbdc1954e857242a80aae5e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
+  m_FlipX: 1
+  m_FlipY: 1
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 22, y: 11}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c99e5cb16d82b414faf3be3fd8797c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollingSpeedData: {fileID: 11400000, guid: 88e9c265a0b33b84a83ee3c67f706eb4, type: 2}
+  scrollingSpeedData: {fileID: 11400000, guid: c8d3573cecf98064ea6a3fecc2563e80, type: 2}
 --- !u!114 &8247845236957717878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 8247845237836004462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7331543, y: 0.55, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8247845235840892232}
@@ -269,13 +269,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1782435363
   m_SortingLayer: 1
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a07beeb7a77d4a4468c172888b1d858c, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 9a783039dbdc1954e857242a80aae5e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 22, y: 11}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c99e5cb16d82b414faf3be3fd8797c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollingSpeedData: {fileID: 11400000, guid: 88e9c265a0b33b84a83ee3c67f706eb4, type: 2}
+  scrollingSpeedData: {fileID: 11400000, guid: c8d3573cecf98064ea6a3fecc2563e80, type: 2}
 --- !u!114 &8247845237836004464
 MonoBehaviour:
   m_ObjectHideFlags: 0

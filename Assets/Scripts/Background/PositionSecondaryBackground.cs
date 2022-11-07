@@ -7,7 +7,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Background
     {
         private void Start()
         {
-            gameObject.transform.position = new Vector3(CameraUtils.RightEdgeInRealWorldUnits, 0, 0);
+            gameObject.transform.position = new Vector3(CameraUtils.OrthographicBounds.max.x + CameraUtils.OrthographicBounds.extents.x, 0, 0);
         }
     }
 }
