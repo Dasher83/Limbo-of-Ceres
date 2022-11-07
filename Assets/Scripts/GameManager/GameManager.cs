@@ -10,7 +10,7 @@ namespace QuarkAcademyJam1Team1.Scripts.GameManager
     {
         [SerializeField] private PlayerData playerData;
 
-        public GameState gameState { get; private set; }
+        private GameState gameState;
 
         void Update()
         {
@@ -40,6 +40,11 @@ namespace QuarkAcademyJam1Team1.Scripts.GameManager
                     // TODO : se tropiesa, cartel de game over que muestre los metros totales y menu que te deje volve, repetir, y 10 mejores.
                 break;
             }
+        }
+
+        public GameState GetState()
+        {
+            return gameState;
         }
     }
 }
