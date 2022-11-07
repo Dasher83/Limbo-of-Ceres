@@ -1,14 +1,14 @@
-using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
+using QuarkAcademyJam1Team1.Scripts.UI;
 using QuarkAcademyJam1Team1.Scripts.Shared.Enums;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.GameManager
+namespace QuarkAcademyJam1Team1.Scripts.Managers
 {
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private PlayerData playerData;
+        [SerializeField] private LifeBar lifeBar;
 
         private GameState gameState;
 
@@ -17,11 +17,11 @@ namespace QuarkAcademyJam1Team1.Scripts.GameManager
             // Debugger
             if (Input.GetKeyDown(KeyCode.H))
             {
-                playerData.AddLives();
+                lifeBar.Addlife();
             }
             if (Input.GetKeyDown(KeyCode.L))
             {
-                playerData.RemoveLife();
+                lifeBar.RemoveLife();
             }
         }
 
@@ -37,7 +37,7 @@ namespace QuarkAcademyJam1Team1.Scripts.GameManager
                     // TODO: pausar todos los sistemas, ui que puedas salir del juego o reanudar
                 break;
                 case GameState.GAMEOVER:
-                    // TODO : se tropiesa, cartel de game over que muestre los metros totales y menu que te deje volve, repetir, y 10 mejores.
+                    Debug.Log("GAMEOVER");
                 break;
             }
         }

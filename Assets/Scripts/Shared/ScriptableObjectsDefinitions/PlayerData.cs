@@ -10,7 +10,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions
 
         public int Lifes { get { return lifes; } }
 
-        public void AddLives()
+        public void AddLifes()
         {
             lifes++;
             Debug.Log("la vida actual es: " + lifes);
