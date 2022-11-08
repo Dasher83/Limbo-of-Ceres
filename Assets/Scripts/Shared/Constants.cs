@@ -29,6 +29,12 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
         {
             public const string Obstacle = "Obstacle";
         }
+
+        public static class HighScores
+        {
+            public const string FileName = "/highScores.json";
+            public const int Seats = 10;
+        }
     }
 }
 
