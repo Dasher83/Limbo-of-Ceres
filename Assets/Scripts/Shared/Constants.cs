@@ -14,6 +14,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
         {
             public const float OffsetWidth = 0.001f;
             public const float HeightProportion = 0.1f;
+            public const float CollidersExtraWidth = 1f;
         }
 
         public static class Obstacles
