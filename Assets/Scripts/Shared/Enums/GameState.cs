@@ -4,7 +4,6 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared.Enums
     {
         STARTING,
         PLAYING,
-        PAUSE,
         GAMEOVER
     }
 }

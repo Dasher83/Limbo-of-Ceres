@@ -44,9 +44,6 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
                 break;
                 case GameState.PLAYING:
                 break;
-                case GameState.PAUSE:
-                    // TODO: pausar todos los sistemas, ui que puedas salir del juego o reanudar
-                break;
                 case GameState.GAMEOVER:
                     Debug.Log("GAMEOVER");
                 break;
