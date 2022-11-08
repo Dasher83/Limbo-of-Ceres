@@ -1,4 +1,4 @@
-using QuarkAcademyJam1Team1.Scripts.UI;
+using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
 using QuarkAcademyJam1Team1.Scripts.Shared.Enums;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,29 +8,40 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
 {
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private LifeBar lifeBar;
+        [SerializeField] private PlayerData playerData;
 
-        private GameState gameState;
-
+        void Start()
+        {
+            SetState(GameState.STARTING);
+        }
+        
         void Update()
         {
             // Debugger
             if (Input.GetKeyDown(KeyCode.H))
             {
-                lifeBar.Addlife();
+                playerData.AddLifes();
             }
             if (Input.GetKeyDown(KeyCode.L))
             {
-                lifeBar.RemoveLife();
+                playerData.RemoveLife();
+            }
+            // Debugger
+
+            if (playerData.Lifes == 0)
+            {
+                SetState(GameState.GAMEOVER);
             }
         }
 
         public void SetState(GameState state)
         {
-            gameState = state;
-
             switch (state)
             {
+                case GameState.STARTING:
+                    playerData.SetInitialLifes();
+                    SetState(GameState.PLAYING);
+                break;
                 case GameState.PLAYING:
                 break;
                 case GameState.PAUSE:
@@ -40,11 +51,6 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
                     Debug.Log("GAMEOVER");
                 break;
             }
-        }
-
-        public GameState GetState()
-        {
-            return gameState;
         }
     }
 }

@@ -1,4 +1,4 @@
-using QuarkAcademyJam1Team1.Scripts.Managers;
+using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
 using QuarkAcademyJam1Team1.Scripts.Shared;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,27 +10,24 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
 {
     public class LifeBar : MonoBehaviour
     {
-        // capas que si usamos el playerdata, asi el gameover se setea desde el manager, y no se manda game over en cada frame
-        [SerializeField]private int lifes;
-        [SerializeField]private int numbersOfHearts;
-        [SerializeField] private GameManager gameManager;
+        [SerializeField] private int lifes;
+        [SerializeField] private int minHeartsInScreen;
+        [SerializeField] private PlayerData playerData;
         [SerializeField] private Transform hearts;
         [SerializeField] private Sprite heartSprite;
         [SerializeField] private Sprite emptyHeartSprite;
 
+
         void Start()
         {
-            lifes = Constants.Player.InitialLifes;
-            numbersOfHearts = Constants.Player.MaxLifes;
+            lifes = playerData.Lifes;
+            minHeartsInScreen = Constants.Player.InitialLifes - 1;
         }
 
 
         void Update()
         {
-            if (lifes > numbersOfHearts)
-            {
-                lifes = numbersOfHearts;
-            }
+            lifes = playerData.Lifes;
 
             for (int i = 0; i < hearts.childCount; i++)
             {
@@ -40,22 +37,15 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
                 }else{
                     hearts.GetChild(i).GetComponent<Image>().sprite = emptyHeartSprite;
                 }
-                if (i > lifes && i > 3) hearts.GetChild(i).gameObject.SetActive(false);
-                else hearts.GetChild(i).gameObject.SetActive(true);
-                // TODO: que el comportamiento sea el esperado y no este 
+                if (i > minHeartsInScreen && i > lifes - 1) 
+                {
+                    hearts.GetChild(i).gameObject.SetActive(false); // TODO: can make an animation of banishin 
+                    continue;
+                }
+                hearts.GetChild(i).gameObject.SetActive(true);
             }
         }
 
-        public void Addlife()
-        {
-            lifes++;
-            Debug.Log("la vida actual es: " + lifes);
-        }
 
-        public void RemoveLife()
-        {
-            lifes--;
-            Debug.Log("la vida actual es: " + lifes);
-        }
     }
 }
