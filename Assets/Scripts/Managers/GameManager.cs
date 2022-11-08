@@ -9,6 +9,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private PlayerData playerData;
+        [SerializeField] private GameObject GameOverMenu;
 
         void Start()
         {
@@ -45,7 +46,9 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
                 case GameState.PLAYING:
                 break;
                 case GameState.GAMEOVER:
-                    Debug.Log("GAMEOVER");
+                    // TODO: if we not use this manager eny more, but steel have this logic here is where the animation need to be
+                    GameOverMenu.SetActive(true);
+                    Time.timeScale = 0f;
                 break;
             }
         }

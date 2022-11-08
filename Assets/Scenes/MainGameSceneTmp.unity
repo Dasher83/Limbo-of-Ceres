@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &257890972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8177353102441049280, guid: 7df85276b18f05e4aaff11531fe129b7, type: 3}
+  m_PrefabInstance: {fileID: 2090044452}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &295364929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -613,6 +618,10 @@ PrefabInstance:
       propertyPath: lifeBar
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8120543152943485205, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
+      propertyPath: GameOverMenu
+      value: 
+      objectReference: {fileID: 257890972}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
 --- !u!1001 &8944472602951488911
