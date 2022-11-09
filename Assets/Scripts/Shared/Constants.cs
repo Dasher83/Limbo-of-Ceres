@@ -35,6 +35,10 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
             public const string FileName = "/highScores.json";
             public const int Seats = 10;
         }
+
+        public static class AudioPlayer {
+            public const float InBetweenSongsPauseLength = 0.3f;
+        }
     }
 }
 
