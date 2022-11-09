@@ -21,14 +21,5 @@ namespace QuarkAcademyJam1Team1.Scripts.Obstacles
                 gameObject.SetActive(false);
             }
         }
-
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-
-            if(collision.gameObject.CompareTag(Constants.Tags.Obstacle))
-            {
-                collision.otherCollider.gameObject.SetActive(false);
-            }
-        }
     }
 }

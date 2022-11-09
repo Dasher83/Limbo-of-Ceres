@@ -29,7 +29,6 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions
             }
 
             lives -= damage;
-            Debug.Log("la vida actual es: " + lives);
         }
 
         public void ReceiveRestauration(int restauration)
@@ -46,7 +45,6 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions
             }
 
             lives += restauration;
-            Debug.Log("la vida actual es: " + lives);
         }
 
         public void Initialize()
