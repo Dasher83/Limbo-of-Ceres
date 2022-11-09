@@ -42,14 +42,14 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
                 case GameState.STARTING:
                     playerData.SetInitialLifes();
                     SetState(GameState.PLAYING);
-                break;
+                    break;
                 case GameState.PLAYING:
-                break;
+                    break;
                 case GameState.GAMEOVER:
                     // TODO: if we not use this manager eny more, but steel have this logic here is where the animation need to be
                     GameOverMenu.SetActive(true);
                     Time.timeScale = 0f;
-                break;
+                    break;
             }
         }
     }
