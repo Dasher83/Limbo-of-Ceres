@@ -1,48 +1,43 @@
-using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
-using QuarkAcademyJam1Team1.Scripts.Shared;
-using System.Collections;
-using System.Collections.Generic;
+using QuarkAcademyJam1Team1.Scripts.Shared.Interfaces;
 using UnityEngine.UI;
 using UnityEngine;
-
 
 namespace QuarkAcademyJam1Team1.Scripts.UI
 {
     public class LifeBar : MonoBehaviour
     {
-        [SerializeField] private int lifes;
-        [SerializeField] private int minHeartsInScreen;
-        [SerializeField] private PlayerData playerData;
-        [SerializeField] private Transform hearts;
         [SerializeField] private Sprite heartSprite;
         [SerializeField] private Sprite emptyHeartSprite;
+        private IDurable durable;
 
+        public IDurable Durable { set { durable = value; } }
 
-        void Start()
+        private void Update()
         {
-            lifes = playerData.Lifes;
-            minHeartsInScreen = Constants.Player.InitialLifes - 1;
-        }
+            if (durable == null) return;
 
+            if (durable.CurrentDurability == 0) gameObject.SetActive(false);
 
-        void Update()
-        {
-            lifes = playerData.Lifes;
-
-            for (int i = 0; i < hearts.childCount; i++)
+            for (int i = 0; i < durable.InitialDurability && i < durable.CurrentDurability; i++)
             {
-                if (i < lifes)
+                gameObject.transform.GetChild(i).GetComponent<Image>().sprite = heartSprite;
+            }
+
+            for(int i = durable.CurrentDurability; i < durable.InitialDurability; i++)
+            {
+                gameObject.transform.GetChild(i).GetComponent<Image>().sprite = emptyHeartSprite;
+            }
+
+            for (int i = durable.InitialDurability; i < durable.MaxDurability; i++)
+            {
+                if (i <= durable.CurrentDurability - 1)
                 {
-                    hearts.GetChild(i).GetComponent<Image>().sprite = heartSprite;
-                }else{
-                    hearts.GetChild(i).GetComponent<Image>().sprite = emptyHeartSprite;
+                    gameObject.transform.GetChild(i).gameObject.SetActive(true); // TODO: can make an animation of banishin
                 }
-                if (i > minHeartsInScreen && i > lifes - 1) 
+                else
                 {
-                    hearts.GetChild(i).gameObject.SetActive(false); // TODO: can make an animation of banishin 
-                    continue;
+                    gameObject.transform.GetChild(i).gameObject.SetActive(false);
                 }
-                hearts.GetChild(i).gameObject.SetActive(true);
             }
         }
 
