@@ -1,8 +1,9 @@
-using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
 using QuarkAcademyJam1Team1.Scripts.Shared.Enums;
-using System.Collections;
-using System.Collections.Generic;
+using QuarkAcademyJam1Team1.Scripts.Shared.Interfaces;
+using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
+using QuarkAcademyJam1Team1.Scripts.UI;
 using UnityEngine;
+
 
 namespace QuarkAcademyJam1Team1.Scripts.Managers
 {
@@ -10,8 +11,9 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
     {
         [SerializeField] private PlayerData playerData;
         [SerializeField] private GameObject GameOverMenu;
+        [SerializeField] private LifeBar lifeBar;
 
-        void Start()
+        void Awake()
         {
             SetState(GameState.STARTING);
         }
@@ -21,15 +23,15 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
             // Debugger
             if (Input.GetKeyDown(KeyCode.H))
             {
-                playerData.AddLifes();
+                playerData.ReceiveRestauration(1);
             }
             if (Input.GetKeyDown(KeyCode.L))
             {
-                playerData.RemoveLife();
+                playerData.ReceiveDamage(1);
             }
             // Debugger
 
-            if (playerData.Lifes == 0)
+            if (playerData.CurrentDurability == 0)
             {
                 SetState(GameState.GAMEOVER);
             }
@@ -40,7 +42,8 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
             switch (state)
             {
                 case GameState.STARTING:
-                    playerData.SetInitialLifes();
+                    playerData.Initialize();
+                    lifeBar.Durable = (IDurable)playerData;
                     SetState(GameState.PLAYING);
                     break;
                 case GameState.PLAYING:

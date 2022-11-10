@@ -8,8 +8,8 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
             public const float DecelerationSpeed = 0.3f;
             public const float GravityScale = 1.2f;
             public const float HorizontalPositionOffsetFactor = 0.2f;
-            public const int InitialLifes = 3;
-            public const int MaxLifes = 5;
+            public const int InitialLives = 3;
+            public const int MaxLives = 5;
         }
 
         public static class FloorAndCeiling
@@ -28,6 +28,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
         public static class Tags
         {
             public const string Obstacle = "Obstacle";
+            public const string Player = "Player";
         }
 
         public static class HighScores
