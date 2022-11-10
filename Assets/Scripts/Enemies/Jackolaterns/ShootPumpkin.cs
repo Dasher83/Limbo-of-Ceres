@@ -30,7 +30,15 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolaterns
             get {
                 Vector3 spawnPosition = transform.position;
                 spawnPosition.y += GetComponent<SpriteRenderer>().bounds.extents.y + Mathf.Epsilon;
-                spawnPosition.x -= GetComponent<SpriteRenderer>().bounds.extents.x + Mathf.Epsilon;
+                if(gameObject.transform.position.x > lockedOnTarget.transform.position.x)
+                {
+                    spawnPosition.x -= GetComponent<SpriteRenderer>().bounds.extents.x + Mathf.Epsilon;
+                }
+                else
+                {
+                    spawnPosition.x += GetComponent<SpriteRenderer>().bounds.extents.x + Mathf.Epsilon;
+                }
+
                 return spawnPosition;
             }
         }
