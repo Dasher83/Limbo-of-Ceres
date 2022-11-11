@@ -20,27 +20,29 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
 
             for (int i = 0; i < durable.InitialDurability && i < durable.CurrentDurability; i++)
             {
-                gameObject.transform.GetChild(i).GetComponent<Image>().sprite = heartSprite;
+                transform.GetChild(i).GetComponent<Image>().sprite = heartSprite;
             }
 
             for(int i = durable.CurrentDurability; i < durable.InitialDurability; i++)
             {
-                gameObject.transform.GetChild(i).GetComponent<Image>().sprite = emptyHeartSprite;
+                transform.GetChild(i).GetComponent<Image>().sprite = emptyHeartSprite;
             }
 
             for (int i = durable.InitialDurability; i < durable.MaxDurability; i++)
             {
+                Heart heart = transform.GetChild(i).GetComponent<Heart>();
                 if (i <= durable.CurrentDurability - 1)
                 {
-                    gameObject.transform.GetChild(i).gameObject.SetActive(true); // TODO: can make an animation of banishin
+                    heart.AddHeart();
                 }
                 else
                 {
-                    gameObject.transform.GetChild(i).gameObject.SetActive(false);
+                    if (!heart.IsInactive)
+                    {
+                        heart.RemoveHeart();
+                    }
                 }
             }
         }
-
-
     }
 }

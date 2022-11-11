@@ -37,8 +37,16 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
             public const int Seats = 10;
         }
 
-        public static class AudioPlayer {
+        public static class AudioPlayer 
+        {
             public const float InBetweenSongsPauseLength = 0.3f;
+        }
+
+        public static class Animations
+        {
+            public const float HeartAnimTime = 0.22f;
+            public const float ShakeAnimTime = 1.5f;
+            public const float VanishAnimTime = 0.02f;
         }
     }
 }
