@@ -26,8 +26,8 @@ namespace QuarkAcademyJam1Team1.Scripts.Obstacles
             {
                 newPosition.y = CameraUtils.OrthographicBounds.max.y - obstacle.GetComponent<SpriteRenderer>().bounds.size.y;
                 newPosition.y -= ceilingSpriteRenderer.bounds.size.y;
-                obstacle.GetComponent<Rigidbody2D>().gravityScale *= -1;
                 obstacle.GetComponent<SpriteRenderer>().flipY = true;
+                obstacle.GetComponent<Rigidbody2D>().gravityScale *= -1;
             }
             else
             {

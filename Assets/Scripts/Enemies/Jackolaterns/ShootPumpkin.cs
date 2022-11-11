@@ -28,7 +28,6 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         private Vector3 ShootPosition { 
             get {
                 Vector3 spawnPosition = transform.position;
-                spawnPosition.y += GetComponent<SpriteRenderer>().bounds.extents.y + Mathf.Epsilon;
                 if(gameObject.transform.position.x > lockedOnTarget.transform.position.x)
                 {
                     spawnPosition.x -= GetComponent<SpriteRenderer>().bounds.extents.x + Mathf.Epsilon;
@@ -36,6 +35,14 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
                 else
                 {
                     spawnPosition.x += GetComponent<SpriteRenderer>().bounds.extents.x + Mathf.Epsilon;
+                }
+                if(gameObject.GetComponent<Rigidbody2D>().gravityScale > 0)
+                {
+                    spawnPosition.y += GetComponent<SpriteRenderer>().bounds.extents.y + Mathf.Epsilon;
+                }
+                else
+                {
+                    spawnPosition.y -= GetComponent<SpriteRenderer>().bounds.extents.y + Mathf.Epsilon;
                 }
 
                 return spawnPosition;
@@ -88,6 +95,9 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         private void Aim()
         {
             directionToAim = (Vector2)lockedOnTarget.position - (Vector2)ShootPosition;
+            /*if(directionToAim.magnitude <= range * 0.70) {
+                directionToAim.Normalize();
+            }*/
             RaycastHit2D rayInfo = Physics2D.Raycast(transform.position, directionToAim, range, ~IgnoreMe);
             if (rayInfo)
             {
@@ -105,7 +115,15 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         private void Fire()
         {
             GameObject pumpkinInstance = Instantiate(pumpkinPrefab, ShootPosition, Quaternion.identity);
-            pumpkinInstance.GetComponent<Rigidbody2D>().AddForce(directionToAim * fireForce);
+            if (gameObject.GetComponent<Rigidbody2D>().gravityScale < 0)
+            {
+                pumpkinInstance.GetComponent<Rigidbody2D>().gravityScale *= -1;
+                pumpkinInstance.GetComponent<Rigidbody2D>().AddForce(directionToAim * fireForce);
+            }
+            else
+            {
+                pumpkinInstance.GetComponent<Rigidbody2D>().AddForce(directionToAim * fireForce);
+            }
         }
 
         private void OnDrawGizmosSelected()

@@ -20,15 +20,27 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         private ResettableTimer spawnTimer;
         private Vector3 newPosition;
 
-        private void SpawnJackolantern(GameObject obstacle)
+        private void SpawnJackolantern(GameObject jackolantern)
         {
-            newPosition.x = CameraUtils.OrthographicBounds.max.x + obstacle.GetComponent<SpriteRenderer>().bounds.size.x;
-            obstacle.GetComponent<Rigidbody2D>().gravityScale = Constants.Enemies.Jackolanterns.DefaultGravityScale;
-            newPosition.y = CameraUtils.OrthographicBounds.min.y + obstacle.GetComponent<SpriteRenderer>().bounds.size.y;
-            newPosition.y += floorSpriteRenderer.bounds.size.y;
-            obstacle.GetComponent<SpriteRenderer>().flipY = false;
-            obstacle.transform.position = newPosition;
-            obstacle.SetActive(true);
+            newPosition.x = CameraUtils.OrthographicBounds.max.x + jackolantern.GetComponent<SpriteRenderer>().bounds.size.x;
+            jackolantern.GetComponent<Rigidbody2D>().gravityScale = Constants.Enemies.Jackolanterns.DefaultGravityScale;
+
+            if (Random.value >= Constants.Enemies.Jackolanterns.CeilingSpawnProbability)
+            {
+                newPosition.y = CameraUtils.OrthographicBounds.max.y - jackolantern.GetComponent<SpriteRenderer>().bounds.size.y;
+                newPosition.y -= floorSpriteRenderer.bounds.size.y;
+                jackolantern.GetComponent<SpriteRenderer>().flipY = true;
+                jackolantern.GetComponent<Rigidbody2D>().gravityScale *= -1;
+            }
+            else
+            {
+                newPosition.y = CameraUtils.OrthographicBounds.min.y + jackolantern.GetComponent<SpriteRenderer>().bounds.size.y;
+                newPosition.y += floorSpriteRenderer.bounds.size.y;
+                jackolantern.GetComponent<SpriteRenderer>().flipY = false;
+            }
+
+            jackolantern.transform.position = newPosition;
+            jackolantern.SetActive(true);
         }
 
         private void Start()
