@@ -4,8 +4,9 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Shared
 {
     public class FaceTarget : MonoBehaviour
     {
-        [SerializeField]
         private Transform lockedOnTarget;
+
+        public Transform LockedOnTarget { set { lockedOnTarget = value; } }
 
         private void Update()
         {

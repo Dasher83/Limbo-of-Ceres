@@ -2,7 +2,7 @@ using QuarkAcademyJam1Team1.Scripts.Shared;
 using QuarkAcademyJam1Team1.Scripts.TimeScripts;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolaterns
+namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
 {
     public class ShootPumpkin : MonoBehaviour
     {
@@ -18,7 +18,6 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolaterns
         private float fireForce;
         [SerializeField]
         private GameObject pumpkinPrefab;
-        [SerializeField]
         private Transform lockedOnTarget;
 
         private ResettableTimer aimTimer;
@@ -43,6 +42,8 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolaterns
             }
         }
 
+        public Transform LockedOnTarget { set { lockedOnTarget = value; } }
+
         private void Start()
         {
             aimTimer = new ResettableTimer(aimRate);
@@ -59,9 +60,9 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolaterns
             if (aimTimer.OutOfTime)
             {
                 Aim();
-                if (!Mathf.Approximately(aimRate, aimTimer.InitialSettime))
+                if (!Mathf.Approximately(aimRate, aimTimer.NextTimeToCountdown))
                 {
-                    aimTimer = new ResettableTimer(aimRate);
+                    aimTimer.Reset(aimRate);
                 }
                 else
                 {
@@ -72,9 +73,9 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolaterns
             if (fireTimer.OutOfTime && clearShot)
             {
                 Fire();
-                if (!Mathf.Approximately(fireRate, fireTimer.InitialSettime))
+                if (!Mathf.Approximately(fireRate, fireTimer.NextTimeToCountdown))
                 {
-                    fireTimer = new ResettableTimer(fireRate);
+                    fireTimer.Reset(fireRate);
                 } 
                 else
                 {
@@ -86,7 +87,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolaterns
 
         private void Aim()
         {
-            directionToAim = (Vector2)lockedOnTarget.position - (Vector2)gameObject.transform.position;
+            directionToAim = (Vector2)lockedOnTarget.position - (Vector2)ShootPosition;
             RaycastHit2D rayInfo = Physics2D.Raycast(transform.position, directionToAim, range, ~IgnoreMe);
             if (rayInfo)
             {
@@ -112,7 +113,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolaterns
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(gameObject.transform.position, range);
             Gizmos.color = Color.yellow;
-            Gizmos.DrawLine(gameObject.transform.position, lockedOnTarget.position);
+            Gizmos.DrawLine(ShootPosition, lockedOnTarget.position);
         }
     }
 }

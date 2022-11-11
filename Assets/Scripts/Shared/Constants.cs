@@ -25,10 +25,20 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
             public const float CeilingSpawnProbability = 0.6f;
         }
 
+        public static class Enemies
+        {
+            public static class Jackolanterns
+            {
+                public const float DefaultGravityScale = 10f;
+            }
+        }
+
         public static class Tags
         {
             public const string Obstacle = "Obstacle";
             public const string Player = "Player";
+            public const string Enemy = "Enemy";
+            public const string Projectile = "Projectile";
         }
 
         public static class HighScores
