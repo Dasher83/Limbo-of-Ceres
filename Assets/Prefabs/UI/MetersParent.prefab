@@ -187,3 +187,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   metersText: {fileID: 7106367024970322061}
   playerData: {fileID: 11400000, guid: 244905dc55d0b3b46add0b807796e42a, type: 2}
+  scrollingSpeedFloor: {fileID: 11400000, guid: d1b604eb62facf74e872ca7efe5733f7, type: 2}

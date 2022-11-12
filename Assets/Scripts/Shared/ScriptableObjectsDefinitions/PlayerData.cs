@@ -7,7 +7,6 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions
     public class PlayerData : ScriptableObject, IDurable, IDamageable, IRestorable
     {
         [SerializeField] private int lives;
-        [SerializeField] private ScrollingSpeedScriptableObject scrollingSpeed;
         private float meters;
 
         public float CurrentMeters => meters;
@@ -48,9 +47,9 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions
             lives += restauration;
         }
 
-        public void AddMeters()
+        public void AddMeters(float ScrollingSpeed)
         {
-            meters += Mathf.Abs(scrollingSpeed.ScrollingSpeed) * Time.deltaTime/2;
+            meters += Mathf.Abs(ScrollingSpeed) * Time.deltaTime/2;
         }
 
         public void Initialize()
