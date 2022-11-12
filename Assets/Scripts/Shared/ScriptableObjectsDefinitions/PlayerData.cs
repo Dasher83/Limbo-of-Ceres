@@ -7,12 +7,13 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions
     public class PlayerData : ScriptableObject, IDurable, IDamageable, IRestorable
     {
         [SerializeField] private int lives;
+        [SerializeField] private ScrollingSpeedScriptableObject scrollingSpeed;
         private float meters;
 
+        public float CurrentMeters => meters;
+
         public int CurrentDurability => lives;
-
         public int MaxDurability => Constants.Player.MaxLives;
-
         public int InitialDurability => Constants.Player.InitialLives; 
 
         public void ReceiveDamage(int damage)
@@ -47,9 +48,15 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions
             lives += restauration;
         }
 
+        public void AddMeters()
+        {
+            meters += Mathf.Abs(scrollingSpeed.ScrollingSpeed) * Time.deltaTime/2;
+        }
+
         public void Initialize()
         {
             lives = Constants.Player.InitialLives;
+            meters = 0;
         }
     }
 }

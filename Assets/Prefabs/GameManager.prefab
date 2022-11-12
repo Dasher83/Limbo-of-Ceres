@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 244905dc55d0b3b46add0b807796e42a, type: 2}
   GameOverMenu: {fileID: 5091654321470286064, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
+  lifeBar: {fileID: 8552591785796964880, guid: 6a08c14e182491940b3881b7552cde4f, type: 3}
+  metersCounter: {fileID: 0}
