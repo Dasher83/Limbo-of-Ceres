@@ -23,8 +23,10 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         private ResettableTimer fireTimer;
         private Vector2 directionToAim;
         private bool clearShot;
+        private SpawnPumpkinBullets pumpkinBulletSpawner;
 
         public Transform LockedOnTarget { set { lockedOnTarget = value; } }
+        public SpawnPumpkinBullets PumpkinBulletSpawner { set { pumpkinBulletSpawner = value; } }
 
         private Vector3 ShootPosition { 
             get {
@@ -66,7 +68,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
 
         private void Update()
         {
-            if (lockedOnTarget == null) return;
+            if (lockedOnTarget == null || pumpkinBulletSpawner == null) return;
 
             aimTimer.Countdown(Time.deltaTime);
             fireTimer.Countdown(Time.deltaTime);
@@ -119,7 +121,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
 
         private void Fire()
         {
-            GameObject pumpkinInstance = Instantiate(pumpkinPrefab, ShootPosition, Quaternion.identity);
+            GameObject pumpkinInstance = pumpkinBulletSpawner.Spawn(spawnPosition: ShootPosition);
             pumpkinInstance.GetComponent<Rigidbody2D>().AddForce(directionToAim * fireForce * Random.Range(0.75f, 1.00f));
         }
 
