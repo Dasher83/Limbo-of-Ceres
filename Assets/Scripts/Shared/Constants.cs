@@ -31,6 +31,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
             {
                 public const float DefaultGravityScale = 10f;
                 public const float CeilingSpawnProbability = 0.6f;
+                public const float DiplomaticThreshold = 3f;
             }
         }
 

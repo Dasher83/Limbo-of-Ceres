@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SmallObstaclesSpawningData
   m_EditorClassIdentifier: 
   minimumRespawnTime: 1
-  maximumRespawnTime: 2
+  maximumRespawnTime: 3

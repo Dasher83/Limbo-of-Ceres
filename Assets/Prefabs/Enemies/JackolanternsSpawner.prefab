@@ -65,6 +65,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7363630895381158997}
     m_Modifications:
+    - target: {fileID: 4670997851035706752, guid: 941bb6fd8270949498198072aef8aea9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670997851035706752, guid: 941bb6fd8270949498198072aef8aea9, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670997851035706752, guid: 941bb6fd8270949498198072aef8aea9, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4670997851035706753, guid: 941bb6fd8270949498198072aef8aea9, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -640,6 +652,10 @@ PrefabInstance:
     - target: {fileID: 4670997851035706755, guid: 941bb6fd8270949498198072aef8aea9, type: 3}
       propertyPath: m_Name
       value: Jackolatern
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670997851035706755, guid: 941bb6fd8270949498198072aef8aea9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 941bb6fd8270949498198072aef8aea9, type: 3}

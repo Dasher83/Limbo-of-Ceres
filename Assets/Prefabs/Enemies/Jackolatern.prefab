@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4670997851035706756}
   - component: {fileID: 4670997850951537308}
   - component: {fileID: 4670997850951537314}
+  - component: {fileID: -8866487689074243921}
   m_Layer: 6
   m_Name: Jackolatern
   m_TagString: Enemy
@@ -104,11 +105,12 @@ MonoBehaviour:
   IgnoreMe:
     serializedVersion: 2
     m_Bits: 192
-  aimRate: 1
-  fireRate: 1
+  aimRate: 1.5
+  fireRate: 1.5
   range: 20
-  fireForce: 40
+  fireForce: 200
   pumpkinPrefab: {fileID: 2091393193384232770, guid: 7d47b7ddebb82fb49bbbfbcb4462eec0, type: 3}
+  diplomaticThreshold: 1
 --- !u!50 &4670997851035706759
 Rigidbody2D:
   serializedVersion: 4
@@ -178,5 +180,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bb3517cfb5e2ea4f8397047bad0557c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8866487689074243921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4670997851035706755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04fe750e87560bc41ab2b029d4812bbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

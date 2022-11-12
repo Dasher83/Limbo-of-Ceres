@@ -19,11 +19,12 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         [SerializeField]
         private GameObject pumpkinPrefab;
         private Transform lockedOnTarget;
-
         private ResettableTimer aimTimer;
         private ResettableTimer fireTimer;
         private Vector2 directionToAim;
         private bool clearShot;
+
+        public Transform LockedOnTarget { set { lockedOnTarget = value; } }
 
         private Vector3 ShootPosition { 
             get {
@@ -49,7 +50,13 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
             }
         }
 
-        public Transform LockedOnTarget { set { lockedOnTarget = value; } }
+        private bool OutsideDiplomaticThreshold
+        {
+            get
+            {
+                return gameObject.transform.position.x > lockedOnTarget.transform.position.x + Constants.Enemies.Jackolanterns.DiplomaticThreshold;
+            }
+        }
 
         private void Start()
         {
@@ -77,7 +84,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
                 }
             }
 
-            if (fireTimer.OutOfTime && clearShot)
+            if (fireTimer.OutOfTime && clearShot && OutsideDiplomaticThreshold)
             {
                 Fire();
                 if (!Mathf.Approximately(fireRate, fireTimer.NextTimeToCountdown))
@@ -95,9 +102,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         private void Aim()
         {
             directionToAim = (Vector2)lockedOnTarget.position - (Vector2)ShootPosition;
-            /*if(directionToAim.magnitude <= range * 0.70) {
-                directionToAim.Normalize();
-            }*/
+            directionToAim.Normalize();
             RaycastHit2D rayInfo = Physics2D.Raycast(transform.position, directionToAim, range, ~IgnoreMe);
             if (rayInfo)
             {
@@ -115,15 +120,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         private void Fire()
         {
             GameObject pumpkinInstance = Instantiate(pumpkinPrefab, ShootPosition, Quaternion.identity);
-            if (gameObject.GetComponent<Rigidbody2D>().gravityScale < 0)
-            {
-                pumpkinInstance.GetComponent<Rigidbody2D>().gravityScale *= -1;
-                pumpkinInstance.GetComponent<Rigidbody2D>().AddForce(directionToAim * fireForce);
-            }
-            else
-            {
-                pumpkinInstance.GetComponent<Rigidbody2D>().AddForce(directionToAim * fireForce);
-            }
+            pumpkinInstance.GetComponent<Rigidbody2D>().AddForce(directionToAim * fireForce * Random.Range(0.75f, 1.00f));
         }
 
         private void OnDrawGizmosSelected()
@@ -132,6 +129,10 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
             Gizmos.DrawWireSphere(gameObject.transform.position, range);
             Gizmos.color = Color.yellow;
             Gizmos.DrawLine(ShootPosition, lockedOnTarget.position);
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(
+                new Vector3(lockedOnTarget.transform.position.x + Constants.Enemies.Jackolanterns.DiplomaticThreshold, 1000, 0),
+                new Vector3(lockedOnTarget.transform.position.x + Constants.Enemies.Jackolanterns.DiplomaticThreshold, -1000, 0));
         }
     }
 }

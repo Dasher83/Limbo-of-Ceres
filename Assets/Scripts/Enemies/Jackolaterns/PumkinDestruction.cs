@@ -10,7 +10,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         {
             if (collision.gameObject.CompareTag(Constants.Tags.Enemy))
             {
-                return;
+                Destroy(gameObject);
             }
 
             if (collision.gameObject.CompareTag(Constants.Tags.Player))
