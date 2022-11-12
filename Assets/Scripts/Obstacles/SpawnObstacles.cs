@@ -1,5 +1,6 @@
 using QuarkAcademyJam1Team1.Scripts.Shared;
 using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
+using QuarkAcademyJam1Team1.Scripts.TimeScripts;
 using QuarkAcademyJam1Team1.Scripts.Utils;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Obstacles
         private SpriteRenderer floorSpriteRenderer;
         [SerializeField]
         private SpriteRenderer ceilingSpriteRenderer;
-        private float spawnTimer;
+        private ResettableTimer spawnTimer;
         private Vector3 newPosition;
 
         private void SpawnObstacle(GameObject obstacle)
@@ -25,8 +26,8 @@ namespace QuarkAcademyJam1Team1.Scripts.Obstacles
             {
                 newPosition.y = CameraUtils.OrthographicBounds.max.y - obstacle.GetComponent<SpriteRenderer>().bounds.size.y;
                 newPosition.y -= ceilingSpriteRenderer.bounds.size.y;
-                obstacle.GetComponent<Rigidbody2D>().gravityScale *= -1;
                 obstacle.GetComponent<SpriteRenderer>().flipY = true;
+                obstacle.GetComponent<Rigidbody2D>().gravityScale *= -1;
             }
             else
             {
@@ -37,24 +38,19 @@ namespace QuarkAcademyJam1Team1.Scripts.Obstacles
 
             obstacle.transform.position = newPosition;
             obstacle.SetActive(true);
-        } 
-
-        private void SetNextRespawn()
-        {
-            spawnTimer += Random.Range(obstacleData.MinimumRespawnTime, obstacleData.MaximumRespawnTime);
         }
 
         private void Start()
         {
             newPosition = Vector3.zero;
-            SetNextRespawn();
+            spawnTimer = new ResettableTimer(time: Random.Range(obstacleData.MinimumRespawnTime, obstacleData.MaximumRespawnTime));
         }
 
         private void Update()
         {
-            spawnTimer -= Time.deltaTime;
+            spawnTimer.Countdown(Time.deltaTime);
 
-            if (spawnTimer > 0f)
+            if (!spawnTimer.OutOfTime)
             {
                 return;
             }
@@ -63,7 +59,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Obstacles
             {
                 if (gameObject.transform.GetChild(i).gameObject.activeSelf) continue;
                 SpawnObstacle(gameObject.transform.GetChild(i).gameObject);
-                SetNextRespawn();
+                spawnTimer.Reset(time: Random.Range(obstacleData.MinimumRespawnTime, obstacleData.MaximumRespawnTime));
                 break;
             }
         }

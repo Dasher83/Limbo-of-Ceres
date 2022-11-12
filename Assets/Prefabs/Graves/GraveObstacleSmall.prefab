@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 1349739426613462084}
   - component: {fileID: 1349739426613462085}
   - component: {fileID: 1349739426613462139}
-  - component: {fileID: 825258746188476305}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GraveObstacleSmall
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

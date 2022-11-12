@@ -2,24 +2,23 @@ using QuarkAcademyJam1Team1.Scripts.Shared;
 using QuarkAcademyJam1Team1.Scripts.Shared.Interfaces;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Obstacles
+namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
 {
-    public class ObstacleDestruction : MonoBehaviour
+    public class PumkinDestruction : MonoBehaviour
     {
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.CompareTag(Constants.Tags.Obstacle) || collision.gameObject.CompareTag(Constants.Tags.Enemy))
+            if (collision.gameObject.CompareTag(Constants.Tags.Enemy))
             {
-                collision.otherCollider.gameObject.SetActive(false);
-                return;
+                Destroy(gameObject);
             }
 
             if (collision.gameObject.CompareTag(Constants.Tags.Player))
             {
                 collision.gameObject.GetComponent<IDamageable>().ReceiveDamage(1);
-                gameObject.SetActive(false);
-                return;
             }
+
+            Destroy(gameObject);
         }
     }
 }
