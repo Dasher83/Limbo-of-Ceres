@@ -67,6 +67,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
             public const float HorizontalPositionOffsetFactor = 0.8f;
             public const float MinimumRespawnTime = 20f;
             public const float MaximumRespawnTime = 30f;
+            public const float VerticalSpawnOffset = 1.7f;
         }
 
         public static class GameObjects

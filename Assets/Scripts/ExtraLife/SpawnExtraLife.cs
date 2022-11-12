@@ -7,8 +7,6 @@ namespace QuarkAcademyJam1Team1.Scripts.ExtraLife
 {
     public class SpawnExtraLife : MonoBehaviour
     {
-        [SerializeField]
-        private float verticalOffset;
         private SpriteRenderer floorSpriteRenderer = null;
         private SpriteRenderer ceilingSpriteRenderer = null;
         private ResettableTimer spawnTimer;
@@ -22,8 +20,8 @@ namespace QuarkAcademyJam1Team1.Scripts.ExtraLife
                 Vector3 newPosition = new Vector3();
                 newPosition.x = CameraUtils.OrthographicBounds.max.x + extraLifeRenderer.size.x;
                 newPosition.y = Random.Range(
-                    CameraUtils.OrthographicBounds.min.y + floorSpriteRenderer.size.y + verticalOffset,
-                    CameraUtils.OrthographicBounds.max.y - ceilingSpriteRenderer.size.y - verticalOffset);
+                    CameraUtils.OrthographicBounds.min.y + floorSpriteRenderer.size.y + Constants.ExtraLife.VerticalSpawnOffset,
+                    CameraUtils.OrthographicBounds.max.y - ceilingSpriteRenderer.size.y - Constants.ExtraLife.VerticalSpawnOffset);
                 return newPosition;
             }
         }
@@ -64,17 +62,17 @@ namespace QuarkAcademyJam1Team1.Scripts.ExtraLife
             Gizmos.DrawLine(
                 new Vector3(
                     CameraUtils.OrthographicBounds.min.x, 
-                    CameraUtils.OrthographicBounds.min.y + floorSpriteRenderer.size.y + verticalOffset, 0),
+                    CameraUtils.OrthographicBounds.min.y + floorSpriteRenderer.size.y + Constants.ExtraLife.VerticalSpawnOffset, 0),
                 new Vector3(
                     CameraUtils.OrthographicBounds.max.x,
-                    CameraUtils.OrthographicBounds.min.y + floorSpriteRenderer.size.y + verticalOffset, 0));
+                    CameraUtils.OrthographicBounds.min.y + floorSpriteRenderer.size.y + Constants.ExtraLife.VerticalSpawnOffset, 0));
             Gizmos.DrawLine(
                 new Vector3(
                     CameraUtils.OrthographicBounds.min.x,
-                    CameraUtils.OrthographicBounds.max.y - ceilingSpriteRenderer.size.y - verticalOffset, 0),
+                    CameraUtils.OrthographicBounds.max.y - ceilingSpriteRenderer.size.y - Constants.ExtraLife.VerticalSpawnOffset, 0),
                 new Vector3(
                     CameraUtils.OrthographicBounds.max.x,
-                    CameraUtils.OrthographicBounds.max.y - ceilingSpriteRenderer.size.y - verticalOffset, 0));
+                    CameraUtils.OrthographicBounds.max.y - ceilingSpriteRenderer.size.y - Constants.ExtraLife.VerticalSpawnOffset, 0));
         }
     }
 }
