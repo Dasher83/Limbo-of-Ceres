@@ -15,21 +15,28 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
 
         public bool IsInactive { get {return isInactive; } private set{isInactive = false;}}
 
-        public void RemoveHeart()
+        public void Initialize()
         {
             startPos = transform.position;
             startScale = transform.localScale;
             startColor = transform.GetComponent<Image>().color;
-            isInactive = true;
+        }
+
+        public void RemoveHeart()
+        {
             if (receivAnimationCoroutine != null)
             {
                 StopCoroutine(receivAnimationCoroutine);
                 receivAnimationCoroutine = null;
-                transform.localScale = startScale;
-                transform.position = startPos;
-                transform.GetComponent<Image>().color = startColor;
+                ResetHearts(true);
             }
+            isInactive = true;
             receivAnimationCoroutine = StartCoroutine(VanishAnim());
+        }
+
+        public void RemoveHeart(Sprite sprite)
+        {
+            transform.GetComponent<Image>().sprite = sprite;
         }
 
         public void AddHeart()
@@ -38,13 +45,16 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
             {
                 StopCoroutine(receivAnimationCoroutine);
                 receivAnimationCoroutine = null;
-                transform.localScale = startScale;
-                transform.position = startPos;
-                transform.GetComponent<Image>().color = new Color(startColor.r, startColor.g, startColor.b, 0f);
+                ResetHearts();
             }
             isInactive = false;
             gameObject.SetActive(true);
             receivAnimationCoroutine = StartCoroutine(AppearAnim());
+        }
+
+        public void AddHeart(Sprite sprite)
+        {
+            transform.GetComponent<Image>().sprite = sprite;
         }
 
         private IEnumerator VanishAnim()
@@ -106,6 +116,20 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
         {
             Vector3 shakePos = startPos + (Random.insideUnitSphere * distance);
             transform.position = shakePos;
+        }
+
+        private void ResetHearts(bool isRemove = false)
+        {
+            if (isRemove)
+            {
+                transform.localScale = startScale;
+                transform.position = startPos;
+                transform.GetComponent<Image>().color = startColor;
+                return;
+            }
+            transform.localScale = startScale;
+            transform.position = startPos;
+            transform.GetComponent<Image>().color = new Color(startColor.r, startColor.g, startColor.b, 0f);
         }
     }
 }
