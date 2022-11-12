@@ -4,6 +4,7 @@ using QuarkAcademyJam1Team1.Scripts.TimeScripts;
 using QuarkAcademyJam1Team1.Scripts.Utils;
 using UnityEngine;
 using QuarkAcademyJam1Team1.Scripts.Enemies.Shared;
+using static UnityEngine.GraphicsBuffer;
 
 namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
 {
@@ -11,12 +12,9 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
     {
         [SerializeField]
         private JackolanternDataScriptableObject jackolanternData;
-        [SerializeField]
-        private Transform target;
-        [SerializeField]
-        private SpriteRenderer floorSpriteRenderer;
-        [SerializeField]
-        private SpriteRenderer ceilingSpriteRenderer;
+        private Transform target = null;
+        private SpriteRenderer floorSpriteRenderer = null;
+        private SpriteRenderer ceilingSpriteRenderer = null;
         private ResettableTimer spawnTimer;
         private Vector3 newPosition;
 
@@ -28,7 +26,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
             if (Random.value >= Constants.Enemies.Jackolanterns.CeilingSpawnProbability)
             {
                 newPosition.y = CameraUtils.OrthographicBounds.max.y - jackolantern.GetComponent<SpriteRenderer>().bounds.size.y;
-                newPosition.y -= floorSpriteRenderer.bounds.size.y;
+                newPosition.y -= ceilingSpriteRenderer.bounds.size.y;
                 jackolantern.GetComponent<SpriteRenderer>().flipY = true;
                 jackolantern.GetComponent<Rigidbody2D>().gravityScale *= -1;
             }
@@ -45,6 +43,9 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
 
         private void Start()
         {
+            target = GameObject.FindGameObjectWithTag(Constants.Tags.Player).transform;
+            floorSpriteRenderer = GameObject.Find(Constants.GameObjects.MainFloor).GetComponent<SpriteRenderer>();
+            ceilingSpriteRenderer = GameObject.Find(Constants.GameObjects.MainCeiling).GetComponent<SpriteRenderer>();
             newPosition = Vector3.zero;
             spawnTimer = new ResettableTimer(time: Random.Range(jackolanternData.MinimumRespawnTime, jackolanternData.MaximumRespawnTime));
             for (int i = 0; i < gameObject.transform.childCount; i++)
