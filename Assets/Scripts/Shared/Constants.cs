@@ -47,6 +47,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
             public const float HeartAnimTime = 0.22f;
             public const float ShakeAnimTime = 1.5f;
             public const float VanishAnimTime = 0.02f;
+            public const float AppearAnimTime = 0.08f;
         }
     }
 }

@@ -33,7 +33,10 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
                 Heart heart = transform.GetChild(i).GetComponent<Heart>();
                 if (i <= durable.CurrentDurability - 1)
                 {
-                    heart.AddHeart();
+                    if (heart.IsInactive)
+                    {
+                        heart.AddHeart();   
+                    }
                 }
                 else
                 {

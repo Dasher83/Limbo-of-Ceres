@@ -14,7 +14,6 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
         private bool isInactive = false;
 
         public bool IsInactive { get {return isInactive; } private set{isInactive = false;}}
-        
 
         public void RemoveHeart()
         {
@@ -41,7 +40,7 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
                 receivAnimationCoroutine = null;
                 transform.localScale = startScale;
                 transform.position = startPos;
-                transform.GetComponent<Image>().color = new Color(startColor.r, startColor.g, startColor.b, 1f);
+                transform.GetComponent<Image>().color = new Color(startColor.r, startColor.g, startColor.b, 0f);
             }
             isInactive = false;
             gameObject.SetActive(true);
@@ -62,7 +61,7 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
                 vanishColor = new Color(vanishColor.r, vanishColor.g, vanishColor.b, vanishColor.a -= Constants.Animations.VanishAnimTime);
                 transform.GetComponent<Image>().color = vanishColor;
 
-                vanishScale = new Vector3(startScale.x, startScale.y -= 0.02f, startScale.z);
+                vanishScale = new Vector3(vanishScale.x, vanishScale.y -= Constants.Animations.VanishAnimTime, vanishScale.z);
                 transform.localScale = vanishScale;
 
                 yield return new WaitForFixedUpdate();
@@ -77,14 +76,30 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
         private IEnumerator AppearAnim()
         {
             float time = 0;
+            Color appearColor = transform.GetComponent<Image>().color;
+            Vector3 appearScale = transform.localScale;
 
             while (time < Constants.Animations.HeartAnimTime)
             {
                 
+                time = Time.deltaTime;
+
+                if (appearColor.a < startColor.a)
+                {
+                    appearColor = new Color(appearColor.r, appearColor.g, appearColor.b, appearColor.a += Constants.Animations.AppearAnimTime);
+                    transform.GetComponent<Image>().color = appearColor;
+                }
+                if (appearScale.y < startScale.y)
+                {
+                    appearScale = new Vector3(appearScale.x, appearScale.y += Constants.Animations.AppearAnimTime, appearScale.z);
+                    transform.localScale = appearScale;
+                }
 
                 yield return new WaitForFixedUpdate();
             }
 
+            transform.GetComponent<Image>().color = startColor;
+            transform.localScale = startScale;
         }
 
         private void ShakeHeart(float distance)
