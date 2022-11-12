@@ -61,6 +61,19 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
             public const float VanishAnimTime = 0.02f;
             public const float AppearAnimTime = 0.08f;
         }
+
+        public static class ExtraLife
+        {
+            public const float HorizontalPositionOffsetFactor = 0.8f;
+            public const float MinimumRespawnTime = 20f;
+            public const float MaximumRespawnTime = 30f;
+        }
+
+        public static class GameObjects
+        {
+            public const string MainFloor = "MainFloor";
+            public const string MainCeiling = "MainCeiling";
+        }
     }
 }
 
