@@ -66,7 +66,7 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
             while (time < Constants.Animations.HeartAnimTime)
             {
                 time += Time.deltaTime;
-                ShakeHeart(Constants.Animations.ShakeAnimTime);
+                ShakeHeart(Constants.Animations.ShakeAnim);
 
                 vanishColor = new Color(vanishColor.r, vanishColor.g, vanishColor.b, vanishColor.a -= Constants.Animations.VanishAnimTime);
                 transform.GetComponent<Image>().color = vanishColor;
