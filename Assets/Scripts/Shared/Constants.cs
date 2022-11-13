@@ -10,6 +10,12 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
             public const float HorizontalPositionOffsetFactor = 0.2f;
             public const int InitialLives = 3;
             public const int MaxLives = 5;
+            public const float RecoveryTime = 3f;
+
+            public static class SafetyBubble
+            {
+                public const float TravelDistance = 3.8f;
+            }
         }
 
         public static class FloorAndCeiling
@@ -68,12 +74,14 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
             public const float MinimumRespawnTime = 20f;
             public const float MaximumRespawnTime = 30f;
             public const float VerticalSpawnOffset = 1.7f;
+            public const float MovementSpeed = 3.5f;
         }
 
         public static class GameObjects
         {
             public const string MainFloor = "MainFloor";
             public const string MainCeiling = "MainCeiling";
+            public const string PumpkinBulletsSpawner = "PumpkinBulletsSpawner";
         }
     }
 }

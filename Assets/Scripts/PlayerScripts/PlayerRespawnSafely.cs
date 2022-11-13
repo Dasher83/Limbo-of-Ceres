@@ -31,7 +31,7 @@ namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
             isSafeToGetOut = false;
             floorSpriteRenderer = GameObject.Find(Constants.GameObjects.MainFloor).GetComponent<SpriteRenderer>();
             ceilingSpriteRenderer = GameObject.Find(Constants.GameObjects.MainCeiling).GetComponent<SpriteRenderer>();
-            recoveryTimer = new ResettableTimer(time: 3f);
+            recoveryTimer = new ResettableTimer(time: Constants.Player.RecoveryTime);
         }
 
         private void UpdateRigidbody2DConstraints(RigidbodyConstraints2D newConstraints)
@@ -49,7 +49,7 @@ namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
                     origin: gameObject.transform.position,
                     radius: (CameraUtils.OrthographicBounds.size.y - floorSpriteRenderer.size.y - ceilingSpriteRenderer.size.y) / 2 - Mathf.Epsilon,
                     direction: Vector2.right,
-                    distance: Mathf.Epsilon,
+                    distance: Constants.Player.SafetyBubble.TravelDistance,
                     layerMask: dontIgnoreMe);
                 isSafeToGetOut = recoveryTimer.OutOfTime && !hits.Any(
                     h => h.collider.gameObject.CompareTag(Constants.Tags.Projectile) || 
@@ -79,7 +79,9 @@ namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
         {
             if (floorSpriteRenderer == null || ceilingSpriteRenderer == null) return;
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(gameObject.transform.position, (CameraUtils.OrthographicBounds.size.y - floorSpriteRenderer.size.y - ceilingSpriteRenderer.size.y) / 2 - Mathf.Epsilon);
+            Gizmos.DrawWireSphere(
+                gameObject.transform.position,
+                (CameraUtils.OrthographicBounds.size.y - floorSpriteRenderer.size.y - ceilingSpriteRenderer.size.y) / 2 - Mathf.Epsilon);
         }
     }
 }

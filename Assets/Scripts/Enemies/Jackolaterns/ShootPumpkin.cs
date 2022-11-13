@@ -1,3 +1,4 @@
+using QuarkAcademyJam1Team1.Scripts.PlayerScritps;
 using QuarkAcademyJam1Team1.Scripts.Shared;
 using QuarkAcademyJam1Team1.Scripts.TimeScripts;
 using UnityEngine;
@@ -17,6 +18,8 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         [SerializeField]
         private float fireForce;
         [SerializeField]
+        private Color cooldownColor;
+        [SerializeField]
         private GameObject pumpkinPrefab;
         private Transform lockedOnTarget;
         private ResettableTimer aimTimer;
@@ -24,9 +27,14 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         private Vector2 directionToAim;
         private bool clearShot;
         private SpawnPumpkinBullets pumpkinBulletSpawner;
+        private PlayerRespawnSafely playerRespawnSafely;
+        private Color originalColor;
+        private SpriteRenderer spriteRender;
 
         public Transform LockedOnTarget { set { lockedOnTarget = value; } }
         public SpawnPumpkinBullets PumpkinBulletSpawner { set { pumpkinBulletSpawner = value; } }
+
+        public PlayerRespawnSafely PlayerRespawnSafely { set { playerRespawnSafely = value; } }
 
         private Vector3 ShootPosition { 
             get {
@@ -64,14 +72,34 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         {
             aimTimer = new ResettableTimer(aimRate);
             fireTimer = new ResettableTimer(fireRate);
+            spriteRender = gameObject.GetComponent<SpriteRenderer>();
+            originalColor = spriteRender.color;
         }
 
         private void Update()
         {
-            if (lockedOnTarget == null || pumpkinBulletSpawner == null) return;
+            if (lockedOnTarget == null || pumpkinBulletSpawner == null || playerRespawnSafely == null) return;
 
-            aimTimer.Countdown(Time.deltaTime);
-            fireTimer.Countdown(Time.deltaTime);
+            if (playerRespawnSafely.IsPlayerProtected)
+            {
+                if (aimTimer.OutOfTime) aimTimer.Reset();
+                if (fireTimer.OutOfTime) fireTimer.Reset();
+            }
+            else
+            {
+                aimTimer.Countdown(Time.deltaTime);
+                fireTimer.Countdown(Time.deltaTime);
+            }
+
+            if(playerRespawnSafely.IsPlayerProtected && spriteRender.color == originalColor)
+            {
+                spriteRender.color = cooldownColor;
+            }
+
+            if(!playerRespawnSafely.IsPlayerProtected && spriteRender.color == cooldownColor)
+            {
+                spriteRender.color = originalColor;
+            }
 
             if (aimTimer.OutOfTime)
             {

@@ -109,8 +109,8 @@ MonoBehaviour:
   fireRate: 1.5
   range: 20
   fireForce: 200
+  cooldownColor: {r: 0.16078432, g: 1, b: 0, a: 1}
   pumpkinPrefab: {fileID: 2091393193384232770, guid: 7d47b7ddebb82fb49bbbfbcb4462eec0, type: 3}
-  diplomaticThreshold: 1
 --- !u!50 &4670997851035706759
 Rigidbody2D:
   serializedVersion: 4
