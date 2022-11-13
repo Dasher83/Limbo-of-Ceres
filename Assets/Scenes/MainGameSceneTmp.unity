@@ -197,6 +197,74 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 680a8b8876456f74796de8dfbe7284c4, type: 3}
+--- !u!114 &339272092 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3103637346113321289, guid: 7df85276b18f05e4aaff11531fe129b7, type: 3}
+  m_PrefabInstance: {fileID: 2090044452}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2088a84145e810d4ab497e04e4869e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &467159804
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8147564280617247570, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
+      propertyPath: m_Name
+      value: PumpkinBulletsSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147564280617247571, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147564280617247571, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.133972
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147564280617247571, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.073211
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147564280617247571, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.890715
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147564280617247571, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147564280617247571, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147564280617247571, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147564280617247571, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147564280617247571, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147564280617247571, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147564280617247571, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
 --- !u!1001 &475282167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -823,6 +891,10 @@ PrefabInstance:
       propertyPath: GameOverMenu
       value: 
       objectReference: {fileID: 1646713360}
+    - target: {fileID: 8120543152943485205, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
+      propertyPath: metersCounter
+      value: 
+      objectReference: {fileID: 339272092}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
 --- !u!1001 &8944472602951488911
