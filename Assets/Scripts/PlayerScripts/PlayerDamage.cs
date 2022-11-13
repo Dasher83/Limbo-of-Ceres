@@ -19,10 +19,9 @@ namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
 
         private void Update()
         {
-            if(playerRespawnSafely.IsPlayerProtected && playerRespawnSafely.IsSafeToGetOut)
+            if(!playerRespawnSafely.IsPlayerProtected && playerFlicker.IsFlickering)
             {
                 playerFlicker.StopFlickering();
-                playerRespawnSafely.LeaveSafety();
             }
         }
 

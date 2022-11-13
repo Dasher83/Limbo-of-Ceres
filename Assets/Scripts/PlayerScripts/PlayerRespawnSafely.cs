@@ -1,4 +1,5 @@
 using QuarkAcademyJam1Team1.Scripts.Shared;
+using QuarkAcademyJam1Team1.Scripts.TimeScripts;
 using QuarkAcademyJam1Team1.Scripts.Utils;
 using System.Collections;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
         private bool isSafeToGetOut;
         private SpriteRenderer floorSpriteRenderer = null;
         private SpriteRenderer ceilingSpriteRenderer = null;
+        private ResettableTimer recoveryTimer;
 
         public bool IsPlayerProtected { get { return keepPlayerSafe; } }
         public bool IsSafeToGetOut { get { return isSafeToGetOut; } }
@@ -29,37 +31,48 @@ namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
             isSafeToGetOut = false;
             floorSpriteRenderer = GameObject.Find(Constants.GameObjects.MainFloor).GetComponent<SpriteRenderer>();
             ceilingSpriteRenderer = GameObject.Find(Constants.GameObjects.MainCeiling).GetComponent<SpriteRenderer>();
+            recoveryTimer = new ResettableTimer(time: 3f);
+        }
+
+        private void UpdateRigidbody2DConstraints(RigidbodyConstraints2D newConstraints)
+        {
+            rb.constraints = newConstraints;
+            rb.AddForce(Vector2.up * Mathf.Epsilon);
         }
 
         private IEnumerator KeepPlayerSafeCorrutine()
         {
             while (keepPlayerSafe && !IsSafeToGetOut)
             {
+                recoveryTimer.Countdown(time: Time.deltaTime);
                 hits = Physics2D.CircleCastAll(
                     origin: gameObject.transform.position,
                     radius: (CameraUtils.OrthographicBounds.size.y - floorSpriteRenderer.size.y - ceilingSpriteRenderer.size.y) / 2 - Mathf.Epsilon,
                     direction: Vector2.right,
                     distance: Mathf.Epsilon,
                     layerMask: dontIgnoreMe);
-                isSafeToGetOut = !hits.Any(
+                isSafeToGetOut = recoveryTimer.OutOfTime && !hits.Any(
                     h => h.collider.gameObject.CompareTag(Constants.Tags.Projectile) || 
                     h.collider.gameObject.CompareTag(Constants.Tags.Enemy));
                 yield return new WaitForEndOfFrame();
             }
+            LeaveSafety();
+        }
+
+        private void LeaveSafety()
+        {
+            recoveryTimer.Reset();
+            keepPlayerSafe = false;
+            isSafeToGetOut = false;
+            UpdateRigidbody2DConstraints(RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation);
         }
 
         public void GetToSafety()
         {
             keepPlayerSafe = true;
             playerPositionReseter.Reset();
-            rb.constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
+            UpdateRigidbody2DConstraints(RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation);
             StartCoroutine(KeepPlayerSafeCorrutine());
-        }
-
-        public void LeaveSafety()
-        {
-            keepPlayerSafe = false;
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         }
 
         private void OnDrawGizmosSelected()

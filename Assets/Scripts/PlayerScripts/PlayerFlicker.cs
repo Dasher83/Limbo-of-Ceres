@@ -15,6 +15,8 @@ namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
         private Color originalColor;
         private bool isFlickering;
 
+        public bool IsFlickering { get { return isFlickering; } }
+
         private IEnumerator FlickeringCorrutine()
         {
             while(isFlickering)
