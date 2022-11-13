@@ -15,8 +15,6 @@ namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
         private Color originalColor;
         private bool isFlickering;
 
-        public bool IsFlickering { get { return isFlickering; } }
-
         private IEnumerator FlickeringCorrutine()
         {
             while(isFlickering)
@@ -29,7 +27,7 @@ namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
                 yield return new WaitForSeconds(flickerDuration);
             }
             spriteRenderer.color = originalColor;
-            yield return new WaitForSeconds(flickerDuration);
+            yield break;
         }
 
         private void Start()
@@ -42,7 +40,7 @@ namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
         public void StartFlickering()
         {
             isFlickering = true;
-            StartCoroutine("FlickeringCorrutine");
+            StartCoroutine(FlickeringCorrutine());
         }
 
         public void StopFlickering()

@@ -4,7 +4,6 @@ using QuarkAcademyJam1Team1.Scripts.TimeScripts;
 using QuarkAcademyJam1Team1.Scripts.Utils;
 using UnityEngine;
 using QuarkAcademyJam1Team1.Scripts.Enemies.Shared;
-using static UnityEngine.GraphicsBuffer;
 
 namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
 {

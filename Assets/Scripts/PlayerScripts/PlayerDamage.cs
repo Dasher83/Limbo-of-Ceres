@@ -7,35 +7,32 @@ namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
     public class PlayerDamage : MonoBehaviour, IDamageable
     {
         private IDamageable damageable;
-        private ResettableTimer flickerTestTimer;
         private PlayerFlicker playerFlicker;
+        private PlayerRespawnSafely playerRespawnSafely;
 
         private void Start()
         {
             damageable = gameObject.GetComponent<PlayerDataContainer>().PlayerData;
             playerFlicker = gameObject.GetComponent<PlayerFlicker>();
+            playerRespawnSafely = gameObject.GetComponent<PlayerRespawnSafely>();
         }
 
         private void Update()
         {
-            if (flickerTestTimer == null) return;
-            flickerTestTimer.Countdown(Time.deltaTime);
-            if (flickerTestTimer.OutOfTime)
+            if(playerRespawnSafely.IsPlayerProtected && playerRespawnSafely.IsSafeToGetOut)
             {
                 playerFlicker.StopFlickering();
-                flickerTestTimer.Reset();
+                playerRespawnSafely.LeaveSafety();
             }
         }
 
         public void ReceiveDamage(int damage)
         {
-            if (playerFlicker.IsFlickering) return;
-
-            damageable.ReceiveDamage(damage);
-            playerFlicker.StartFlickering();
-            if (flickerTestTimer == null)
+            if (!playerRespawnSafely.IsPlayerProtected)
             {
-                flickerTestTimer = new ResettableTimer(5f);
+                damageable.ReceiveDamage(damage);
+                playerFlicker.StartFlickering();
+                playerRespawnSafely.GetToSafety();
             }
         }
     }
