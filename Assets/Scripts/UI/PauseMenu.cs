@@ -1,23 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 namespace QuarkAcademyJam1Team1.Scripts.UI
 {
     public class PauseMenu : MonoBehaviour
-    {   
-        [SerializeField] private GameObject pauseMenu;
-
+    {
         public void Pause()
         {
-            pauseMenu.SetActive(true);
+            gameObject.SetActive(true);
             Time.timeScale = 0f;
         }
 
         public void Resume()
         {
-            pauseMenu.SetActive(false);
+            gameObject.SetActive(false);
             Time.timeScale = 1f;
+        }
+
+        public void Restart()
+        {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        public void Quit()
+        {
+            Debug.Log("Anejmi dale trabaja y haceme la pantalla de inicio");
         }
     }
 }
