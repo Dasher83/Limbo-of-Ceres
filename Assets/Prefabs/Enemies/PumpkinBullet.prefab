@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 2091393193384232764}
   - component: {fileID: 2091393193384232771}
   - component: {fileID: 2091393193384232765}
-  - component: {fileID: 2091393193384232766}
   - component: {fileID: 4009653107130887823}
+  - component: {fileID: 2091393193384232766}
+  - component: {fileID: 1648431752266393112}
   m_Layer: 8
-  m_Name: JackolaternBullet
+  m_Name: PumpkinBullet
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,18 +109,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2091393193384232766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091393193384232770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d706a2cb801eb46a431a2e32d278b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &4009653107130887823
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,3 +135,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13057756, y: 0.11447896}
   m_EdgeRadius: 0
+--- !u!114 &2091393193384232766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091393193384232770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d706a2cb801eb46a431a2e32d278b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1648431752266393112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091393193384232770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d107d3aa0a5ef24880b6392de16b3ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

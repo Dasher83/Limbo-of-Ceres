@@ -17,6 +17,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         private SpriteRenderer ceilingSpriteRenderer = null;
         private ResettableTimer spawnTimer;
         private Vector3 newPosition;
+        private SpawnPumpkinBullets pumpkinBulletsSpawner = null;
 
         private void SpawnJackolantern(GameObject jackolantern)
         {
@@ -38,6 +39,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
             }
 
             jackolantern.transform.position = newPosition;
+            jackolantern.GetComponent<ShootPumpkin>().PumpkinBulletSpawner = pumpkinBulletsSpawner;
             jackolantern.SetActive(true);
         }
 
@@ -46,6 +48,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
             target = GameObject.FindGameObjectWithTag(Constants.Tags.Player).transform;
             floorSpriteRenderer = GameObject.Find(Constants.GameObjects.MainFloor).GetComponent<SpriteRenderer>();
             ceilingSpriteRenderer = GameObject.Find(Constants.GameObjects.MainCeiling).GetComponent<SpriteRenderer>();
+            pumpkinBulletsSpawner = GameObject.Find("PumpkinBulletsSpawner").GetComponent<SpawnPumpkinBullets>();
             newPosition = Vector3.zero;
             spawnTimer = new ResettableTimer(time: Random.Range(jackolanternData.MinimumRespawnTime, jackolanternData.MaximumRespawnTime));
             for (int i = 0; i < gameObject.transform.childCount; i++)
