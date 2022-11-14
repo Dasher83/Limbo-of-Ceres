@@ -35,7 +35,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
             }
             // Debugger
 
-            if (playerData.CurrentDurability == 0)
+            if (playerData.CurrentDurability == 0 && currentState != GameState.GAMEOVER)
             {
                 SetState(GameState.GAMEOVER);
             }
