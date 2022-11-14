@@ -10,9 +10,10 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private PlayerData playerData;
-        [SerializeField] private GameObject GameOverMenu;
+        [SerializeField] private GameOver gameOverMenu;
         [SerializeField] private LifeBar lifeBar;
         [SerializeField] private MetersCounter metersCounter;
+        [SerializeField] private GameObject pauseButton;
 
         private GameState currentState;
 
@@ -60,10 +61,17 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
                     break;
                 case GameState.GAMEOVER:
                     // TODO : fall animation
-                    GameOverMenu.SetActive(true);
                     Time.timeScale = 0f;
+                    HideIuInGameOver();
+                    gameOverMenu.StartGameOver();
                     break;
             }
+        }
+
+        private void HideIuInGameOver()
+        {
+            metersCounter.gameObject.SetActive(false);
+            pauseButton.SetActive(false);
         }
     }
 }
