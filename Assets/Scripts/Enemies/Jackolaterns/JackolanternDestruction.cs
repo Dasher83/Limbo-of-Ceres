@@ -1,6 +1,8 @@
 using QuarkAcademyJam1Team1.Scripts.Shared.Interfaces;
 using QuarkAcademyJam1Team1.Scripts.Shared;
+using QuarkAcademyJam1Team1.Scripts.AudioScripts;
 using UnityEngine;
+
 
 namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
 {
@@ -10,7 +12,10 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         {
             if (collision.gameObject.CompareTag(Constants.Tags.Player))
             {
-                collision.gameObject.GetComponent<IDamageable>().ReceiveDamage(1);
+                if(collision.gameObject.GetComponent<IDamageable>().ReceiveDamage(1) > 0)
+                {
+                    AudioPlayer.instance.PlaySoundEffect(SoundEffectsEnum.MALE_BOO_AND_EVIL_LAUGH);
+                }
                 gameObject.SetActive(false);
             }
         }

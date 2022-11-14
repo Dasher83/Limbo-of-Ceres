@@ -9,6 +9,7 @@ namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
         private IDamageable damageable;
         private PlayerFlicker playerFlicker;
         private PlayerRespawnSafely playerRespawnSafely;
+        private int damagedCaused;
 
         private void Start()
         {
@@ -25,14 +26,19 @@ namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
             }
         }
 
-        public void ReceiveDamage(int damage)
+        public int ReceiveDamage(int damage)
         {
             if (!playerRespawnSafely.IsPlayerProtected)
             {
-                damageable.ReceiveDamage(damage);
+                damagedCaused = damageable.ReceiveDamage(damage);
                 playerFlicker.StartFlickering();
                 playerRespawnSafely.GetToSafety();
             }
+            else
+            {
+                return 0;
+            }
+            return damagedCaused;
         }
     }
 }

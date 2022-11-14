@@ -13,6 +13,8 @@ namespace QuarkAcademyJam1Team1.Scripts.AudioScripts
         private Song[] songs;
         [SerializeField]
         private SoundEffect[] soundEffects;
+        private Song song;
+        private SoundEffect soundEffect;
 
         public Song GetCustomSong(SongsEnum songId)
         {
@@ -38,7 +40,7 @@ namespace QuarkAcademyJam1Team1.Scripts.AudioScripts
             return null;
         }
 
-        private void Start()
+        private void Awake()
         {
             if (instance != null)
             {
@@ -49,12 +51,12 @@ namespace QuarkAcademyJam1Team1.Scripts.AudioScripts
                 instance = this;
             }
             audioSource = GetComponent<AudioSource>();
-            PlaySong(SongsEnum.EXAMPLE_SONG_1);
         }
 
         IEnumerator PlayAudioCorutine(CustomAudioClip audio, float delay, bool loop = false)
         {
             yield return new WaitForSeconds(delay);
+
             if (loop)
             {
                 audioSource.Stop();
@@ -62,6 +64,7 @@ namespace QuarkAcademyJam1Team1.Scripts.AudioScripts
                 audioSource.volume = audio.Volume;
                 audioSource.loop = true;
                 audioSource.Play();
+                yield return null;
             }
             else
             {
@@ -77,14 +80,22 @@ namespace QuarkAcademyJam1Team1.Scripts.AudioScripts
         public void PlaySong(SongsEnum songId, float delay = Constants.AudioPlayer.InBetweenSongsPauseLength)
         {
             audioSource.Stop();
-            Song song = GetCustomSong(songId);
+            song = GetCustomSong(songId);
             StartCoroutine(PlayAudioCorutine(song, delay, loop: true));
         }
 
         public void PlaySoundEffect(SoundEffectsEnum soundEffectId, float delay = 0f)
         {
-            SoundEffect soundEffect = GetCustomSoundEffect(soundEffectId);
-            StartCoroutine(PlayAudioCorutine(soundEffect, delay));
+            soundEffect = GetCustomSoundEffect(soundEffectId);
+            if(delay > 0f)
+            {
+                StartCoroutine(PlayAudioCorutine(soundEffect, delay));
+            }
+            else
+            {
+                audioSource.PlayOneShot(soundEffect.Clip, soundEffect.Volume);
+            }
+
         }
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2847182617783405572}
   - component: {fileID: 2847182617783405578}
-  - component: {fileID: 2847182617783405579}
+  - component: {fileID: 7875522253052267763}
   m_Layer: 0
   m_Name: AudioPlayer
   m_TagString: Untagged
@@ -129,7 +129,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2847182617783405579
+--- !u!114 &7875522253052267763
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,10 +142,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songs:
-  - _clip: {fileID: 8300000, guid: 52ccc012d24e2234d8d617cd8068a73e, type: 3}
-    _volume: 0.13
+  - _clip: {fileID: 8300000, guid: 36b425942265b5d4ebff312736e2bf7d, type: 3}
+    _volume: 0.1
     _id: 0
+  - _clip: {fileID: 8300000, guid: c3c57400e13773a498ede388ac05961f, type: 3}
+    _volume: 0.1
+    _id: 1
   soundEffects:
-  - _clip: {fileID: 8300000, guid: 86996b106a0e8d74f9c12e64ad0cc96d, type: 3}
-    _volume: 0.276
+  - _clip: {fileID: 8300000, guid: 5226dee135689c245ac6850cb7f0a1b3, type: 3}
+    _volume: 0.5
     _id: 0
+  - _clip: {fileID: 8300000, guid: 0544e45732e40ec44bd6a6dbb32466fd, type: 3}
+    _volume: 0.5
+    _id: 1
+  - _clip: {fileID: 8300000, guid: e644653ceaf65b44abd8752e7e089b08, type: 3}
+    _volume: 1
+    _id: 2
+  - _clip: {fileID: 8300000, guid: 8ca2f82718371994ca126846288544a9, type: 3}
+    _volume: 1
+    _id: 3
+  - _clip: {fileID: 8300000, guid: dd8ed929cc762ad4898c68c3082a226c, type: 3}
+    _volume: 1
+    _id: 4
+  - _clip: {fileID: 8300000, guid: af422c116a2aaf54cbab4fd5ae3be2ae, type: 3}
+    _volume: 1
+    _id: 5
