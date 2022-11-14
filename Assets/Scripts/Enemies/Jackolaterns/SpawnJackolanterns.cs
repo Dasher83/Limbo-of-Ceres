@@ -4,7 +4,7 @@ using QuarkAcademyJam1Team1.Scripts.TimeScripts;
 using QuarkAcademyJam1Team1.Scripts.Utils;
 using UnityEngine;
 using QuarkAcademyJam1Team1.Scripts.Enemies.Shared;
-using static UnityEngine.GraphicsBuffer;
+using QuarkAcademyJam1Team1.Scripts.PlayerScritps;
 
 namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
 {
@@ -18,6 +18,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         private ResettableTimer spawnTimer;
         private Vector3 newPosition;
         private SpawnPumpkinBullets pumpkinBulletsSpawner = null;
+        private PlayerRespawnSafely playerRespawnSafely = null;
 
         private void SpawnJackolantern(GameObject jackolantern)
         {
@@ -40,15 +41,18 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
 
             jackolantern.transform.position = newPosition;
             jackolantern.GetComponent<ShootPumpkin>().PumpkinBulletSpawner = pumpkinBulletsSpawner;
+            jackolantern.GetComponent<ShootPumpkin>().PlayerRespawnSafely = playerRespawnSafely;
             jackolantern.SetActive(true);
         }
 
         private void Start()
         {
-            target = GameObject.FindGameObjectWithTag(Constants.Tags.Player).transform;
+            GameObject player = GameObject.FindGameObjectWithTag(Constants.Tags.Player);
+            target = player.transform;
+            playerRespawnSafely = player.GetComponent<PlayerRespawnSafely>();
             floorSpriteRenderer = GameObject.Find(Constants.GameObjects.MainFloor).GetComponent<SpriteRenderer>();
             ceilingSpriteRenderer = GameObject.Find(Constants.GameObjects.MainCeiling).GetComponent<SpriteRenderer>();
-            pumpkinBulletsSpawner = GameObject.Find("PumpkinBulletsSpawner").GetComponent<SpawnPumpkinBullets>();
+            pumpkinBulletsSpawner = GameObject.Find(Constants.GameObjects.PumpkinBulletsSpawner).GetComponent<SpawnPumpkinBullets>();
             newPosition = Vector3.zero;
             spawnTimer = new ResettableTimer(time: Random.Range(jackolanternData.MinimumRespawnTime, jackolanternData.MaximumRespawnTime));
             for (int i = 0; i < gameObject.transform.childCount; i++)
