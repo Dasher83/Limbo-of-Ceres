@@ -83,7 +83,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
             {
                 if(Random.value > 0.62f)
                 {
-                    return Random.Range(0f, 0.2f);
+                    return Random.Range(0f, 0.15f);
                 }
                 return 0f;
             }
@@ -201,7 +201,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
                 pumpkinRigidBody2D.gravityScale = PumpkinGravityScale;
                 if(rb.gravityScale < 0)
                 {
-                    pumpkinRigidBody2D.gravityScale = PumpkinGravityScale * -1;
+                    pumpkinRigidBody2D.gravityScale *= -1;
                 }
                 pumpkinRigidBody2D.AddForce(directionToAim * FireForce * Random.Range(0.75f, 1.00f));
             }
