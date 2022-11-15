@@ -54,6 +54,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
         {
             public const string FileName = "/highScores.json";
             public const int Seats = 10;
+            public const int NameLimitCharacters = 3;
         }
 
         public static class AudioPlayer 

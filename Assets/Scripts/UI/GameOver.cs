@@ -1,8 +1,9 @@
 using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
 using QuarkAcademyJam1Team1.Scripts.HighScores;
+using QuarkAcademyJam1Team1.Scripts.Shared;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using UnityEngine;
+using System;
 using TMPro;
 
 namespace QuarkAcademyJam1Team1.Scripts.UI
@@ -11,25 +12,26 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
     {
         [SerializeField] private GameObject gameOvermenu;
         [SerializeField] private GameObject inputNewHighScoreMenu;
-        [SerializeField] private GameObject HighScore;
+        [SerializeField] private HighScoreTable highScore;
+        [SerializeField] private Transform Seats;
         [SerializeField] private PlayerData playerData;
         [SerializeField] private TextMeshProUGUI scoreText;
         [SerializeField] private TextMeshProUGUI inputText;
+        [SerializeField] private TMP_InputField inputField;
+        [SerializeField] private GameObject errorText;
 
         private string nameText;
         private TouchScreenKeyboard keyboard;
         private int currentScore;
 
-        void Update()
+        void Start()
         {
-            if (TouchScreenKeyboard.visible == false && keyboard != null)
+            inputField.characterLimit = Constants.HighScores.NameLimitCharacters;
+            inputField.onValidateInput += delegate (string s, int i, char c) 
             {
-                if (inputText.text.Length == 4)
-                {
-                    Debug.Log("prueba");
-                    // buscar como cerrar teclado
-                }
-            }
+                c = char.ToUpper(c);
+                return char.IsLetter(c) ? c : '\0';
+            };
         }
 
         public void StartGameOver()
@@ -42,12 +44,47 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
         public void ContinueGameOver()
         {
             gameOvermenu.SetActive(false);
-            inputNewHighScoreMenu.SetActive(true);
+            if (HighScoresReadWriter.Instance.HighScores.Length < Constants.HighScores.Seats)
+            {
+                Debug.Log("hay menos de 10");
+                inputNewHighScoreMenu.SetActive(true);
+                return;
+            }
+            for (int i = 0; i < HighScoresReadWriter.Instance.HighScores.Length; i++)
+            {
+                if (currentScore > HighScoresReadWriter.Instance.HighScores[i].points)
+                {
+                    Debug.Log("hay mas de 10 y soy mas alto");
+                    inputNewHighScoreMenu.SetActive(true);
+                    return;
+                }
+            }
+            highScore.Setup();
+            highScore.gameObject.SetActive(true);
+        }
+
+        public void ContinueToHighScore()
+        {
+            if(inputText.text.Length <= 1)
+            {
+                errorText.SetActive(true);
+                return;
+            }
+            Debug.Log(currentScore);
+            HighScoreItem score = new HighScoreItem(inputText.text, currentScore);
+            HighScoresReadWriter.Instance.AddHighScore(score);
+            inputNewHighScoreMenu.SetActive(false);
+            highScore.Setup();
+            highScore.gameObject.SetActive(true);
         }
 
         public void OpenKeyboard()
         {
-            keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, true, false, false, false, "\"\"", 3);
+            if (errorText.activeSelf)
+            {
+                errorText.SetActive(false);
+            }
+            keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
         }
 
         public void Retry()
