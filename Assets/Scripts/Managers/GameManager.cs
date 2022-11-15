@@ -1,3 +1,4 @@
+using QuarkAcademyJam1Team1.Scripts.AudioScripts;
 using QuarkAcademyJam1Team1.Scripts.Shared.Enums;
 using QuarkAcademyJam1Team1.Scripts.Shared.Interfaces;
 using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
@@ -34,6 +35,11 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
             }
             // Debugger
 
+            if (currentState == GameState.STARTING)
+            {
+                SetState(GameState.PLAYING);
+            }
+
             if (playerData.CurrentDurability == 0)
             {
                 SetState(GameState.GAMEOVER);
@@ -54,12 +60,14 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
                 case GameState.STARTING:
                     playerData.Initialize();
                     lifeBar.Durable = (IDurable)playerData;
-                    SetState(GameState.PLAYING);
                     break;
                 case GameState.PLAYING:
+                    AudioPlayer.instance.PlaySong(SongsEnum.MAIN_GAME_AMBIENT_SONG, delay: 3.8f);
+                    AudioPlayer.instance.PlaySoundEffect(SoundEffectsEnum.MALE_HAPPY_HALLOWEEN_WARNING);
                     break;
                 case GameState.GAMEOVER:
                     // TODO : fall animation
+                    AudioPlayer.instance.StopSong();
                     GameOverMenu.SetActive(true);
                     Time.timeScale = 0f;
                     break;

@@ -1,3 +1,4 @@
+using QuarkAcademyJam1Team1.Scripts.AudioScripts;
 using QuarkAcademyJam1Team1.Scripts.Shared;
 using QuarkAcademyJam1Team1.Scripts.Shared.Interfaces;
 using UnityEngine;
@@ -10,7 +11,10 @@ namespace QuarkAcademyJam1Team1.Scripts.ExtraLife
         {
             if (other.gameObject.CompareTag(Constants.Tags.Player))
             {
-                other.gameObject.GetComponent<IRestorable>().ReceiveRestauration(1);
+                if(other.gameObject.GetComponent<IRestorable>().ReceiveRestauration(1) > 0)
+                {
+                    AudioPlayer.instance.PlaySoundEffect(SoundEffectsEnum.EXTRA_LIFE);
+                }
                 gameObject.SetActive(false);
             }
         }
