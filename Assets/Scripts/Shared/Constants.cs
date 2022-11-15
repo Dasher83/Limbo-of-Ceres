@@ -38,6 +38,12 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
                 public const float DefaultGravityScale = 10f;
                 public const float CeilingSpawnProbability = 0.6f;
                 public const float DiplomaticThreshold = 3f;
+                public const int AmmoRequestsMinimum = 1;
+                public const int AmmoRequestsMaximum = 3;
+                public const float AimRateMinimum = 1;
+                public const float AimRateMaximum = 2;
+                public const float FireRateMinimum = 1;
+                public const float FireRateMaximum = 2;
             }
         }
 

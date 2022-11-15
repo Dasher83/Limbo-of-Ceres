@@ -10,10 +10,6 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         [SerializeField]
         private LayerMask IgnoreMe;
         [SerializeField]
-        private float aimRate;
-        [SerializeField]
-        private float fireRate;
-        [SerializeField]
         private float range;
         [SerializeField]
         private float fireForceMinimum;
@@ -32,6 +28,8 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         private PlayerRespawnSafely playerRespawnSafely;
         private Color originalColor;
         private SpriteRenderer spriteRender;
+        private int ammoRequests;
+        private Rigidbody2D rb;
 
         public Transform LockedOnTarget { set { lockedOnTarget = value; } }
         public SpawnPumpkinBullets PumpkinBulletSpawner { set { pumpkinBulletSpawner = value; } }
@@ -43,6 +41,38 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
             get
             {
                 return Random.Range(fireForceMinimum, fireForceMaximum);
+            }
+        }
+
+        private float AimRate
+        {
+            get
+            {
+                if(rb.gravityScale > 0)
+                {
+                    return Random.Range(Constants.Enemies.Jackolanterns.AimRateMinimum, Constants.Enemies.Jackolanterns.AimRateMaximum) * 0.75f;
+                }
+                return Random.Range(Constants.Enemies.Jackolanterns.AimRateMinimum, Constants.Enemies.Jackolanterns.AimRateMaximum);
+            }
+        }
+
+        private float FireRate
+        {
+            get
+            {
+                if (rb.gravityScale > 0)
+                {
+                    return Random.Range(Constants.Enemies.Jackolanterns.AimRateMinimum, Constants.Enemies.Jackolanterns.AimRateMaximum) * 0.75f;
+                }
+                return Random.Range(Constants.Enemies.Jackolanterns.FireRateMinimum, Constants.Enemies.Jackolanterns.FireRateMaximum);
+            }
+        }
+
+        private int NextAmmoRequests
+        {
+            get
+            {
+                return Random.Range(Constants.Enemies.Jackolanterns.AmmoRequestsMinimum, Constants.Enemies.Jackolanterns.AmmoRequestsMaximum + 1);
             }
         }
 
@@ -80,10 +110,12 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
 
         private void Start()
         {
-            aimTimer = new ResettableTimer(aimRate);
-            fireTimer = new ResettableTimer(fireRate);
+            rb = gameObject.GetComponent<Rigidbody2D>();
             spriteRender = gameObject.GetComponent<SpriteRenderer>();
+            aimTimer = new ResettableTimer(AimRate);
+            fireTimer = new ResettableTimer(FireRate);
             originalColor = spriteRender.color;
+            ammoRequests = NextAmmoRequests;
         }
 
         private void Update()
@@ -92,8 +124,8 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
 
             if (playerRespawnSafely.IsPlayerProtected)
             {
-                if (aimTimer.OutOfTime) aimTimer.Reset();
-                if (fireTimer.OutOfTime) fireTimer.Reset();
+                if (aimTimer.OutOfTime) aimTimer.Reset(AimRate);
+                if (fireTimer.OutOfTime) fireTimer.Reset(FireRate);
             }
             else
             {
@@ -114,27 +146,13 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
             if (aimTimer.OutOfTime)
             {
                 Aim();
-                if (!Mathf.Approximately(aimRate, aimTimer.NextTimeToCountdown))
-                {
-                    aimTimer.Reset(aimRate);
-                }
-                else
-                {
-                    aimTimer.Reset();
-                }
+                aimTimer.Reset(AimRate);
             }
 
             if (fireTimer.OutOfTime && clearShot && OutsideDiplomaticThreshold)
             {
                 Fire();
-                if (!Mathf.Approximately(fireRate, fireTimer.NextTimeToCountdown))
-                {
-                    fireTimer.Reset(fireRate);
-                } 
-                else
-                {
-                    fireTimer.Reset();
-                }
+                fireTimer.Reset(FireRate);
                 clearShot = false;
             }
         }
@@ -159,8 +177,20 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
 
         private void Fire()
         {
-            GameObject pumpkinInstance = pumpkinBulletSpawner.Spawn(spawnPosition: ShootPosition);
-            pumpkinInstance.GetComponent<Rigidbody2D>().AddForce(directionToAim * FireForce * Random.Range(0.75f, 1.00f));
+            if (ammoRequests > 0)
+            {
+                ammoRequests--;
+            }
+            else
+            {
+                GameObject pumpkinInstance = pumpkinBulletSpawner.Spawn(spawnPosition: ShootPosition);
+                pumpkinInstance.GetComponent<Rigidbody2D>().AddForce(directionToAim * FireForce * Random.Range(0.75f, 1.00f));
+            }
+        }
+
+        void OnDisable()
+        {
+            ammoRequests = NextAmmoRequests;
         }
 
         private void OnDrawGizmosSelected()
