@@ -46,7 +46,6 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
             gameOvermenu.SetActive(false);
             if (HighScoresReadWriter.Instance.HighScores.Length < Constants.HighScores.Seats)
             {
-                Debug.Log("hay menos de 10");
                 inputNewHighScoreMenu.SetActive(true);
                 return;
             }
@@ -54,7 +53,6 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
             {
                 if (currentScore > HighScoresReadWriter.Instance.HighScores[i].points)
                 {
-                    Debug.Log("hay mas de 10 y soy mas alto");
                     inputNewHighScoreMenu.SetActive(true);
                     return;
                 }
@@ -70,7 +68,6 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
                 errorText.SetActive(true);
                 return;
             }
-            Debug.Log(currentScore);
             HighScoreItem score = new HighScoreItem(inputText.text, currentScore);
             HighScoresReadWriter.Instance.AddHighScore(score);
             inputNewHighScoreMenu.SetActive(false);

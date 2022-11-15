@@ -62,7 +62,7 @@ namespace QuarkAcademyJam1Team1.Scripts.HighScores
         public void AddHighScore(HighScoreItem highScore)
         {
             ReadFile();
-            if (instance.highScoreCollection.HighScores.Count >= Constants.HighScores.Seats || highScore.points <= 0) return;
+            if (highScore.points <= 0) return;
             instance.highScoreCollection.HighScores.Add(highScore);
             WriteFile();
             ReadFile();
