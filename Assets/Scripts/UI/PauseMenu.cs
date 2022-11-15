@@ -1,19 +1,36 @@
+using QuarkAcademyJam1Team1.Scripts.Shared;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+
 
 namespace QuarkAcademyJam1Team1.Scripts.UI
 {
     public class PauseMenu : MonoBehaviour
     {
+        private GameObject pauseMenu;
+
+        private void Start()
+        {
+            foreach (GameObject menu in GameObject.FindGameObjectsWithTag(Constants.Tags.Menu))
+            {
+                if(menu.name == Constants.GameObjects.PauseMenu)
+                {
+                    pauseMenu = menu;
+                    break;
+                }
+            }
+            pauseMenu.SetActive(false);
+        }
+
         public void Pause()
         {
-            gameObject.SetActive(true);
+            pauseMenu.SetActive(true);
             Time.timeScale = 0f;
         }
 
         public void Resume()
         {
-            gameObject.SetActive(false);
+            pauseMenu.SetActive(false);
             Time.timeScale = 1f;
         }
 
@@ -25,7 +42,7 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
 
         public void Quit()
         {
-            Debug.Log("Anejmi dale trabaja y haceme la pantalla de inicio");
+            Debug.Log("TO DO");
         }
     }
 }
