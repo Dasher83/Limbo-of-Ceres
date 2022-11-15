@@ -461,12 +461,17 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5480869236275489648, guid: 3eb6e76e10c62134ab5944b7a88a733c, type: 3}
   m_PrefabInstance: {fileID: 475282167}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1033175743 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8226843426945528641, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}
+  m_PrefabInstance: {fileID: 3963822032327348969}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1033175745 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6499353352804542382, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}
   m_PrefabInstance: {fileID: 3963822032327348969}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1033175743}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae826cc7f6edddf4f8bb0f20820c0a3d, type: 3}
@@ -886,6 +891,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1726595795460099708}
     m_Modifications:
+    - target: {fileID: 3665223507587337334, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5091654321470286064, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
       propertyPath: m_Name
       value: GameOverMenu
@@ -993,6 +1002,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6761291877641948100, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
   m_PrefabInstance: {fileID: 2874385085562699785}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2874385085562699787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8099081723436769072, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
+  m_PrefabInstance: {fileID: 2874385085562699785}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c6bb365ff0bd2b429668461cafddd58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3963822032327348969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1305,15 +1325,11 @@ PrefabInstance:
     - target: {fileID: 8120543152943485205, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
       propertyPath: pauseButton
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8120543152943485205, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
-      propertyPath: GameOverMenu
-      value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1033175743}
     - target: {fileID: 8120543152943485205, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
       propertyPath: gameOverMenu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2874385085562699787}
     - target: {fileID: 8120543152943485205, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
       propertyPath: metersCounter
       value: 

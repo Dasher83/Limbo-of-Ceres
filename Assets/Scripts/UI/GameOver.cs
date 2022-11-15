@@ -9,10 +9,14 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
 {
     public class GameOver : MonoBehaviour
     {
+        [SerializeField] private GameObject gameOvermenu;
+        [SerializeField] private GameObject inputNewHighScoreMenu;
+        [SerializeField] private GameObject HighScore;
         [SerializeField] private PlayerData playerData;
         [SerializeField] private TextMeshProUGUI scoreText;
+        [SerializeField] private TextMeshProUGUI inputText;
 
-        private TextMeshProUGUI nameText;
+        private string nameText;
         private TouchScreenKeyboard keyboard;
         private int currentScore;
 
@@ -20,10 +24,10 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
         {
             if (TouchScreenKeyboard.visible == false && keyboard != null)
             {
-                if (keyboard.status == TouchScreenKeyboard.Status.Done)
+                if (inputText.text.Length == 4)
                 {
-                    nameText.text = keyboard.text;
-                    keyboard = null;
+                    Debug.Log("prueba");
+                    // buscar como cerrar teclado
                 }
             }
         }
@@ -37,13 +41,13 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
 
         public void ContinueGameOver()
         {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(true);
+            gameOvermenu.SetActive(false);
+            inputNewHighScoreMenu.SetActive(true);
         }
 
         public void OpenKeyboard()
         {
-            keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+            keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, true, false, false, false, "\"\"", 3);
         }
 
         public void Retry()
