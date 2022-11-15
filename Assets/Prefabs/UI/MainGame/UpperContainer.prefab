@@ -35,10 +35,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 155}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.000009536743, y: 0}
+  m_SizeDelta: {x: 1970.99, y: 155}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &6670438417140208571
 CanvasRenderer:
@@ -88,14 +88,6 @@ PrefabInstance:
     - target: {fileID: 1214176395241617612, guid: 446d0a71a1358154087670aa998c8e5b, type: 3}
       propertyPath: m_Name
       value: PauseButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 5430636773555300936, guid: 446d0a71a1358154087670aa998c8e5b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5430636773555300936, guid: 446d0a71a1358154087670aa998c8e5b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Pause
       objectReference: {fileID: 0}
     - target: {fileID: 6281447841170131298, guid: 446d0a71a1358154087670aa998c8e5b, type: 3}
       propertyPath: m_Pivot.x
