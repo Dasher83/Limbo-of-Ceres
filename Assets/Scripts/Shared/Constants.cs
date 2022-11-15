@@ -47,6 +47,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
             public const string Player = "Player";
             public const string Enemy = "Enemy";
             public const string Projectile = "Projectile";
+            public const string Menu = "Menu";
         }
 
         public static class HighScores
@@ -82,6 +83,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
             public const string MainFloor = "MainFloor";
             public const string MainCeiling = "MainCeiling";
             public const string PumpkinBulletsSpawner = "PumpkinBulletsSpawner";
+            public const string PauseMenu = "PauseMenu";
         }
     }
 }
