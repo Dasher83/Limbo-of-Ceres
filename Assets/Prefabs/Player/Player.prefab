@@ -238,5 +238,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontIgnoreMe:
     serializedVersion: 2
-    m_Bits: 448
-  safetyBubbleTravelDistance: 5
+    m_Bits: 256
