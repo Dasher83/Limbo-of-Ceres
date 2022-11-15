@@ -1,5 +1,4 @@
 using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
-using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
@@ -7,9 +6,14 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
 {
     public class MetersCounter : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI metersText;
         [SerializeField] private PlayerData playerData;
         [SerializeField] private ScrollingSpeedScriptableObject scrollingSpeedFloor;
+        private TextMeshProUGUI metersText;
+
+        private void Start()
+        {
+            metersText = GetComponent<TextMeshProUGUI>();
+        }
 
         public void MetersUpdate()
         {
