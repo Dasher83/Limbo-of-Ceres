@@ -15,36 +15,39 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions
         public int MaxDurability => Constants.Player.MaxLives;
         public int InitialDurability => Constants.Player.InitialLives; 
 
-        public void ReceiveDamage(int damage)
+        public int ReceiveDamage(int damage)
         {
             if(damage <= 0)
             {
-                return;
+                return 0;
             }
 
             if(damage > CurrentDurability)
             {
                 lives = 0;
-                return;
+                return CurrentDurability;
             }
 
             lives -= damage;
+            return damage;
         }
 
-        public void ReceiveRestauration(int restauration)
+        public int ReceiveRestauration(int restauration)
         {
             if(restauration <= 0)
             {
-                return;
+                return 0;
             }
 
             if(restauration + CurrentDurability > MaxDurability)
             {
+
                 lives = MaxDurability;
-                return;
+                return restauration + CurrentDurability - MaxDurability - 1;
             }
 
             lives += restauration;
+            return restauration;
         }
 
         public void AddMeters(float ScrollingSpeed)

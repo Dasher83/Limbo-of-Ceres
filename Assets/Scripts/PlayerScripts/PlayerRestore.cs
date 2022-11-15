@@ -12,9 +12,9 @@ namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
             restorable = gameObject.GetComponent<PlayerDataContainer>().PlayerData;
         }
 
-        public void ReceiveRestauration(int restauration)
+        public int ReceiveRestauration(int restauration)
         {
-            restorable.ReceiveRestauration(restauration);
+            return restorable.ReceiveRestauration(restauration);
         }
     }
 }
