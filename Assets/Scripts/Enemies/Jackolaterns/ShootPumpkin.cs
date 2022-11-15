@@ -16,7 +16,9 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         [SerializeField]
         private float range;
         [SerializeField]
-        private float fireForce;
+        private float fireForceMinimum;
+        [SerializeField]
+        private float fireForceMaximum;
         [SerializeField]
         private Color cooldownColor;
         [SerializeField]
@@ -35,6 +37,14 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         public SpawnPumpkinBullets PumpkinBulletSpawner { set { pumpkinBulletSpawner = value; } }
 
         public PlayerRespawnSafely PlayerRespawnSafely { set { playerRespawnSafely = value; } }
+
+        private float FireForce
+        {
+            get
+            {
+                return Random.Range(fireForceMinimum, fireForceMaximum);
+            }
+        }
 
         private Vector3 ShootPosition { 
             get {
@@ -150,7 +160,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         private void Fire()
         {
             GameObject pumpkinInstance = pumpkinBulletSpawner.Spawn(spawnPosition: ShootPosition);
-            pumpkinInstance.GetComponent<Rigidbody2D>().AddForce(directionToAim * fireForce * Random.Range(0.75f, 1.00f));
+            pumpkinInstance.GetComponent<Rigidbody2D>().AddForce(directionToAim * FireForce * Random.Range(0.75f, 1.00f));
         }
 
         private void OnDrawGizmosSelected()
