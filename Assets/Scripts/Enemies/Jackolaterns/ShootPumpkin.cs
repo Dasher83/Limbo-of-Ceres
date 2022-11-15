@@ -30,6 +30,7 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         private SpriteRenderer spriteRender;
         private int ammoRequests;
         private Rigidbody2D rb;
+        private Rigidbody2D pumpkinRigidBody2D;
 
         public Transform LockedOnTarget { set { lockedOnTarget = value; } }
         public SpawnPumpkinBullets PumpkinBulletSpawner { set { pumpkinBulletSpawner = value; } }
@@ -73,6 +74,18 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
             get
             {
                 return Random.Range(Constants.Enemies.Jackolanterns.AmmoRequestsMinimum, Constants.Enemies.Jackolanterns.AmmoRequestsMaximum + 1);
+            }
+        }
+
+        private float PumpkinGravityScale
+        {
+            get
+            {
+                if(Random.value > 0.62f)
+                {
+                    return Random.Range(0f, 0.2f);
+                }
+                return 0f;
             }
         }
 
@@ -184,7 +197,13 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
             else
             {
                 GameObject pumpkinInstance = pumpkinBulletSpawner.Spawn(spawnPosition: ShootPosition);
-                pumpkinInstance.GetComponent<Rigidbody2D>().AddForce(directionToAim * FireForce * Random.Range(0.75f, 1.00f));
+                pumpkinRigidBody2D = pumpkinInstance.GetComponent<Rigidbody2D>();
+                pumpkinRigidBody2D.gravityScale = PumpkinGravityScale;
+                if(rb.gravityScale < 0)
+                {
+                    pumpkinRigidBody2D.gravityScale = PumpkinGravityScale * -1;
+                }
+                pumpkinRigidBody2D.AddForce(directionToAim * FireForce * Random.Range(0.75f, 1.00f));
             }
         }
 
