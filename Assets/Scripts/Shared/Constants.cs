@@ -44,6 +44,14 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
                 public const float AimRateMaximum = 1.5f;
                 public const float FireRateMinimum = 1f;
                 public const float FireRateMaximum = 1.5f;
+                public const float FloorSpeedBoost = 0.75f;
+                public const float StraightPumkinProbability = 0.62f;
+
+                public static class Pumpkin
+                {
+                    public const float GravityScaleMinimum = 0f;
+                    public const float GravityScaleMaximum = 0.15f;
+                }
             }
         }
 

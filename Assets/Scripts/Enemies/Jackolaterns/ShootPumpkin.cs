@@ -51,7 +51,9 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
             {
                 if(rb.gravityScale > 0)
                 {
-                    return Random.Range(Constants.Enemies.Jackolanterns.AimRateMinimum, Constants.Enemies.Jackolanterns.AimRateMaximum) * 0.75f;
+                    return Random.Range(
+                        Constants.Enemies.Jackolanterns.AimRateMinimum,
+                        Constants.Enemies.Jackolanterns.AimRateMaximum) * Constants.Enemies.Jackolanterns.FloorSpeedBoost;
                 }
                 return Random.Range(Constants.Enemies.Jackolanterns.AimRateMinimum, Constants.Enemies.Jackolanterns.AimRateMaximum);
             }
@@ -63,7 +65,9 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
             {
                 if (rb.gravityScale > 0)
                 {
-                    return Random.Range(Constants.Enemies.Jackolanterns.AimRateMinimum, Constants.Enemies.Jackolanterns.AimRateMaximum) * 0.75f;
+                    return Random.Range(
+                        Constants.Enemies.Jackolanterns.FireRateMinimum,
+                        Constants.Enemies.Jackolanterns.FireRateMaximum) * Constants.Enemies.Jackolanterns.FloorSpeedBoost;
                 }
                 return Random.Range(Constants.Enemies.Jackolanterns.FireRateMinimum, Constants.Enemies.Jackolanterns.FireRateMaximum);
             }
@@ -81,9 +85,11 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
         {
             get
             {
-                if(Random.value > 0.62f)
+                if(Random.value > Constants.Enemies.Jackolanterns.StraightPumkinProbability)
                 {
-                    return Random.Range(0f, 0.15f);
+                    return Random.Range(
+                        Constants.Enemies.Jackolanterns.Pumpkin.GravityScaleMinimum,
+                        Constants.Enemies.Jackolanterns.Pumpkin.GravityScaleMaximum);
                 }
                 return 0f;
             }
