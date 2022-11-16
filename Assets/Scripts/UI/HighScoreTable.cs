@@ -17,8 +17,8 @@ namespace QuarkAcademyJam1Team1
             for (int i = 0; i < highScores.Length; i++)
             {
                 seats[i].SetActive(true);
-                seats[i].GetComponent<TextMeshProUGUI>().text = highScores[i].name;
-                seats[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = highScores[i].points.ToString();
+                seats[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = highScores[i].name;
+                seats[i].transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = highScores[i].points.ToString();
             }
         }
     }
