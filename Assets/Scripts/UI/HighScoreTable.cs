@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using TMPro;
 
-namespace QuarkAcademyJam1Team1
+namespace QuarkAcademyJam1Team1.Scripts.UI
 {
     public class HighScoreTable : MonoBehaviour
     {
