@@ -20,9 +20,9 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
 
         public static class FloorAndCeiling
         {
-            public const float OffsetWidth = 0.001f;
+            public const float OffsetWidth = 5f;
             public const float HeightProportion = 0.1f;
-            public const float CollidersExtraWidth = 1f;
+            public const float CollidersExtraWidth = 5f;
         }
 
         public static class Obstacles
@@ -37,7 +37,21 @@ namespace QuarkAcademyJam1Team1.Scripts.Shared
             {
                 public const float DefaultGravityScale = 10f;
                 public const float CeilingSpawnProbability = 0.6f;
-                public const float DiplomaticThreshold = 3f;
+                public const float DiplomaticThreshold = 3.8f;
+                public const int AmmoRequestsMinimum = 2;
+                public const int AmmoRequestsMaximum = 4;
+                public const float AimRateMinimum = 1f;
+                public const float AimRateMaximum = 1.5f;
+                public const float FireRateMinimum = 1f;
+                public const float FireRateMaximum = 1.5f;
+                public const float FloorSpeedBoost = 0.75f;
+                public const float StraightPumkinProbability = 0.62f;
+
+                public static class Pumpkin
+                {
+                    public const float GravityScaleMinimum = 0f;
+                    public const float GravityScaleMaximum = 0.15f;
+                }
             }
         }
 

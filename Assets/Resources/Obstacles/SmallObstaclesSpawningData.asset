@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c0139967cd33ee4ba4bff699b3f1fc9, type: 3}
   m_Name: SmallObstaclesSpawningData
   m_EditorClassIdentifier: 
-  minimumRespawnTime: 1
-  maximumRespawnTime: 3
+  minimumRespawnTime: 1.3
+  maximumRespawnTime: 3.8
