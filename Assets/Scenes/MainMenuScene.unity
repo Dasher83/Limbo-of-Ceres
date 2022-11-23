@@ -597,7 +597,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: JUGAR
+  m_text: PLAY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e02ff79c28694b249a14684390f6cdd3, type: 2}
   m_sharedMaterial: {fileID: -2026535427264726974, guid: e02ff79c28694b249a14684390f6cdd3, type: 2}
@@ -953,7 +953,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PUNTUACIONES
+  m_text: HIGH SCORES
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e02ff79c28694b249a14684390f6cdd3, type: 2}
   m_sharedMaterial: {fileID: -2026535427264726974, guid: e02ff79c28694b249a14684390f6cdd3, type: 2}
@@ -1579,7 +1579,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Jam Equipo 1
+  m_text: Game Jam Team 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e02ff79c28694b249a14684390f6cdd3, type: 2}
   m_sharedMaterial: {fileID: -2026535427264726974, guid: e02ff79c28694b249a14684390f6cdd3, type: 2}
@@ -1663,6 +1663,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 403134196}
     m_Modifications:
+    - target: {fileID: 223208148403991671, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 605746107691867804, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 844356148011022073, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1747,6 +1755,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1866927439622527222, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879794776357426853, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881299226058540762, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
+      propertyPath: m_text
+      value: NAME
+      objectReference: {fileID: 0}
+    - target: {fileID: 2437483559492631674, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3510742018001590470, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
+      propertyPath: m_text
+      value: BACK
+      objectReference: {fileID: 0}
+    - target: {fileID: 3963888058477354960, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112378864573331988, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6353485495361004677, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6429978687822725965, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1766,6 +1806,22 @@ PrefabInstance:
     - target: {fileID: 7548119428869519797, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229067514390182608, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676882317233832661, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222608002259328257, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
+      propertyPath: m_text
+      value: SCORE
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222608002259328257, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6a990f6f68a05f4aaff3f73a61d8212, type: 3}

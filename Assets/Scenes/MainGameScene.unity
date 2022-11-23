@@ -1029,6 +1029,24 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: QuarkAcademyJam1Team1.Scripts.Managers.CustomSceneManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1560770081860059579, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
+      propertyPath: m_text
+      value: NEW HIGH SCORE
+      objectReference: {fileID: 0}
+    - target: {fileID: 2346212832010654383, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
+      propertyPath: m_text
+      value: 'SCORE
+
+        0M'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017666886882557780, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
+      propertyPath: m_text
+      value: SCORE
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017666886882557780, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5091654321470286064, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
       propertyPath: m_Name
       value: GameOverMenu
@@ -1036,6 +1054,22 @@ PrefabInstance:
     - target: {fileID: 5091654321470286064, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421385316269997792, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
+      propertyPath: m_text
+      value: CONTINUE
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478090991224202383, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
+      propertyPath: m_text
+      value: NAME
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548598911872079581, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
+      propertyPath: m_text
+      value: RETRY
+      objectReference: {fileID: 0}
+    - target: {fileID: 5957905166775563247, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
+      propertyPath: m_text
+      value: YOU DID NOT INPUT A NAME !!!
       objectReference: {fileID: 0}
     - target: {fileID: 6761291877641948100, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
       propertyPath: m_Pivot.x
@@ -1125,9 +1159,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -29.899994
       objectReference: {fileID: 0}
+    - target: {fileID: 7396327124447378067, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
+      propertyPath: m_text
+      value: QUIT
+      objectReference: {fileID: 0}
     - target: {fileID: 8325594389572627729, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -29.899994
+      objectReference: {fileID: 0}
+    - target: {fileID: 8963373032141326523, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
+      propertyPath: m_text
+      value: INPUT A NAME ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 9219945687974593533, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
+      propertyPath: m_text
+      value: CONTINUE
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
@@ -1257,6 +1303,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2374604926204622823}
     m_Modifications:
+    - target: {fileID: 1762682127449281466, guid: f1ed33fdf4ba9924ab41d0f2e5a7884e, type: 3}
+      propertyPath: m_text
+      value: QUIT
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762682127449281466, guid: f1ed33fdf4ba9924ab41d0f2e5a7884e, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2751924810744688292, guid: f1ed33fdf4ba9924ab41d0f2e5a7884e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1361,6 +1415,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1288449872}
+    - target: {fileID: 4802410261025223638, guid: f1ed33fdf4ba9924ab41d0f2e5a7884e, type: 3}
+      propertyPath: m_text
+      value: RESUME
+      objectReference: {fileID: 0}
+    - target: {fileID: 8302553576088423307, guid: f1ed33fdf4ba9924ab41d0f2e5a7884e, type: 3}
+      propertyPath: m_text
+      value: RESTART
+      objectReference: {fileID: 0}
     - target: {fileID: 8660362344194964434, guid: f1ed33fdf4ba9924ab41d0f2e5a7884e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
