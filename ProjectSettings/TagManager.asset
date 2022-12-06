@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Obstacle
+  - Enemy
+  - Projectile
+  - Floor&Ceiling
+  - Menu
   layers:
   - Default
   - TransparentFX
@@ -11,10 +16,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Enemies
+  - Obstacles
+  - Projectiles
+  - Friendly
   - 
   - 
   - 
@@ -40,4 +45,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2512531933
+    locked: 0
+  - name: FloorAndCeiling
+    uniqueID: 2477903583
+    locked: 0
+  - name: Foreground
+    uniqueID: 3545159275
+    locked: 0
+  - name: UI
+    uniqueID: 1023803845
     locked: 0
