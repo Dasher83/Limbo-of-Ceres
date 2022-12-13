@@ -1173,7 +1173,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Limbo of Ceres
+  m_text: The Limbo of Ceres
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e02ff79c28694b249a14684390f6cdd3, type: 2}
   m_sharedMaterial: {fileID: -2026535427264726974, guid: e02ff79c28694b249a14684390f6cdd3, type: 2}
