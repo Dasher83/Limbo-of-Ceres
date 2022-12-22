@@ -1,7 +1,7 @@
 using QuarkAcademyJam1Team1.Scripts.Utils;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
+namespace QuarkAcademyJam1Team1.Scripts.Spawnables.Enemies.Jackolanterns
 {
     public class PumpkinBulletDespawn : MonoBehaviour
     {

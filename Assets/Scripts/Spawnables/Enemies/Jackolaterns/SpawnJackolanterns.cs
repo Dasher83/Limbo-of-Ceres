@@ -3,10 +3,10 @@ using QuarkAcademyJam1Team1.Scripts.Shared;
 using QuarkAcademyJam1Team1.Scripts.TimeScripts;
 using QuarkAcademyJam1Team1.Scripts.Utils;
 using UnityEngine;
-using QuarkAcademyJam1Team1.Scripts.Enemies.Shared;
+using QuarkAcademyJam1Team1.Scripts.Spawnables.Enemies.Shared;
 using QuarkAcademyJam1Team1.Scripts.PlayerScritps;
 
-namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
+namespace QuarkAcademyJam1Team1.Scripts.Spawnables.Enemies.Jackolanterns
 {
     public class SpawnJackolanterns : MonoBehaviour
     {

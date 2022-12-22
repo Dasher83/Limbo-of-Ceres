@@ -4,7 +4,7 @@ using QuarkAcademyJam1Team1.Scripts.TimeScripts;
 using QuarkAcademyJam1Team1.Scripts.Utils;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Obstacles
+namespace QuarkAcademyJam1Team1.Scripts.Spawnables.Obstacles
 {
     public class SpawnObstacles : MonoBehaviour
     {

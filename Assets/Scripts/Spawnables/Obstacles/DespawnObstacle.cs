@@ -1,8 +1,7 @@
-using QuarkAcademyJam1Team1.Scripts.Shared;
 using QuarkAcademyJam1Team1.Scripts.Utils;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Obstacles
+namespace QuarkAcademyJam1Team1.Scripts.Spawnables.Obstacles
 {
     public class DespawnObstacle : MonoBehaviour
     {
