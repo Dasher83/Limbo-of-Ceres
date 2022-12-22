@@ -6,17 +6,40 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
 {
     public class DespawnJackolantern : MonoBehaviour
     {
-        private float leftEdge;
+        private bool OutOfHorizontalBounds
+        {
+            get
+            {
+                return gameObject.transform.position.x < CameraUtils.OrthographicBounds.min.x - gameObject.GetComponent<SpriteRenderer>().bounds.size.x / 2;
+            }
+        }
+
+        private bool OutOfVerticalBounds
+        {
+            get
+            {
+                if(gameObject.transform.position.y > CameraUtils.OrthographicBounds.max.y + gameObject.GetComponent<SpriteRenderer>().bounds.size.y / 2)
+                {
+                    return true;
+                }
+
+                if (gameObject.transform.position.y < CameraUtils.OrthographicBounds.min.y - gameObject.GetComponent<SpriteRenderer>().bounds.size.y / 2)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+        }
 
         private void Start()
         {
-            leftEdge = CameraUtils.OrthographicBounds.min.x;
             gameObject.SetActive(false);
         }
 
         private void Update()
         {
-            if (gameObject.transform.position.x <= leftEdge - gameObject.GetComponent<SpriteRenderer>().bounds.size.x / 2)
+            if (OutOfHorizontalBounds || OutOfVerticalBounds)
             {
                 gameObject.SetActive(false);
             }
