@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
+namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 {
     public class SpawnPumpkinBullets : MonoBehaviour
     {

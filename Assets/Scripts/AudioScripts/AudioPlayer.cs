@@ -1,8 +1,8 @@
-using QuarkAcademyJam1Team1.Scripts.Shared;
+using LimboOfCeres.Scripts.Shared;
 using System.Collections;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.AudioScripts
+namespace LimboOfCeres.Scripts.AudioScripts
 {
     public class AudioPlayer : MonoBehaviour
     {

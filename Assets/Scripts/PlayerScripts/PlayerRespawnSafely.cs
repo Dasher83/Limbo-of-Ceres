@@ -1,11 +1,11 @@
-using QuarkAcademyJam1Team1.Scripts.Shared;
-using QuarkAcademyJam1Team1.Scripts.TimeScripts;
-using QuarkAcademyJam1Team1.Scripts.Utils;
+using LimboOfCeres.Scripts.Shared;
+using LimboOfCeres.Scripts.TimeScripts;
+using LimboOfCeres.Scripts.Utils;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
+namespace LimboOfCeres.Scripts.PlayerScritps
 {
     public class PlayerRespawnSafely : MonoBehaviour
     {

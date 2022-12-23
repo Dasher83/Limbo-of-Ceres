@@ -1,10 +1,10 @@
-using QuarkAcademyJam1Team1.Scripts.Shared.Interfaces;
-using QuarkAcademyJam1Team1.Scripts.Shared;
-using QuarkAcademyJam1Team1.Scripts.AudioScripts;
+using LimboOfCeres.Scripts.Shared.Interfaces;
+using LimboOfCeres.Scripts.Shared;
+using LimboOfCeres.Scripts.AudioScripts;
 using UnityEngine;
 
 
-namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
+namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 {
     public class JackolanternDestruction : MonoBehaviour
     {
@@ -17,6 +17,13 @@ namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
                     AudioPlayer.instance.PlaySoundEffect(SoundEffectsEnum.MALE_BOO_AND_EVIL_LAUGH);
                 }
                 gameObject.SetActive(false);
+                return;
+            }
+
+            if (collision.gameObject.CompareTag(Constants.Tags.Enemy))
+            {
+                collision.otherCollider.gameObject.SetActive(false);
+                return;
             }
         }
     }

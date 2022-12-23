@@ -1,7 +1,7 @@
-using QuarkAcademyJam1Team1.Scripts.Utils;
+using LimboOfCeres.Scripts.Utils;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.ExtraLife
+namespace LimboOfCeres.Scripts.ExtraLife
 {
     public class DespawnExtraLife : MonoBehaviour
     {

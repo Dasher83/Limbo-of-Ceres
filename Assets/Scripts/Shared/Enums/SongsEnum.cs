@@ -1,4 +1,4 @@
-namespace QuarkAcademyJam1Team1.Scripts.AudioScripts
+namespace LimboOfCeres.Scripts.AudioScripts
 {
     public enum SongsEnum
     {

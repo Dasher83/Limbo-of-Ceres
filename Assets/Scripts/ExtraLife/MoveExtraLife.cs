@@ -1,7 +1,7 @@
-using QuarkAcademyJam1Team1.Scripts.Shared;
+using LimboOfCeres.Scripts.Shared;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.ExtraLife
+namespace LimboOfCeres.Scripts.ExtraLife
 {
     public class MoveExtraLife : MonoBehaviour
     {

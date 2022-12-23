@@ -1,10 +1,10 @@
-using QuarkAcademyJam1Team1.Scripts.HighScores;
+using LimboOfCeres.Scripts.HighScores;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
 using TMPro;
 
-namespace QuarkAcademyJam1Team1.Scripts.UI
+namespace LimboOfCeres.Scripts.UI
 {
     public class HighScoreTable : MonoBehaviour
     {

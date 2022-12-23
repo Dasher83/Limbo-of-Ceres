@@ -1,8 +1,8 @@
 
-using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
+using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Scrolling
+namespace LimboOfCeres.Scripts.Scrolling
 {
     public class ScrollingObject : MonoBehaviour
     {

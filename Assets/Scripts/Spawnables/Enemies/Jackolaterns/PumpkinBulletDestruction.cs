@@ -1,9 +1,9 @@
-using QuarkAcademyJam1Team1.Scripts.AudioScripts;
-using QuarkAcademyJam1Team1.Scripts.Shared;
-using QuarkAcademyJam1Team1.Scripts.Shared.Interfaces;
+using LimboOfCeres.Scripts.AudioScripts;
+using LimboOfCeres.Scripts.Shared;
+using LimboOfCeres.Scripts.Shared.Interfaces;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
+namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 {
     public class PumpkinBulletDestruction : MonoBehaviour
     {

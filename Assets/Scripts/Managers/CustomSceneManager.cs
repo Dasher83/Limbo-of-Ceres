@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace QuarkAcademyJam1Team1.Scripts.Managers
+namespace LimboOfCeres.Scripts.Managers
 {
     public class CustomSceneManager : MonoBehaviour
     {

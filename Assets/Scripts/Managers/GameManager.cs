@@ -1,12 +1,12 @@
-using QuarkAcademyJam1Team1.Scripts.AudioScripts;
-using QuarkAcademyJam1Team1.Scripts.Shared.Enums;
-using QuarkAcademyJam1Team1.Scripts.Shared.Interfaces;
-using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
-using QuarkAcademyJam1Team1.Scripts.UI;
+using LimboOfCeres.Scripts.AudioScripts;
+using LimboOfCeres.Scripts.Shared.Enums;
+using LimboOfCeres.Scripts.Shared.Interfaces;
+using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
+using LimboOfCeres.Scripts.UI;
 using UnityEngine;
 
 
-namespace QuarkAcademyJam1Team1.Scripts.Managers
+namespace LimboOfCeres.Scripts.Managers
 {
     public class GameManager : MonoBehaviour
     {

@@ -1,9 +1,9 @@
-using QuarkAcademyJam1Team1.Scripts.Shared;
+using LimboOfCeres.Scripts.Shared;
 using System.IO;
 using System.Linq;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.HighScores
+namespace LimboOfCeres.Scripts.HighScores
 {
     public class HighScoresReadWriter
     {

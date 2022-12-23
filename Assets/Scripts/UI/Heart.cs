@@ -1,9 +1,9 @@
-using QuarkAcademyJam1Team1.Scripts.Shared;
+using LimboOfCeres.Scripts.Shared;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.UI
+namespace LimboOfCeres.Scripts.UI
 {
     public class Heart : MonoBehaviour
     {

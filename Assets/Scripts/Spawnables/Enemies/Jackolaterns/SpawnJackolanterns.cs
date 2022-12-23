@@ -1,12 +1,12 @@
-using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
-using QuarkAcademyJam1Team1.Scripts.Shared;
-using QuarkAcademyJam1Team1.Scripts.TimeScripts;
-using QuarkAcademyJam1Team1.Scripts.Utils;
+using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
+using LimboOfCeres.Scripts.Shared;
+using LimboOfCeres.Scripts.TimeScripts;
+using LimboOfCeres.Scripts.Utils;
 using UnityEngine;
-using QuarkAcademyJam1Team1.Scripts.Enemies.Shared;
-using QuarkAcademyJam1Team1.Scripts.PlayerScritps;
+using LimboOfCeres.Scripts.Spawnables.Enemies.Shared;
+using LimboOfCeres.Scripts.PlayerScritps;
 
-namespace QuarkAcademyJam1Team1.Scripts.Enemies.Jackolanterns
+namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 {
     public class SpawnJackolanterns : MonoBehaviour
     {

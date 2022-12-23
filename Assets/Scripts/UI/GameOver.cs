@@ -1,12 +1,12 @@
-using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
-using QuarkAcademyJam1Team1.Scripts.HighScores;
-using QuarkAcademyJam1Team1.Scripts.Shared;
+using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
+using LimboOfCeres.Scripts.HighScores;
+using LimboOfCeres.Scripts.Shared;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System;
 using TMPro;
 
-namespace QuarkAcademyJam1Team1.Scripts.UI
+namespace LimboOfCeres.Scripts.UI
 {
     public class GameOver : MonoBehaviour
     {

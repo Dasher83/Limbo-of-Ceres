@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Background
+namespace LimboOfCeres.Scripts.Background
 {
     public class PositionMainBackground : MonoBehaviour
     {

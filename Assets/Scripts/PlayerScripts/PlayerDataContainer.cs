@@ -1,7 +1,7 @@
-using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
+using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
+namespace LimboOfCeres.Scripts.PlayerScritps
 {
     public class PlayerDataContainer : MonoBehaviour
     {
