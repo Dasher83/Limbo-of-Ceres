@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions
+namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
 {
     [CreateAssetMenu(fileName = "JackolanternData", menuName = "ScriptableObjects/JackolanternDataScriptableObject", order = 3)]
     public class JackolanternDataScriptableObject : ScriptableObject

@@ -1,8 +1,8 @@
-using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
+using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using UnityEngine;
 using TMPro;
 
-namespace QuarkAcademyJam1Team1.Scripts.UI
+namespace LimboOfCeres.Scripts.UI
 {
     public class MetersCounter : MonoBehaviour
     {

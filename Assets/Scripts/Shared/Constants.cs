@@ -1,4 +1,4 @@
-namespace QuarkAcademyJam1Team1.Scripts.Shared
+namespace LimboOfCeres.Scripts.Shared
 {
     public static class Constants
     {

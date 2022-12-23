@@ -1,10 +1,10 @@
-using QuarkAcademyJam1Team1.Scripts.Shared;
-using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
-using QuarkAcademyJam1Team1.Scripts.TimeScripts;
-using QuarkAcademyJam1Team1.Scripts.Utils;
+using LimboOfCeres.Scripts.Shared;
+using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
+using LimboOfCeres.Scripts.TimeScripts;
+using LimboOfCeres.Scripts.Utils;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Spawnables.Obstacles
+namespace LimboOfCeres.Scripts.Spawnables.Obstacles
 {
     public class SpawnObstacles : MonoBehaviour
     {

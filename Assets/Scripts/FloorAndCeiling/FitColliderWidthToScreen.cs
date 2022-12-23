@@ -1,8 +1,8 @@
-using QuarkAcademyJam1Team1.Scripts.Shared;
-using QuarkAcademyJam1Team1.Scripts.Utils;
+using LimboOfCeres.Scripts.Shared;
+using LimboOfCeres.Scripts.Utils;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.FloorAndCeiling
+namespace LimboOfCeres.Scripts.FloorAndCeiling
 {
     public class FitColliderWidthToScreen : MonoBehaviour
     {

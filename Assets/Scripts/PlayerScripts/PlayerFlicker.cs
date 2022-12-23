@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
+namespace LimboOfCeres.Scripts.PlayerScritps
 {
     public class PlayerFlicker : MonoBehaviour
     {

@@ -1,9 +1,8 @@
-using QuarkAcademyJam1Team1.Scripts.Shared.Interfaces;
+using LimboOfCeres.Scripts.Shared.Interfaces;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.UI
+namespace LimboOfCeres.Scripts.UI
 {
     public class LifeBar : MonoBehaviour
     {

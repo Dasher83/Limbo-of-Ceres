@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Utils
+namespace LimboOfCeres.Scripts.Utils
 {
     public static class CameraUtils
     {

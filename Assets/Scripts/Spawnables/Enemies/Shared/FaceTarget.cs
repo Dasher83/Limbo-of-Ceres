@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Spawnables.Enemies.Shared
+namespace LimboOfCeres.Scripts.Spawnables.Enemies.Shared
 {
     public class FaceTarget : MonoBehaviour
     {

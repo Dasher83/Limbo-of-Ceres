@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.TimeScripts
+namespace LimboOfCeres.Scripts.TimeScripts
 {
     public class ResettableTimer
     {

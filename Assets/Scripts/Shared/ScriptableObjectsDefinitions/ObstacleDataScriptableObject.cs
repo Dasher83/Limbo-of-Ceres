@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions
+namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
 {
     [CreateAssetMenu(fileName = "ObstacleData", menuName = "ScriptableObjects/ObstacleDataScriptableObject", order = 2)]
     public class ObstacleDataScriptableObject : ScriptableObject

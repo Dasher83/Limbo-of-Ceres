@@ -1,7 +1,7 @@
-using QuarkAcademyJam1Team1.Scripts.Shared.Interfaces;
+using LimboOfCeres.Scripts.Shared.Interfaces;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions
+namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
 {
     [CreateAssetMenu(fileName = "PlayerData", menuName = "ScriptableObjects/PlayerData", order = 2)]
     public class PlayerData : ScriptableObject, IDurable, IDamageable, IRestorable
