@@ -17,6 +17,13 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
                     AudioPlayer.instance.PlaySoundEffect(SoundEffectsEnum.MALE_BOO_AND_EVIL_LAUGH);
                 }
                 gameObject.SetActive(false);
+                return;
+            }
+
+            if (collision.gameObject.CompareTag(Constants.Tags.Enemy))
+            {
+                collision.otherCollider.gameObject.SetActive(false);
+                return;
             }
         }
     }

@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8775858449516065142}
   - component: {fileID: 8775858449516065141}
   - component: {fileID: 8775858449516065140}
-  - component: {fileID: 8775858449516065098}
+  - component: {fileID: -4578607690102424446}
+  - component: {fileID: -2045495877238532188}
   m_Layer: 7
   m_Name: CrossObstacleSmall
   m_TagString: Obstacle
@@ -134,18 +135,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8775858449516065098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8775858449516065137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39ecf63b7a9390a4bad07f86af84e960, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-4578607690102424446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,5 +145,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34a0c90d7f351df46a17b5f746488068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2045495877238532188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8775858449516065137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ef37c6ecdb6cc41965768b3e92d1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
