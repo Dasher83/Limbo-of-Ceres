@@ -3,7 +3,7 @@ using LimboOfCeres.Scripts.Shared;
 using LimboOfCeres.Scripts.Shared.Interfaces;
 using UnityEngine;
 
-namespace LimboOfCeres.Scripts.ExtraLife
+namespace LimboOfCeres.Scripts.Spawnables.ExtraLife
 {
     public class ConsumeExtraLife : MonoBehaviour
     {

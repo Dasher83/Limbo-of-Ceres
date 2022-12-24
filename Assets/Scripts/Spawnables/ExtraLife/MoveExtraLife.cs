@@ -1,7 +1,7 @@
 using LimboOfCeres.Scripts.Shared;
 using UnityEngine;
 
-namespace LimboOfCeres.Scripts.ExtraLife
+namespace LimboOfCeres.Scripts.Spawnables.ExtraLife
 {
     public class MoveExtraLife : MonoBehaviour
     {
