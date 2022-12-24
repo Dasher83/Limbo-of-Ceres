@@ -195,6 +195,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 8247845236957717874, guid: 680a8b8876456f74796de8dfbe7284c4, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247845236957717874, guid: 680a8b8876456f74796de8dfbe7284c4, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247845236957717874, guid: 680a8b8876456f74796de8dfbe7284c4, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247845236957717874, guid: 680a8b8876456f74796de8dfbe7284c4, type: 3}
+      propertyPath: m_Color.g
+      value: 0.052643314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247845236957717874, guid: 680a8b8876456f74796de8dfbe7284c4, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4836101
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247845237836004460, guid: 680a8b8876456f74796de8dfbe7284c4, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8584906
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247845237836004460, guid: 680a8b8876456f74796de8dfbe7284c4, type: 3}
+      propertyPath: m_Color.g
+      value: 0.052643314
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247845237836004460, guid: 680a8b8876456f74796de8dfbe7284c4, type: 3}
+      propertyPath: m_Color.r
+      value: 0.4836101
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 680a8b8876456f74796de8dfbe7284c4, type: 3}
 --- !u!114 &421017572 stripped
