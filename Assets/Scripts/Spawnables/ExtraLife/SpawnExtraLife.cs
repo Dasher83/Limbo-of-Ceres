@@ -3,7 +3,7 @@ using LimboOfCeres.Scripts.TimeScripts;
 using LimboOfCeres.Scripts.Utils;
 using UnityEngine;
 
-namespace LimboOfCeres.Scripts.ExtraLife
+namespace LimboOfCeres.Scripts.Spawnables.ExtraLife
 {
     public class SpawnExtraLife : MonoBehaviour
     {
