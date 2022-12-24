@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 8247845236957717869}
   - component: {fileID: 8247845236957717872}
   - component: {fileID: 8247845236957717878}
-  - component: {fileID: 8247845236957717879}
+  - component: {fileID: 2380805843076567307}
   m_Layer: 0
   m_Name: SecondaryBackground
   m_TagString: Untagged
@@ -111,7 +111,7 @@ SpriteRenderer:
   m_SortingLayerID: -1782435363
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9a783039dbdc1954e857242a80aae5e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 82dcc3eed147bf44c80c620324fc35c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 1
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7ec3a1974c8a744bfada169cc53aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8247845236957717879
+--- !u!114 &2380805843076567307
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,9 +189,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8247845236957717871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9fec798dd2333b4b840b2c1a5c484f8, type: 3}
+  m_Script: {fileID: 11500000, guid: d83d06a1a134a7e4990a0669ed2ed504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tail: {fileID: 8247845237836004462}
 --- !u!1 &8247845237836004462
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +207,7 @@ GameObject:
   - component: {fileID: 8247845237836004461}
   - component: {fileID: 8247845237836004467}
   - component: {fileID: 8247845237836004464}
-  - component: {fileID: 8247845237836004470}
+  - component: {fileID: 1400436752571920895}
   m_Layer: 0
   m_Name: MainBackground
   m_TagString: Untagged
@@ -270,7 +271,7 @@ SpriteRenderer:
   m_SortingLayerID: -1782435363
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 9a783039dbdc1954e857242a80aae5e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d944c896f048c5040a8e1ffb074b4e3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -339,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967e94d9f22af3649ba8247f9ee1596d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8247845237836004470
+--- !u!114 &1400436752571920895
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -348,6 +349,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8247845237836004462}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9fec798dd2333b4b840b2c1a5c484f8, type: 3}
+  m_Script: {fileID: 11500000, guid: d83d06a1a134a7e4990a0669ed2ed504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tail: {fileID: 8247845236957717871}
