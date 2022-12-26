@@ -247,6 +247,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2374604926204622823}
     m_Modifications:
+    - target: {fileID: 2368781213394349409, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2368781213394349409, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2368781213394349409, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 592.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 2368781213394349409, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000015256317
+      objectReference: {fileID: 0}
+    - target: {fileID: 2368781213394349409, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751269010987467258, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}
+      propertyPath: m_text
+      value: 10000000M
+      objectReference: {fileID: 0}
     - target: {fileID: 6670438417140208572, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}
       propertyPath: m_Name
       value: UpperContainer
