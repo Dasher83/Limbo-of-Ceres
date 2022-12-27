@@ -229,17 +229,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 680a8b8876456f74796de8dfbe7284c4, type: 3}
---- !u!114 &421017572 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4103212917428955991, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}
-  m_PrefabInstance: {fileID: 452569970}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 529d00a59332d8c4c8f3afe69e4f02f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &452569970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270,6 +259,14 @@ PrefabInstance:
     - target: {fileID: 2751269010987467258, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}
       propertyPath: m_text
       value: 10000000M
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809815628155315804, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809815628155315804, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6670438417140208572, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}
       propertyPath: m_Name
@@ -1066,6 +1063,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5091654321470286064, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
   m_PrefabInstance: {fileID: 1216408554016209298}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2111049354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5735724970183979373, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}
+  m_PrefabInstance: {fileID: 452569970}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 529d00a59332d8c4c8f3afe69e4f02f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1216408554016209298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1636,7 +1644,7 @@ PrefabInstance:
     - target: {fileID: 8120543152943485205, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
       propertyPath: lifeBar
       value: 
-      objectReference: {fileID: 421017572}
+      objectReference: {fileID: 2111049354}
     - target: {fileID: 8120543152943485205, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
       propertyPath: pauseButton
       value: 

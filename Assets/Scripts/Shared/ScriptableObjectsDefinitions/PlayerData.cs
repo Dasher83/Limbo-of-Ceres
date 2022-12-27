@@ -41,9 +41,9 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
 
             if(restauration + CurrentDurability > MaxDurability)
             {
-
+                restauration = (restauration + CurrentDurability) - MaxDurability;
                 lives = MaxDurability;
-                return restauration + CurrentDurability - MaxDurability - 1;
+                return restauration;
             }
 
             lives += restauration;
