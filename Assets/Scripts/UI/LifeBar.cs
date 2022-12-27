@@ -1,14 +1,14 @@
+using LimboOfCeres.Scripts.Shared;
 using LimboOfCeres.Scripts.Shared.Interfaces;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace LimboOfCeres.Scripts.UI
 {
     public class LifeBar : MonoBehaviour
     {
-        [SerializeField] private Sprite heartSprite;
-        [SerializeField] private Sprite emptyHeartSprite;
-        private List<Heart> hearts;
+        [SerializeField]
+        private TextMeshProUGUI livesCounterText;
         private IDurable durable;
 
         public IDurable Durable { set { durable = value; } }
@@ -16,48 +16,20 @@ namespace LimboOfCeres.Scripts.UI
 
         private void Start()
         {
-            hearts = new List<Heart>();
-            for (int i = 0; i < transform.childCount; i++)
-            {
-                Heart heart = transform.GetChild(i).GetComponent<Heart>();
-                heart.Initialize();
-                hearts.Add(heart);
-            }
+            livesCounterText.text = Constants.Player.InitialLives.ToString();
         }
 
         private void Update()
         {
             if (durable == null) return;
 
-            if (durable.CurrentDurability == 0) gameObject.SetActive(false);
-
-            for (int i = 0; i < durable.InitialDurability && i < durable.CurrentDurability; i++)
+            if (durable.CurrentDurability == 0)
             {
-                hearts[i].AddHeart(heartSprite);
+                gameObject.SetActive(false);
+                return;
             }
 
-            for(int i = durable.CurrentDurability; i < durable.InitialDurability; i++)
-            {
-                hearts[i].RemoveHeart(emptyHeartSprite);
-            }
-
-            for (int i = durable.InitialDurability; i < durable.MaxDurability; i++)
-            {
-                if (i <= durable.CurrentDurability - 1)
-                {
-                    if (hearts[i].IsInactive)
-                    {
-                        hearts[i].AddHeart();   
-                    }
-                }
-                else
-                {
-                    if (!hearts[i].IsInactive)
-                    {
-                        hearts[i].RemoveHeart();
-                    }
-                }
-            }
+            livesCounterText.text = durable.CurrentDurability.ToString();
         }
     }
 }

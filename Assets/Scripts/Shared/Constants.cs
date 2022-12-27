@@ -9,7 +9,7 @@ namespace LimboOfCeres.Scripts.Shared
             public const float GravityScale = 1.2f;
             public const float HorizontalPositionOffsetFactor = 0.2f;
             public const int InitialLives = 3;
-            public const int MaxLives = 5;
+            public const int MaxLives = 999;
             public const float RecoveryTime = 3f;
 
             public static class SafetyBubble
