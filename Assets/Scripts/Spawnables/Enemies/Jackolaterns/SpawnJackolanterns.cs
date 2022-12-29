@@ -12,12 +12,13 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
     {
         [SerializeField]
         private JackolanternDataScriptableObject jackolanternData;
+        [SerializeField]
+        private SpawnPumpkinBullets pumpkinBulletsSpawner;
         private Transform target = null;
         private SpriteRenderer floorSpriteRenderer = null;
         private SpriteRenderer ceilingSpriteRenderer = null;
         private ResettableTimer spawnTimer;
         private Vector3 newPosition;
-        private SpawnPumpkinBullets pumpkinBulletsSpawner = null;
         private PlayerRespawnSafely playerRespawnSafely = null;
 
         private void SpawnJackolantern(GameObject jackolantern)
@@ -52,7 +53,6 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
             playerRespawnSafely = player.GetComponent<PlayerRespawnSafely>();
             floorSpriteRenderer = GameObject.Find(Constants.GameObjects.MainFloor).GetComponent<SpriteRenderer>();
             ceilingSpriteRenderer = GameObject.Find(Constants.GameObjects.MainCeiling).GetComponent<SpriteRenderer>();
-            pumpkinBulletsSpawner = GameObject.Find(Constants.GameObjects.PumpkinBulletsSpawner).GetComponent<SpawnPumpkinBullets>();
             newPosition = Vector3.zero;
             spawnTimer = new ResettableTimer(time: Random.Range(jackolanternData.MinimumRespawnTime, jackolanternData.MaximumRespawnTime));
             for (int i = 0; i < gameObject.transform.childCount; i++)

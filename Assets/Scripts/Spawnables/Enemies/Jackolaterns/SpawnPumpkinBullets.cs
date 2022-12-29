@@ -13,10 +13,6 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         private void Awake()
         {
             pumpkinBullets = new List<GameObject>();
-            for(int i = 0; i < gameObject.transform.childCount; i++)
-            {
-                pumpkinBullets.Add(gameObject.transform.GetChild(i).gameObject);
-            }    
         }
 
         public GameObject Spawn(Vector3 spawnPosition)
