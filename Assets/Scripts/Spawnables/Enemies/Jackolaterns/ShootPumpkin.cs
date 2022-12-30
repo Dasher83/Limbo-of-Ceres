@@ -24,7 +24,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         private ResettableTimer fireTimer;
         private Vector2 directionToAim;
         private bool clearShot;
-        private SpawnPumpkinBullets pumpkinBulletSpawner;
+        private SpawnPumpkinBullets pumpkinBulletSpawner = null;
         private PlayerRespawnSafely playerRespawnSafely;
         private Color originalColor;
         private SpriteRenderer spriteRender;

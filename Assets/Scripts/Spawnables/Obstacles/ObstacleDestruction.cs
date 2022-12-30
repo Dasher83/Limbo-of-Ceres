@@ -7,6 +7,11 @@ namespace LimboOfCeres.Scripts.Spawnables.Obstacles
 {
     public class ObstacleDestruction : MonoBehaviour
     {
+        private void Start()
+        {
+            gameObject.SetActive(false);
+        }
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag(Constants.Tags.Obstacle) || collision.gameObject.CompareTag(Constants.Tags.Enemy))

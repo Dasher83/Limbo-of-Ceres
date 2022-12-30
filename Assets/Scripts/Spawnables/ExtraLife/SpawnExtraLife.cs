@@ -39,6 +39,7 @@ namespace LimboOfCeres.Scripts.Spawnables.ExtraLife
             extraLifeRenderer = extraLife.GetComponent<SpriteRenderer>();
             floorSpriteRenderer = GameObject.Find(Constants.GameObjects.MainFloor).GetComponent<SpriteRenderer>();
             ceilingSpriteRenderer = GameObject.Find(Constants.GameObjects.MainCeiling).GetComponent<SpriteRenderer>();
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
         }
 
         private void Update()

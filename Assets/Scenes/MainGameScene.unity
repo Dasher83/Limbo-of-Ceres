@@ -613,6 +613,17 @@ PrefabInstance:
       objectReference: {fileID: 6200000, guid: b68d55126198ebc4e8181727c7ca48c4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a0828615b3e40d479025d01ea685c47, type: 3}
+--- !u!114 &777104003 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8147564280617247572, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
+  m_PrefabInstance: {fileID: 1607892886}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7edc76771c3661440ad9b83e33fc3136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &1020169446 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5480869236275489648, guid: 3eb6e76e10c62134ab5944b7a88a733c, type: 3}
@@ -629,67 +640,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae826cc7f6edddf4f8bb0f20820c0a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1405179731
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7363630895381158996, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
-      propertyPath: pumpkinBulletsSpawner
-      value: 
-      objectReference: {fileID: 1985106388}
-    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7363630895381158998, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
-      propertyPath: m_Name
-      value: JackolanternsSpawner
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
 --- !u!1 &1428367057
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,7 +777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8147564280617247571, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8147564280617247571, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
       propertyPath: m_LocalPosition.x
@@ -880,7 +830,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7714247275911957057, guid: 5ee5cb6eb107c5244923ed880fd8d3f9, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7714247275911957057, guid: 5ee5cb6eb107c5244923ed880fd8d3f9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -946,7 +896,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5677227493115949988, guid: 097d1b80e6d600541a9fd6254720f1dc, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5677227493115949988, guid: 097d1b80e6d600541a9fd6254720f1dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1005,22 +955,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503c99fc8812b24418edf82bcf8a1f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1835933133
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7363630895381158996, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
+      propertyPath: pumpkinBulletsSpawner
+      value: 
+      objectReference: {fileID: 777104003}
+    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363630895381158997, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7363630895381158998, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
+      propertyPath: m_Name
+      value: JackolanternsSpawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
 --- !u!1 &1909050680 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5091654321470286064, guid: ee152e53e7688b84497ad8feb0cefdaf, type: 3}
   m_PrefabInstance: {fileID: 1216408554016209298}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1985106388 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8147564280617247572, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
-  m_PrefabInstance: {fileID: 1607892886}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7edc76771c3661440ad9b83e33fc3136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2111049354 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5735724970183979373, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}

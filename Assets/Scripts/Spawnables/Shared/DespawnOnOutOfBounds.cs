@@ -36,7 +36,6 @@ namespace LimboOfCeres.Scripts.Spawnables.Shared
         private void Start()
         {
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-            gameObject.SetActive(false);
         }
 
         private void Update()

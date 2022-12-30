@@ -7,30 +7,42 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
     {
         [SerializeField]
         private GameObject pumpkinBulletPrefab;
-        private List<GameObject> pumpkinBullets;
+        private List<GameObject> pool;
         private GameObject newSpawn;
 
         private void Awake()
         {
-            pumpkinBullets = new List<GameObject>();
+            pool = new List<GameObject>();
         }
 
         public GameObject Spawn(Vector3 spawnPosition)
         {
-            foreach(GameObject pumpkinBullet in pumpkinBullets)
+            newSpawn = GetInactivePumkinBullet();
+            if(newSpawn != null)
             {
-                if (pumpkinBullet.activeSelf)
-                {
-                    continue;
-                }
-                pumpkinBullet.transform.position = spawnPosition;
-                pumpkinBullet.SetActive(true);
-                return pumpkinBullet;
+                newSpawn.transform.position = spawnPosition;
+                newSpawn.SetActive(true);
             }
-            newSpawn = Instantiate(pumpkinBulletPrefab, spawnPosition, Quaternion.identity);
-            newSpawn.transform.parent = gameObject.transform;
-            pumpkinBullets.Add(newSpawn);
+            else
+            {
+                newSpawn = Instantiate(pumpkinBulletPrefab, spawnPosition, Quaternion.identity);
+                newSpawn.transform.parent = gameObject.transform;
+                pool.Add(newSpawn);
+            }
+
             return newSpawn;
+        }
+
+        private GameObject GetInactivePumkinBullet()
+        {
+            foreach (GameObject pumpkinBullet in pool)
+            {
+                if (!pumpkinBullet.activeSelf)
+                {
+                    return pumpkinBullet;
+                }
+            }
+            return null;
         }
     }
 }
