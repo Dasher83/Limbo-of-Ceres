@@ -25,7 +25,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         private PlayerRespawnSafely playerRespawnSafely = null;
         private GameObject nextToBeSpawn;
         private List<GameObject> pool;
-        GameObject newlyCreatedSpwanable;
+        private GameObject newlyCreatedSpwanable;
 
         private void Start()
         {
@@ -57,7 +57,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 
         private void Spawn()
         {
-            nextToBeSpawn = GetInactiveSpawnable();
+            nextToBeSpawn = InactiveSpawnable;
             if (nextToBeSpawn == null)
             {
                 nextToBeSpawn = CreateNewSpawnable();
@@ -71,27 +71,35 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
             RePositionSpawnable();
         }
 
-        private GameObject GetInactiveSpawnable()
+        private GameObject InactiveSpawnable
         {
-            foreach (GameObject spawnable in pool)
+            get
             {
-                if (!spawnable.activeSelf)
+                foreach (GameObject spawnable in pool)
                 {
-                    return spawnable;
+                    if (!spawnable.activeSelf)
+                    {
+                        return spawnable;
+                    }
                 }
+                return null;
             }
-            return null;
         }
 
         private GameObject CreateNewSpawnable()
         {
             newlyCreatedSpwanable = Instantiate(prefabToSpawn, gameObject.transform);
+            InitializeNewSpawnable();
+            pool.Add(newlyCreatedSpwanable);
+            return newlyCreatedSpwanable;
+        }
+
+        private void InitializeNewSpawnable()
+        {
             newlyCreatedSpwanable.GetComponent<ShootPumpkin>().PumpkinBulletSpawner = pumpkinBulletsSpawner;
             newlyCreatedSpwanable.GetComponent<ShootPumpkin>().PlayerRespawnSafely = playerRespawnSafely;
             newlyCreatedSpwanable.GetComponent<FaceTarget>().LockedOnTarget = target;
             newlyCreatedSpwanable.GetComponent<ShootPumpkin>().LockedOnTarget = target;
-            pool.Add(newlyCreatedSpwanable);
-            return newlyCreatedSpwanable;
         }
 
         private void RePositionSpawnable()

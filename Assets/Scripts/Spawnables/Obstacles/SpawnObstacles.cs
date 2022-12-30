@@ -2,6 +2,7 @@ using LimboOfCeres.Scripts.Shared;
 using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using LimboOfCeres.Scripts.TimeScripts;
 using LimboOfCeres.Scripts.Utils;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace LimboOfCeres.Scripts.Spawnables.Obstacles
@@ -14,36 +15,22 @@ namespace LimboOfCeres.Scripts.Spawnables.Obstacles
         private SpriteRenderer floorSpriteRenderer;
         [SerializeField]
         private SpriteRenderer ceilingSpriteRenderer;
+        [SerializeField]
+        private GameObject prefabToSpawn;
         private ResettableTimer spawnTimer;
         private Vector3 newPosition;
-
-        private void SpawnObstacle(GameObject obstacle)
-        {
-            newPosition.x = CameraUtils.OrthographicBounds.max.x + obstacle.GetComponent<SpriteRenderer>().bounds.size.x;
-            obstacle.GetComponent<Rigidbody2D>().gravityScale = Constants.Obstacles.DefaultGravityScale;
-
-            if (Random.value >= Constants.Obstacles.CeilingSpawnProbability)
-            {
-                newPosition.y = CameraUtils.OrthographicBounds.max.y - obstacle.GetComponent<SpriteRenderer>().bounds.size.y;
-                newPosition.y -= ceilingSpriteRenderer.bounds.size.y;
-                obstacle.GetComponent<SpriteRenderer>().flipY = true;
-                obstacle.GetComponent<Rigidbody2D>().gravityScale *= -1;
-            }
-            else
-            {
-                newPosition.y = CameraUtils.OrthographicBounds.min.y + obstacle.GetComponent<SpriteRenderer>().bounds.size.y;
-                newPosition.y += floorSpriteRenderer.bounds.size.y;
-                obstacle.GetComponent<SpriteRenderer>().flipY = false;
-            }
-
-            obstacle.transform.position = newPosition;
-            obstacle.SetActive(true);
-        }
+        private List<GameObject> pool;
+        private GameObject newlyCreatedSpwanable;
+        private GameObject nextToBeSpawn;
+        [SerializeField]
+        private List<Sprite> sprites;
 
         private void Start()
         {
             newPosition = Vector3.zero;
             spawnTimer = new ResettableTimer(time: Random.Range(obstacleData.MinimumRespawnTime, obstacleData.MaximumRespawnTime));
+            pool = new List<GameObject>();
+            newlyCreatedSpwanable = null;
         }
 
         private void Update()
@@ -55,13 +42,77 @@ namespace LimboOfCeres.Scripts.Spawnables.Obstacles
                 return;
             }
 
-            for(int i=0; i < gameObject.transform.childCount; i++)
+            Spawn();
+            nextToBeSpawn = null;
+            spawnTimer.Reset(time: Random.Range(obstacleData.MinimumRespawnTime, obstacleData.MaximumRespawnTime));
+        }
+
+        private void Spawn()
+        {
+            nextToBeSpawn = InactiveSpawnable;
+            if (nextToBeSpawn == null)
             {
-                if (gameObject.transform.GetChild(i).gameObject.activeSelf) continue;
-                SpawnObstacle(gameObject.transform.GetChild(i).gameObject);
-                spawnTimer.Reset(time: Random.Range(obstacleData.MinimumRespawnTime, obstacleData.MaximumRespawnTime));
-                break;
+                nextToBeSpawn = CreateNewSpawnable();
+                newlyCreatedSpwanable = null;
             }
+            else
+            {
+                nextToBeSpawn.SetActive(true);
+            }
+
+            RePositionSpawnable();
+        }
+
+        private GameObject InactiveSpawnable
+        {
+            get
+            {
+                foreach (GameObject spawnable in pool)
+                {
+                    if (!spawnable.activeSelf)
+                    {
+                        return spawnable;
+                    }
+                }
+                return null;
+            }
+        }
+
+        private GameObject CreateNewSpawnable()
+        {
+            newlyCreatedSpwanable = Instantiate(prefabToSpawn, gameObject.transform);
+            InitializeNewSpawnable();
+            pool.Add(newlyCreatedSpwanable);
+            return newlyCreatedSpwanable;
+        }
+
+        private void InitializeNewSpawnable()
+        {
+            newlyCreatedSpwanable.GetComponent<SpriteRenderer>().sprite = RandomSprite;
+        }
+
+        private Sprite RandomSprite => sprites[Random.Range(0, sprites.Count)];
+
+        private void RePositionSpawnable()
+        {
+            newPosition.x = CameraUtils.OrthographicBounds.max.x + nextToBeSpawn.GetComponent<SpriteRenderer>().bounds.size.x;
+            nextToBeSpawn.GetComponent<Rigidbody2D>().gravityScale = Constants.Obstacles.DefaultGravityScale;
+
+            if (Random.value >= Constants.Obstacles.CeilingSpawnProbability)
+            {
+                newPosition.y = CameraUtils.OrthographicBounds.max.y - nextToBeSpawn.GetComponent<SpriteRenderer>().bounds.size.y;
+                newPosition.y -= ceilingSpriteRenderer.bounds.size.y;
+                nextToBeSpawn.GetComponent<SpriteRenderer>().flipY = true;
+                nextToBeSpawn.GetComponent<Rigidbody2D>().gravityScale *= -1;
+            }
+            else
+            {
+                newPosition.y = CameraUtils.OrthographicBounds.min.y + nextToBeSpawn.GetComponent<SpriteRenderer>().bounds.size.y;
+                newPosition.y += floorSpriteRenderer.bounds.size.y;
+                nextToBeSpawn.GetComponent<SpriteRenderer>().flipY = false;
+            }
+
+            nextToBeSpawn.transform.position = newPosition;
         }
     }
 }

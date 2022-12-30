@@ -624,11 +624,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7edc76771c3661440ad9b83e33fc3136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!212 &1020169446 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 5480869236275489648, guid: 3eb6e76e10c62134ab5944b7a88a733c, type: 3}
-  m_PrefabInstance: {fileID: 475282167}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1288449872 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6499353352804542382, guid: 4ffad3c931d16a546bfa11c2687aae2c, type: 3}
@@ -955,6 +950,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 503c99fc8812b24418edf82bcf8a1f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &1832219216 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5480869237306656269, guid: 3eb6e76e10c62134ab5944b7a88a733c, type: 3}
+  m_PrefabInstance: {fileID: 475282167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1835933133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1635,7 +1635,7 @@ PrefabInstance:
     - target: {fileID: 7955689539093541733, guid: a36e257473a8be8488a7b5c6b673a014, type: 3}
       propertyPath: ceilingSpriteRenderer
       value: 
-      objectReference: {fileID: 1020169446}
+      objectReference: {fileID: 1832219216}
     - target: {fileID: 7955689539093541734, guid: a36e257473a8be8488a7b5c6b673a014, type: 3}
       propertyPath: m_RootOrder
       value: 5
