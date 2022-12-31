@@ -29,9 +29,5 @@ namespace LimboOfCeres.Scripts.Spawnables.Shared
             nextToBeSpawn = null;
             spawnTimer.Reset(time: Random.Range(spawningData.MinimumRespawnTime, spawningData.MaximumRespawnTime));
         }
-
-        protected override void InitializeNewSpawnable() { }
-
-        protected override void PositionSpawnable() { }
     }
 }
