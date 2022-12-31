@@ -31,6 +31,8 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         private int ammoRequests;
         private Rigidbody2D rb;
         private Rigidbody2D pumpkinRigidBody2D;
+        private GameObject pumpkinInstance;
+        private RaycastHit2D rayInfo;
 
         public Transform LockedOnTarget { set { lockedOnTarget = value; } }
         public PumpkinBulletSpawner PumpkinBulletSpawner { set { pumpkinBulletSpawner = value; } }
@@ -180,7 +182,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         {
             directionToAim = (Vector2)lockedOnTarget.position - (Vector2)ShootPosition;
             directionToAim.Normalize();
-            RaycastHit2D rayInfo = Physics2D.Raycast(transform.position, directionToAim, range, ~IgnoreMe);
+            rayInfo = Physics2D.Raycast(transform.position, directionToAim, range, ~IgnoreMe);
             if (rayInfo)
             {
                 if (rayInfo.collider.gameObject.CompareTag(Constants.Tags.Player))
@@ -202,7 +204,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
             }
             else
             {
-                GameObject pumpkinInstance = pumpkinBulletSpawner.RequestObject(ShootPosition);
+                pumpkinInstance = pumpkinBulletSpawner.RequestObject(ShootPosition);
                 pumpkinRigidBody2D = pumpkinInstance.GetComponent<Rigidbody2D>();
                 pumpkinRigidBody2D.gravityScale = PumpkinGravityScale;
                 if(rb.gravityScale < 0)
