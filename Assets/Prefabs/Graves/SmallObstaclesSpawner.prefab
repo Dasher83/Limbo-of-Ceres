@@ -44,10 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24686f3cceb2780409442057063b23ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleData: {fileID: 11400000, guid: f55114cf4c5ca9640aa50935da3c3664, type: 2}
+  prefabToSpawn: {fileID: 1349739426613462080, guid: acec30320676fa345a2aea38ba0db42d, type: 3}
+  spawningData: {fileID: 11400000, guid: fac81a6e607252c418b71792e915496f, type: 2}
   floorSpriteRenderer: {fileID: 0}
   ceilingSpriteRenderer: {fileID: 0}
-  prefabToSpawn: {fileID: 1349739426613462080, guid: acec30320676fa345a2aea38ba0db42d, type: 3}
   sprites:
   - {fileID: 21300000, guid: 91a3d11b9b170ed4e8772278dfb942c4, type: 3}
   - {fileID: 21300000, guid: c134d17f872e0464bbbb415699004bd9, type: 3}

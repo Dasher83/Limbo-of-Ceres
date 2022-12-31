@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c0139967cd33ee4ba4bff699b3f1fc9, type: 3}
+  m_Script: {fileID: 11500000, guid: 266d6e5731ed3c44a882951e86f18ef5, type: 3}
   m_Name: SmallObstaclesSpawningData
   m_EditorClassIdentifier: 
   minimumRespawnTime: 1.3
