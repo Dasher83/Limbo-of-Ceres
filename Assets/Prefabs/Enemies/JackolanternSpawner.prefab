@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7363630895381158997}
   - component: {fileID: 7363630895381158996}
   m_Layer: 0
-  m_Name: JackolanternsSpawner
+  m_Name: JackolanternSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f4d514856d1d134a80f8ea063a0c019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jackolanternData: {fileID: 11400000, guid: e2e1347a5afc52d4abd61810a306ec9d, type: 2}
-  pumpkinBulletsSpawner: {fileID: 8147564280617247572, guid: c9ff90f386eb3b448a08a76289d21a84, type: 3}
   prefabToSpawn: {fileID: 4670997851035706755, guid: 941bb6fd8270949498198072aef8aea9, type: 3}
+  spawningData: {fileID: 11400000, guid: 2f2892da7c09db64f9b47d40f65c778b, type: 2}
+  pumpkinBulletsSpawner: {fileID: 0}

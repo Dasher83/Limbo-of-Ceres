@@ -1012,7 +1012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7363630895381158998, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
       propertyPath: m_Name
-      value: JackolanternsSpawner
+      value: JackolanternSpawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
