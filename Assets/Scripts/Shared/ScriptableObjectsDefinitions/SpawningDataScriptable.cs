@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
 {
-    [CreateAssetMenu(fileName = "ObstacleData", menuName = "ScriptableObjects/ObstacleDataScriptableObject", order = 2)]
-    public class ObstacleDataScriptableObject : ScriptableObject
+    [CreateAssetMenu(fileName = "SpawningDataScriptable", menuName = "ScriptableObjects/SpawningDataScriptable", order = 4)]
+    public class SpawningDataScriptable : ScriptableObject
     {
         [SerializeField]
         private float minimumRespawnTime;

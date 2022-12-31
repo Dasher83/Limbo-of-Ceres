@@ -24,16 +24,18 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         private ResettableTimer fireTimer;
         private Vector2 directionToAim;
         private bool clearShot;
-        private SpawnPumpkinBullets pumpkinBulletSpawner;
+        private PumpkinBulletSpawner pumpkinBulletSpawner = null;
         private PlayerRespawnSafely playerRespawnSafely;
         private Color originalColor;
         private SpriteRenderer spriteRender;
         private int ammoRequests;
         private Rigidbody2D rb;
         private Rigidbody2D pumpkinRigidBody2D;
+        private GameObject pumpkinInstance;
+        private RaycastHit2D rayInfo;
 
         public Transform LockedOnTarget { set { lockedOnTarget = value; } }
-        public SpawnPumpkinBullets PumpkinBulletSpawner { set { pumpkinBulletSpawner = value; } }
+        public PumpkinBulletSpawner PumpkinBulletSpawner { set { pumpkinBulletSpawner = value; } }
 
         public PlayerRespawnSafely PlayerRespawnSafely { set { playerRespawnSafely = value; } }
 
@@ -180,7 +182,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         {
             directionToAim = (Vector2)lockedOnTarget.position - (Vector2)ShootPosition;
             directionToAim.Normalize();
-            RaycastHit2D rayInfo = Physics2D.Raycast(transform.position, directionToAim, range, ~IgnoreMe);
+            rayInfo = Physics2D.Raycast(transform.position, directionToAim, range, ~IgnoreMe);
             if (rayInfo)
             {
                 if (rayInfo.collider.gameObject.CompareTag(Constants.Tags.Player))
@@ -202,7 +204,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
             }
             else
             {
-                GameObject pumpkinInstance = pumpkinBulletSpawner.Spawn(spawnPosition: ShootPosition);
+                pumpkinInstance = pumpkinBulletSpawner.RequestObject(ShootPosition);
                 pumpkinRigidBody2D = pumpkinInstance.GetComponent<Rigidbody2D>();
                 pumpkinRigidBody2D.gravityScale = PumpkinGravityScale;
                 if(rb.gravityScale < 0)
