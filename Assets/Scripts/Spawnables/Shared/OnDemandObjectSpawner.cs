@@ -1,23 +1,14 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace LimboOfCeres.Scripts.Spawnables.Shared
 {
-    public class OnDemandObjectSpawner : MonoBehaviour
+    public class OnDemandObjectSpawner : ObjectSpawner
     {
-        [SerializeField]
-        private GameObject prefabToSpawn;
-
-        private List<GameObject> pool;
         private Vector3 spawnPosition;
-        protected GameObject nextToBeSpawn;
-        protected GameObject newlyCreatedSpwanable;
 
-        protected virtual void Start()
+        protected override void Start()
         {
-            pool = new List<GameObject>();
-            nextToBeSpawn = null;
-            newlyCreatedSpwanable = null;
+            base.Start();
         }
 
         public GameObject RequestObject(Vector3 spawnPosition)
@@ -27,49 +18,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Shared
             return nextToBeSpawn;
         }
 
-        private void Spawn()
-        {
-            nextToBeSpawn = InactiveSpawnable;
-            
-            if (nextToBeSpawn == null)
-            {
-                nextToBeSpawn = CreateNewSpawnable();
-                newlyCreatedSpwanable = null;
-            }
-            else
-            {
-                nextToBeSpawn.SetActive(true);
-            }
-
-            RePositionSpawnable();
-        }
-
-        private GameObject InactiveSpawnable
-        {
-            get
-            {
-                foreach (GameObject spawnable in pool)
-                {
-                    if (!spawnable.activeSelf)
-                    {
-                        return spawnable;
-                    }
-                }
-                return null;
-            }
-        }
-
-        private GameObject CreateNewSpawnable()
-        {
-            newlyCreatedSpwanable = Instantiate(prefabToSpawn, gameObject.transform);
-            InitializeNewSpawnable();
-            pool.Add(newlyCreatedSpwanable);
-            return newlyCreatedSpwanable;
-        }
-
-        protected virtual void InitializeNewSpawnable() { }
-
-        protected virtual void RePositionSpawnable()
+        protected override void PositionSpawnable()
         {
             nextToBeSpawn.transform.position = spawnPosition;                
         }

@@ -36,7 +36,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
             this.newlyCreatedSpwanable.GetComponent<ShootPumpkin>().LockedOnTarget = target;
         }
 
-        protected override void RePositionSpawnable()
+        protected override void PositionSpawnable()
         {
             newPosition.x = CameraUtils.OrthographicBounds.max.x + this.nextToBeSpawn.GetComponent<SpriteRenderer>().bounds.size.x;
             this.nextToBeSpawn.GetComponent<Rigidbody2D>().gravityScale = Constants.Enemies.Jackolanterns.DefaultGravityScale;
