@@ -24,7 +24,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         private ResettableTimer fireTimer;
         private Vector2 directionToAim;
         private bool clearShot;
-        private SpawnPumpkinBullets pumpkinBulletSpawner = null;
+        private PumpkinBulletSpawner pumpkinBulletSpawner = null;
         private PlayerRespawnSafely playerRespawnSafely;
         private Color originalColor;
         private SpriteRenderer spriteRender;
@@ -33,7 +33,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         private Rigidbody2D pumpkinRigidBody2D;
 
         public Transform LockedOnTarget { set { lockedOnTarget = value; } }
-        public SpawnPumpkinBullets PumpkinBulletSpawner { set { pumpkinBulletSpawner = value; } }
+        public PumpkinBulletSpawner PumpkinBulletSpawner { set { pumpkinBulletSpawner = value; } }
 
         public PlayerRespawnSafely PlayerRespawnSafely { set { playerRespawnSafely = value; } }
 
@@ -202,7 +202,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
             }
             else
             {
-                GameObject pumpkinInstance = pumpkinBulletSpawner.Spawn(spawnPosition: ShootPosition);
+                GameObject pumpkinInstance = pumpkinBulletSpawner.RequestObject(ShootPosition);
                 pumpkinRigidBody2D = pumpkinInstance.GetComponent<Rigidbody2D>();
                 pumpkinRigidBody2D.gravityScale = PumpkinGravityScale;
                 if(rb.gravityScale < 0)

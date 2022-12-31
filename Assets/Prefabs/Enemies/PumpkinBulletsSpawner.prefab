@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7edc76771c3661440ad9b83e33fc3136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pumpkinBulletPrefab: {fileID: 2091393193384232770, guid: 7d47b7ddebb82fb49bbbfbcb4462eec0, type: 3}
+  prefabToSpawn: {fileID: 2091393193384232770, guid: 7d47b7ddebb82fb49bbbfbcb4462eec0, type: 3}

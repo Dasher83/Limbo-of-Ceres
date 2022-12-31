@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace LimboOfCeres.Scripts.Spawnables.Shared
 {
-    public abstract class ObjectSpawner : MonoBehaviour
+    public class ContinuousObjectSpawner : MonoBehaviour
     {
         [SerializeField]
         private GameObject prefabToSpawn;
@@ -79,8 +79,8 @@ namespace LimboOfCeres.Scripts.Spawnables.Shared
             return newlyCreatedSpwanable;
         }
 
-        protected abstract void InitializeNewSpawnable();
+        protected virtual void InitializeNewSpawnable() { }
 
-        protected abstract void RePositionSpawnable();
+        protected virtual void RePositionSpawnable() { }
     }
 }

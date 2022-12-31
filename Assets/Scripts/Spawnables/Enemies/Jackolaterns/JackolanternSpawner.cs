@@ -7,10 +7,10 @@ using LimboOfCeres.Scripts.Spawnables.Shared;
 
 namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 {
-    public class JackolanternSpawner : ObjectSpawner
+    public class JackolanternSpawner : ContinuousObjectSpawner
     {
         [SerializeField]
-        private SpawnPumpkinBullets pumpkinBulletsSpawner;
+        private PumpkinBulletSpawner pumpkinBulletsSpawner;
         private Transform target = null;
         private SpriteRenderer floorSpriteRenderer = null;
         private SpriteRenderer ceilingSpriteRenderer = null;
