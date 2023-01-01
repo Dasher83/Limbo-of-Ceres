@@ -201,9 +201,6 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
             if (ammoRequests > 0)
             {
                 ammoRequests--;
-            }
-            else
-            {
                 pumpkinInstance = pumpkinBulletSpawner.RequestObject(ShootPosition);
                 pumpkinRigidBody2D = pumpkinInstance.GetComponent<Rigidbody2D>();
                 pumpkinRigidBody2D.gravityScale = PumpkinGravityScale;
@@ -211,7 +208,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
                 {
                     pumpkinRigidBody2D.gravityScale *= -1;
                 }
-                pumpkinRigidBody2D.AddForce(directionToAim * FireForce * Random.Range(0.75f, 1.00f));
+                pumpkinRigidBody2D.AddForce(FireForce * Random.Range(0.75f, 1.00f) * directionToAim);
             }
         }
 

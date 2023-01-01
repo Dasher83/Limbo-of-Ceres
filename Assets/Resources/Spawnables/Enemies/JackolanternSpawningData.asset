@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 266d6e5731ed3c44a882951e86f18ef5, type: 3}
   m_Name: JackolanternSpawningData
   m_EditorClassIdentifier: 
-  minimumRespawnTime: 1.8
-  maximumRespawnTime: 3.3
+  minimumRespawnTime: 1.2
+  maximumRespawnTime: 2.2

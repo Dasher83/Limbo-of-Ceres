@@ -17,7 +17,10 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
                 }
             }
 
-            gameObject.SetActive(false);
+            if (!collision.gameObject.CompareTag(Constants.Tags.Projectile))
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }

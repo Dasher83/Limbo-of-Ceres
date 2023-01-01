@@ -38,19 +38,19 @@ namespace LimboOfCeres.Scripts.Shared
                 public const float DefaultGravityScale = 10f;
                 public const float CeilingSpawnProbability = 0.6f;
                 public const float DiplomaticThreshold = 3.8f;
-                public const int AmmoRequestsMinimum = 2;
-                public const int AmmoRequestsMaximum = 4;
-                public const float AimRateMinimum = 1f;
-                public const float AimRateMaximum = 1.5f;
-                public const float FireRateMinimum = 1f;
-                public const float FireRateMaximum = 1.5f;
+                public const int AmmoRequestsMinimum = 4;
+                public const int AmmoRequestsMaximum = 8;
+                public const float AimRateMinimum = 0.25f;
+                public const float AimRateMaximum = 0.375f;
+                public const float FireRateMinimum = 0.25f;
+                public const float FireRateMaximum = 0.375f;
                 public const float FloorSpeedBoost = 0.75f;
-                public const float StraightPumkinProbability = 0.62f;
+                public const float StraightPumkinProbability = 0.31f;
 
                 public static class Pumpkin
                 {
-                    public const float GravityScaleMinimum = 0f;
-                    public const float GravityScaleMaximum = 0.15f;
+                    public const float GravityScaleMinimum = -0.30f;
+                    public const float GravityScaleMaximum = 0.30f;
                 }
             }
         }
@@ -74,14 +74,6 @@ namespace LimboOfCeres.Scripts.Shared
         public static class AudioPlayer 
         {
             public const float InBetweenSongsPauseLength = 0.3f;
-        }
-
-        public static class Animations
-        {
-            public const float HeartAnimTime = 0.22f;
-            public const float ShakeAnim = 0.1f;
-            public const float VanishAnimTime = 0.02f;
-            public const float AppearAnimTime = 0.08f;
         }
 
         public static class ExtraLife
