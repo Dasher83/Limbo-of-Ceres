@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 {
-    public class PumpkinBulletDestruction : MonoBehaviour
+    public class BulletDestruction : MonoBehaviour
     {
         private void OnCollisionEnter2D(Collision2D collision)
         {

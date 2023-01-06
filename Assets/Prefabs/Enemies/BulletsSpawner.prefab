@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8147564280617247571}
   - component: {fileID: 8147564280617247572}
   m_Layer: 0
-  m_Name: PumpkinBulletsSpawner
+  m_Name: BulletsSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

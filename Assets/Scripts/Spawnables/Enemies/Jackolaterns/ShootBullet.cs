@@ -1,11 +1,13 @@
+using LimboOfCeres.Scripts.Difficulty;
 using LimboOfCeres.Scripts.PlayerScritps;
 using LimboOfCeres.Scripts.Shared;
+using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using LimboOfCeres.Scripts.TimeScripts;
 using UnityEngine;
 
 namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 {
-    public class ShootPumpkin : MonoBehaviour
+    public class ShootBullet : MonoBehaviour
     {
         [SerializeField]
         private LayerMask IgnoreMe;
@@ -19,12 +21,13 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         private Color cooldownColor;
         [SerializeField]
         private GameObject pumpkinPrefab;
+        private UpgradeBulletData bulletDataUpgrader;
         private Transform lockedOnTarget;
         private ResettableTimer aimTimer;
         private ResettableTimer fireTimer;
         private Vector2 directionToAim;
         private bool clearShot;
-        private PumpkinBulletSpawner pumpkinBulletSpawner = null;
+        private BulletSpawner bulletSpawner = null;
         private PlayerRespawnSafely playerRespawnSafely;
         private Color originalColor;
         private SpriteRenderer spriteRender;
@@ -35,9 +38,11 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         private RaycastHit2D rayInfo;
 
         public Transform LockedOnTarget { set { lockedOnTarget = value; } }
-        public PumpkinBulletSpawner PumpkinBulletSpawner { set { pumpkinBulletSpawner = value; } }
+        public BulletSpawner BulletSpawner { set { bulletSpawner = value; } }
 
         public PlayerRespawnSafely PlayerRespawnSafely { set { playerRespawnSafely = value; } }
+
+        public UpgradeBulletData BulletDataUpgrader { set { bulletDataUpgrader = value; } }
 
         private float FireForce
         {
@@ -87,7 +92,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         {
             get
             {
-                if(Random.value > Constants.Enemies.Jackolanterns.StraightPumkinProbability)
+                if(Random.value <= bulletDataUpgrader.CurvedProbability)
                 {
                     return Random.Range(
                         Constants.Enemies.Jackolanterns.Pumpkin.GravityScaleMinimum,
@@ -141,7 +146,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 
         private void Update()
         {
-            if (lockedOnTarget == null || pumpkinBulletSpawner == null || playerRespawnSafely == null) return;
+            if (lockedOnTarget == null || bulletSpawner == null || playerRespawnSafely == null) return;
 
             if (playerRespawnSafely.IsPlayerProtected)
             {
@@ -201,7 +206,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
             if (ammoRequests > 0)
             {
                 ammoRequests--;
-                pumpkinInstance = pumpkinBulletSpawner.RequestObject(ShootPosition);
+                pumpkinInstance = bulletSpawner.RequestObject(ShootPosition);
                 pumpkinRigidBody2D = pumpkinInstance.GetComponent<Rigidbody2D>();
                 pumpkinRigidBody2D.gravityScale = PumpkinGravityScale;
                 if(rb.gravityScale < 0)

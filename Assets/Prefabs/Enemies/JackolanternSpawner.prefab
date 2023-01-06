@@ -46,4 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 4670997851035706755, guid: 941bb6fd8270949498198072aef8aea9, type: 3}
   spawningData: {fileID: 11400000, guid: 2f2892da7c09db64f9b47d40f65c778b, type: 2}
-  pumpkinBulletsSpawner: {fileID: 0}
+  bulletsSpawner: {fileID: 0}
+  bulletData: {fileID: 11400000, guid: 8edd96008cd95f54da45b3176cf5c1d4, type: 2}

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 {
-    public class PumpkinBulletDespawn : MonoBehaviour
+    public class BulletDespawn : MonoBehaviour
     {
         private float leftEdge;
         private SpriteRenderer spriteRenderer;

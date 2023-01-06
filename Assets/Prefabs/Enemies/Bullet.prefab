@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2091393193384232766}
   - component: {fileID: 1648431752266393112}
   m_Layer: 8
-  m_Name: PumpkinBullet
+  m_Name: Bullet
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
