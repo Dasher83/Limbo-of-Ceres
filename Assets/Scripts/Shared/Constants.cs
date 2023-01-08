@@ -111,6 +111,8 @@ namespace LimboOfCeres.Scripts.Shared
                 public const float Minimum = 10f;
                 public const float Maximum = 100f;
             }
+
+            public const float LevelUpFactor = 1.1f;
         }
     }
 }

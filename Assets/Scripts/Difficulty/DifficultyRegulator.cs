@@ -11,6 +11,8 @@ namespace LimboOfCeres
     {
         [SerializeField]
         private PlayerData playerData;
+        [SerializeField]
+        private GameObject upgradersGameObject;
         private List<Upgradable> upgraders;
         private float metersUntilNextLevelUp;
         private int upgradersIndex;
@@ -21,9 +23,9 @@ namespace LimboOfCeres
         private void Start()
         {
             upgraders = new List<Upgradable>();
-            for(int i = 0; i < transform.childCount; i++)
+            for(int i = 0; i < upgradersGameObject.transform.childCount; i++)
             {
-                upgraders.Add(transform.GetChild(i).gameObject.GetComponent<Upgradable>());
+                upgraders.Add(upgradersGameObject.transform.GetChild(i).gameObject.GetComponent<Upgradable>());
             }
             metersUntilNextLevelUp = MetersUntilLevelUp;
         }
@@ -33,7 +35,7 @@ namespace LimboOfCeres
             if (IsAtLimit)
             {
                 shownLimit = true;
-                Debug.LogError("This gameplay cannot get more difficult");
+                gameObject.SetActive(false);
                 return;
             }
             metersUntilNextLevelUp -= playerData.DeltaMeters;

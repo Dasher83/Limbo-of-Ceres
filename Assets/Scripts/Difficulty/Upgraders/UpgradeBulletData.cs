@@ -9,7 +9,6 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
     {
         [SerializeField]
         private BulletsDataScriptable bulletsData;
-        private const float LevelUpFactor = 1.1f;
 
         public float CurvedProbability
         {
@@ -27,21 +26,19 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
             }
         }
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
             bulletsData.Initialize(Constants.Projectiles.Bullet.CurvedProbability.Minimum);
-            Debug.LogError($"BulletLevelUp started at {CurvedProbability}");
         }
 
         public override bool Upgrade()
         {
             if (IsAtLimit)
             {
-                Debug.LogError($"BulletLevelUp capped at {CurvedProbability}");
                 return false;
             }
-            CurvedProbability *= LevelUpFactor;
-            Debug.LogError($"BulletLevelUp to {CurvedProbability}");
+            CurvedProbability *= this.LevelUpFactor;
             return true;
         }
 
