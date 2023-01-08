@@ -1,7 +1,9 @@
+using LimboOfCeres.Scripts.Shared.Enums;
+
 namespace LimboOfCeres.Scripts.Shared.Interfaces
 {
     public interface IUpgradable
     {
-        bool Upgrade();
+        UpgradeStatus Upgrade();
     }
 }

@@ -1,4 +1,5 @@
 using LimboOfCeres.Scripts.Shared;
+using LimboOfCeres.Scripts.Shared.Enums;
 using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using UnityEngine;
 
@@ -32,14 +33,14 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
             bulletsData.Initialize(Constants.Projectiles.Bullet.CurvedProbability.Minimum);
         }
 
-        public override bool Upgrade()
+        public override UpgradeStatus Upgrade()
         {
             if (IsAtLimit)
             {
-                return false;
+                return UpgradeStatus.FAILED;
             }
             CurvedProbability *= this.LevelUpFactor;
-            return true;
+            return UpgradeStatus.SUCCESSFUL;
         }
 
         public bool IsAtLimit => Mathf.Approximately(Constants.Projectiles.Bullet.CurvedProbability.Maximum, bulletsData.CurvedProbability);

@@ -1,5 +1,6 @@
 using LimboOfCeres.Scripts.Difficulty.Upgraders;
 using LimboOfCeres.Scripts.Shared;
+using LimboOfCeres.Scripts.Shared.Enums;
 using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using System.Collections.Generic;
 using UnityEngine;
@@ -54,7 +55,7 @@ namespace LimboOfCeres
         private void LevelUp()
         {
             upgradersIndex = Random.Range(0, upgraders.Count);
-            if (!upgraders[upgradersIndex].Upgrade())
+            if (upgraders[upgradersIndex].Upgrade() == UpgradeStatus.FAILED)
             {
                 upgraders.RemoveAt(upgradersIndex);
             }
