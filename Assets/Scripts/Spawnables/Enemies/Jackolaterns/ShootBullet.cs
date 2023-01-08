@@ -1,9 +1,9 @@
-using LimboOfCeres.Scripts.Difficulty;
+using LimboOfCeres.Scripts.Difficulty.Upgraders;
 using LimboOfCeres.Scripts.PlayerScritps;
 using LimboOfCeres.Scripts.Shared;
-using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using LimboOfCeres.Scripts.TimeScripts;
 using UnityEngine;
+
 
 namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 {

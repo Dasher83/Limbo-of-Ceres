@@ -4,7 +4,7 @@ using UnityEngine;
 using LimboOfCeres.Scripts.Spawnables.Enemies.Shared;
 using LimboOfCeres.Scripts.PlayerScritps;
 using LimboOfCeres.Scripts.Spawnables.Shared;
-using LimboOfCeres.Scripts.Difficulty;
+using LimboOfCeres.Scripts.Difficulty.Upgraders;
 
 namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 {

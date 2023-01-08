@@ -103,6 +103,15 @@ namespace LimboOfCeres.Scripts.Shared
             public const string PumpkinBulletsSpawner = "PumpkinBulletsSpawner";
             public const string PauseMenu = "PauseMenu";
         }
+
+        public static class Difficulty
+        {
+            public static class MetersUntilLevelUp
+            {
+                public const float Minimum = 10f;
+                public const float Maximum = 100f;
+            }
+        }
     }
 }
 

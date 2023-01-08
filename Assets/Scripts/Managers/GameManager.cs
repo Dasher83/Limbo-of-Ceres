@@ -3,6 +3,7 @@ using LimboOfCeres.Scripts.Shared.Enums;
 using LimboOfCeres.Scripts.Shared.Interfaces;
 using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using LimboOfCeres.Scripts.UI;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -14,7 +15,7 @@ namespace LimboOfCeres.Scripts.Managers
         [SerializeField] private GameOver gameOverMenu;
         [SerializeField] private LifeBar lifeBar;
         [SerializeField] private MetersCounter metersCounter;
-        [SerializeField] private GameObject pauseButton;
+        [SerializeField] private List<GameObject> toDeactivateOnGameOver;
 
         private GameState currentState;
 
@@ -70,16 +71,19 @@ namespace LimboOfCeres.Scripts.Managers
                     // TODO : fall animation
                     AudioPlayer.instance.StopSong();
                     Time.timeScale = 0f;
-                    HideIuInGameOver();
+                    DeactivateOnGameOver();
                     gameOverMenu.StartGameOver();
                     break;
             }
         }
 
-        private void HideIuInGameOver()
+        private void DeactivateOnGameOver()
         {
             metersCounter.gameObject.SetActive(false);
-            pauseButton.SetActive(false);
+            foreach(GameObject toBeDeactivated in toDeactivateOnGameOver)
+            {
+                toBeDeactivated.SetActive(false);
+            }
         }
     }
 }

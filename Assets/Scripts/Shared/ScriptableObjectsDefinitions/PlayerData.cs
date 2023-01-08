@@ -7,13 +7,16 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
     public class PlayerData : ScriptableObject, IDurable, IDamageable, IRestorable
     {
         [SerializeField] private int lives;
-        private float meters;
+        private float currentMeters;
+        private float previousMeters;
 
-        public float CurrentMeters => meters;
+        public float CurrentMeters => currentMeters;
+
+        public float DeltaMeters => currentMeters - previousMeters;
 
         public int CurrentDurability => lives;
         public int MaxDurability => Constants.Player.MaxLives;
-        public int InitialDurability => Constants.Player.InitialLives; 
+        public int InitialDurability => Constants.Player.InitialLives;
 
         public int ReceiveDamage(int damage)
         {
@@ -52,13 +55,19 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
 
         public void AddMeters(float ScrollingSpeed)
         {
-            meters += Mathf.Abs(ScrollingSpeed) * Time.deltaTime/2;
+            previousMeters = currentMeters;
+            currentMeters += Mathf.Abs(ScrollingSpeed) * Time.deltaTime/2;
         }
 
         public void Initialize()
         {
             lives = Constants.Player.InitialLives;
-            meters = 0;
+            currentMeters = 0;
+        }
+
+        private void OnDisable()
+        {
+            previousMeters = 0;
         }
     }
 }

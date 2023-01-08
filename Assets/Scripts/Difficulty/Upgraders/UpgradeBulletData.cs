@@ -3,9 +3,9 @@ using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using UnityEngine;
 
 
-namespace LimboOfCeres.Scripts.Difficulty
+namespace LimboOfCeres.Scripts.Difficulty.Upgraders
 {
-    public class UpgradeBulletData : LimitedUpgradable
+    public class UpgradeBulletData : Upgradable, ILimited
     {
         [SerializeField]
         private BulletsDataScriptable bulletsData;
@@ -30,14 +30,21 @@ namespace LimboOfCeres.Scripts.Difficulty
         private void Start()
         {
             bulletsData.Initialize(Constants.Projectiles.Bullet.CurvedProbability.Minimum);
+            Debug.LogError($"BulletLevelUp started at {CurvedProbability}");
         }
 
-        public override void Upgrade()
+        public override bool Upgrade()
         {
-            base.Upgrade();
-            CurvedProbability *= LevelUpFactor; 
+            if (IsAtLimit)
+            {
+                Debug.LogError($"BulletLevelUp capped at {CurvedProbability}");
+                return false;
+            }
+            CurvedProbability *= LevelUpFactor;
+            Debug.LogError($"BulletLevelUp to {CurvedProbability}");
+            return true;
         }
 
-        protected override bool IsAtLimit => Mathf.Approximately(Constants.Projectiles.Bullet.CurvedProbability.Maximum, bulletsData.CurvedProbability);
+        public bool IsAtLimit => Mathf.Approximately(Constants.Projectiles.Bullet.CurvedProbability.Maximum, bulletsData.CurvedProbability);
     }
 }

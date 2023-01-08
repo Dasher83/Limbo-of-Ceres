@@ -646,6 +646,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae826cc7f6edddf4f8bb0f20820c0a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1363105970 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2175351750211569493, guid: 950c3948f01123a47b105e2e048d3b99, type: 3}
+  m_PrefabInstance: {fileID: 2175351750258194946}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1428367057
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,6 +984,10 @@ PrefabInstance:
       objectReference: {fileID: 777104003}
     - target: {fileID: 7363630895381158996, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
       propertyPath: upgradeBulletData
+      value: 
+      objectReference: {fileID: 570843368}
+    - target: {fileID: 7363630895381158996, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
+      propertyPath: bulletDataUpgrader
       value: 
       objectReference: {fileID: 570843368}
     - target: {fileID: 7363630895381158996, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
@@ -1331,7 +1340,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2175351750211569493, guid: 950c3948f01123a47b105e2e048d3b99, type: 3}
       propertyPath: m_Name
-      value: Upgraders
+      value: DifficultyRegulator
       objectReference: {fileID: 0}
     - target: {fileID: 2175351750211569499, guid: 950c3948f01123a47b105e2e048d3b99, type: 3}
       propertyPath: m_RootOrder
@@ -1695,6 +1704,18 @@ PrefabInstance:
       propertyPath: metersCounter
       value: 
       objectReference: {fileID: 452569973}
+    - target: {fileID: 8120543152943485205, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
+      propertyPath: toDeactivateOnGameOver.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120543152943485205, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
+      propertyPath: toDeactivateOnGameOver.Array.data[0]
+      value: 
+      objectReference: {fileID: 452569972}
+    - target: {fileID: 8120543152943485205, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
+      propertyPath: toDeactivateOnGameOver.Array.data[1]
+      value: 
+      objectReference: {fileID: 1363105970}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
 --- !u!1001 &8944472602951488911
