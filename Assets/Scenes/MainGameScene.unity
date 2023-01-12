@@ -140,6 +140,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171c221e62660954bb61c498c0c02b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &116155222 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2175351749688138474, guid: 3fd38c88d321b7c4bb9e210328e38a8e, type: 3}
+  m_PrefabInstance: {fileID: 1124944948}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca065cc677e6f6740929c4ad527582d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &295364929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -631,6 +642,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2175351749688138474, guid: 3fd38c88d321b7c4bb9e210328e38a8e, type: 3}
+      propertyPath: physicMaterial
+      value: 
+      objectReference: {fileID: 6200000, guid: db3e17c1d96fce243bd03c3b384f15c2, type: 2}
     - target: {fileID: 2175351750211569493, guid: 3fd38c88d321b7c4bb9e210328e38a8e, type: 3}
       propertyPath: m_Name
       value: Upgraders
@@ -1040,7 +1055,7 @@ PrefabInstance:
     - target: {fileID: 7363630895381158996, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
       propertyPath: bulletDataUpgrader
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 116155222}
     - target: {fileID: 7363630895381158996, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
       propertyPath: pumpkinBulletsSpawner
       value: 

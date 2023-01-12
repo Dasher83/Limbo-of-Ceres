@@ -63,6 +63,12 @@ namespace LimboOfCeres.Scripts.Shared
                     public const float Minimum = 0.38f;
                     public const float Maximum = 0.69f;
                 }
+
+                public static class Bounciness
+                {
+                    public const float Minimum = 0.1f;
+                    public const float Maximum = 8f;
+                }
             }
         }
 

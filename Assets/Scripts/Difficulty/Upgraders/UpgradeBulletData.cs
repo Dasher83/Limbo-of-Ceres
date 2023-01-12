@@ -10,6 +10,7 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
     {
         [SerializeField]
         private BulletsDataScriptable bulletsData;
+        private float decisionNumber;
 
         public float CurvedProbability
         {
@@ -27,10 +28,26 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
             }
         }
 
+        public float Bounciness
+        {
+            get { return bulletsData.Bounciness; }
+
+            private set
+            {
+                if(value > Constants.Projectiles.Bullet.Bounciness.Maximum)
+                {
+                    bulletsData.Bounciness = Constants.Projectiles.Bullet.Bounciness.Maximum;
+                    return;
+                }
+
+                bulletsData.Bounciness = value;
+            }
+        }
+
         protected override void Start()
         {
             base.Start();
-            bulletsData.Initialize(Constants.Projectiles.Bullet.CurvedProbability.Minimum);
+            bulletsData.Initialize();
         }
 
         public override UpgradeStatus Upgrade()
@@ -39,10 +56,27 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
             {
                 return UpgradeStatus.FAILED;
             }
-            CurvedProbability *= this.LevelUpFactor;
-            return UpgradeStatus.SUCCESSFUL;
+
+            decisionNumber = Random.Range(0, 2);
+
+            if (decisionNumber < 1 && !BouncinessIsAtLimit)
+            {
+                Bounciness *= this.LevelUpFactor;
+                return UpgradeStatus.SUCCESSFUL;
+            }
+            if (decisionNumber > 1 && !CurvedProbabilityIsAtLimit)
+            {
+                CurvedProbability *= this.LevelUpFactor;
+                return UpgradeStatus.SUCCESSFUL;
+            }
+
+            return UpgradeStatus.FAILED;
         }
 
-        public bool IsAtLimit => Mathf.Approximately(Constants.Projectiles.Bullet.CurvedProbability.Maximum, bulletsData.CurvedProbability);
+        public bool IsAtLimit => CurvedProbabilityIsAtLimit && BouncinessIsAtLimit;
+
+        private bool CurvedProbabilityIsAtLimit => Mathf.Approximately(Constants.Projectiles.Bullet.CurvedProbability.Maximum, bulletsData.CurvedProbability);
+
+        private bool BouncinessIsAtLimit => Mathf.Approximately(Constants.Projectiles.Bullet.Bounciness.Maximum, bulletsData.Bounciness);
     }
 }

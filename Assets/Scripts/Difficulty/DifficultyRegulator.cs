@@ -55,7 +55,8 @@ namespace LimboOfCeres
         private void LevelUp()
         {
             upgradersIndex = Random.Range(0, upgraders.Count);
-            if (upgraders[upgradersIndex].Upgrade() == UpgradeStatus.FAILED)
+            if (upgraders[upgradersIndex].Upgrade() == UpgradeStatus.FAILED &&
+                upgraders[upgradersIndex] is ILimited limited && limited.IsAtLimit)
             {
                 upgraders.RemoveAt(upgradersIndex);
             }

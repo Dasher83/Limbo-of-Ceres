@@ -6,12 +6,15 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
     public class BulletsDataScriptable : ScriptableObject
     {
         private float curvedProbability;
+        private float bounciness;
 
         public float CurvedProbability { get { return curvedProbability; } set { curvedProbability = value; } }
+        public float Bounciness { get { return bounciness; } set { bounciness = value; } }
 
-        public void Initialize(float curvedProbability)
+        public void Initialize()
         {
-            this.curvedProbability = curvedProbability;
+            this.curvedProbability = Constants.Projectiles.Bullet.CurvedProbability.Minimum;
+            this.bounciness = Constants.Projectiles.Bullet.Bounciness.Minimum;
         }
     }
 }

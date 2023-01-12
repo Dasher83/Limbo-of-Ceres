@@ -36,6 +36,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         private Rigidbody2D pumpkinRigidBody2D;
         private GameObject pumpkinInstance;
         private RaycastHit2D rayInfo;
+        private PhysicsMaterial2D newPhysicsMaterial2D;
 
         public Transform LockedOnTarget { set { lockedOnTarget = value; } }
         public BulletSpawner BulletSpawner { set { bulletSpawner = value; } }
@@ -212,6 +213,12 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
                 if(rb.gravityScale < 0)
                 {
                     pumpkinRigidBody2D.gravityScale *= -1;
+                }
+                if(pumpkinRigidBody2D.sharedMaterial.bounciness != bulletDataUpgrader.Bounciness)
+                {
+                    newPhysicsMaterial2D = new PhysicsMaterial2D();
+                    newPhysicsMaterial2D.bounciness = bulletDataUpgrader.Bounciness;
+                    pumpkinRigidBody2D.sharedMaterial = newPhysicsMaterial2D;
                 }
                 pumpkinRigidBody2D.AddForce(FireForce * Random.Range(0.75f, 1.00f) * directionToAim);
             }
