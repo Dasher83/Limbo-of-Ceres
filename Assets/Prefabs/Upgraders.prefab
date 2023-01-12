@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2175351749688138469}
   - component: {fileID: 2175351749688138474}
   m_Layer: 0
-  m_Name: BulletDataUpgrader
+  m_Name: BulletUpgrader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

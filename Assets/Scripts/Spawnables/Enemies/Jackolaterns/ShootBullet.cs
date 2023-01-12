@@ -21,7 +21,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         private Color cooldownColor;
         [SerializeField]
         private GameObject pumpkinPrefab;
-        private UpgradeBulletData bulletDataUpgrader;
+        private BulletUpgrader bulletUpgrader;
         private Transform lockedOnTarget;
         private ResettableTimer aimTimer;
         private ResettableTimer fireTimer;
@@ -43,7 +43,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 
         public PlayerRespawnSafely PlayerRespawnSafely { set { playerRespawnSafely = value; } }
 
-        public UpgradeBulletData BulletDataUpgrader { set { bulletDataUpgrader = value; } }
+        public BulletUpgrader BulletUpgrader { set { bulletUpgrader = value; } }
 
         private float FireForce
         {
@@ -89,7 +89,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
             }
         }
 
-        private float BulletGravityScale => Random.Range(bulletDataUpgrader.GravityScaleMinimum, bulletDataUpgrader.GravityScaleMaximum);
+        private float BulletGravityScale => Random.Range(bulletUpgrader.GravityScaleMinimum, bulletUpgrader.GravityScaleMaximum);
 
         private Vector3 ShootPosition { 
             get {
@@ -202,10 +202,10 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
                 {
                     pumpkinRigidBody2D.gravityScale *= -1;
                 }
-                if(pumpkinRigidBody2D.sharedMaterial.bounciness != bulletDataUpgrader.Bounciness)
+                if(pumpkinRigidBody2D.sharedMaterial.bounciness != bulletUpgrader.Bounciness)
                 {
                     newPhysicsMaterial2D = new PhysicsMaterial2D();
-                    newPhysicsMaterial2D.bounciness = bulletDataUpgrader.Bounciness;
+                    newPhysicsMaterial2D.bounciness = bulletUpgrader.Bounciness;
                     pumpkinRigidBody2D.sharedMaterial = newPhysicsMaterial2D;
                 }
                 pumpkinRigidBody2D.AddForce(FireForce * Random.Range(0.75f, 1.00f) * directionToAim);

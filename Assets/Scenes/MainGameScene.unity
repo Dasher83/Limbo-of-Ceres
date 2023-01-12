@@ -1045,6 +1045,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7363630895381158996, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
+      propertyPath: bulletUpgrader
+      value: 
+      objectReference: {fileID: 116155222}
+    - target: {fileID: 7363630895381158996, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
       propertyPath: bulletsSpawner
       value: 
       objectReference: {fileID: 777104003}
