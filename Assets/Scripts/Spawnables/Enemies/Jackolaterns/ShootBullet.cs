@@ -1,6 +1,6 @@
-using LimboOfCeres.Scripts.Difficulty.Upgraders;
 using LimboOfCeres.Scripts.PlayerScritps;
 using LimboOfCeres.Scripts.Shared;
+using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using LimboOfCeres.Scripts.TimeScripts;
 using UnityEngine;
 
@@ -21,7 +21,8 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         private Color cooldownColor;
         [SerializeField]
         private GameObject pumpkinPrefab;
-        private BulletUpgrader bulletUpgrader;
+        [SerializeField]
+        private BulletsDataScriptable bulletsData;
         private Transform lockedOnTarget;
         private ResettableTimer aimTimer;
         private ResettableTimer fireTimer;
@@ -42,8 +43,6 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         public BulletSpawner BulletSpawner { set { bulletSpawner = value; } }
 
         public PlayerRespawnSafely PlayerRespawnSafely { set { playerRespawnSafely = value; } }
-
-        public BulletUpgrader BulletUpgrader { set { bulletUpgrader = value; } }
 
         private float FireForce
         {
@@ -89,7 +88,16 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
             }
         }
 
-        private float BulletGravityScale => Random.Range(bulletUpgrader.GravityScaleMinimum, bulletUpgrader.GravityScaleMaximum);
+        private float BulletGravityScale {
+            get
+            {
+                if(Random.value > bulletsData.CurvedProbability)
+                {
+                    return Random.Range(bulletsData.GravityScaleMinimum, bulletsData.GravityScaleMaximum);
+                }
+                return 0;
+            }
+        }
 
         private Vector3 ShootPosition { 
             get {
@@ -202,10 +210,10 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
                 {
                     pumpkinRigidBody2D.gravityScale *= -1;
                 }
-                if(pumpkinRigidBody2D.sharedMaterial.bounciness != bulletUpgrader.Bounciness)
+                if(pumpkinRigidBody2D.sharedMaterial.bounciness != bulletsData.Bounciness)
                 {
                     newPhysicsMaterial2D = new PhysicsMaterial2D();
-                    newPhysicsMaterial2D.bounciness = bulletUpgrader.Bounciness;
+                    newPhysicsMaterial2D.bounciness = bulletsData.Bounciness;
                     pumpkinRigidBody2D.sharedMaterial = newPhysicsMaterial2D;
                 }
                 pumpkinRigidBody2D.AddForce(FireForce * Random.Range(0.75f, 1.00f) * directionToAim);

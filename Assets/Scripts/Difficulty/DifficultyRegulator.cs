@@ -1,4 +1,4 @@
-using LimboOfCeres.Scripts.Difficulty.Upgraders;
+using LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore;
 using LimboOfCeres.Scripts.Shared;
 using LimboOfCeres.Scripts.Shared.Enums;
 using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
@@ -11,22 +11,22 @@ namespace LimboOfCeres
     public class DifficultyRegulator : MonoBehaviour
     {
         [SerializeField]
-        private PlayerData playerData;
+        private PlayerDataScriptable playerData;
         [SerializeField]
         private GameObject upgradersGameObject;
-        private List<Upgrader> upgraders;
+
+        private List<UpgraderComposite> upgraders;
         private float metersUntilNextLevelUp;
         private int upgradersIndex;
 
-        private bool IsAtLimit => upgraders.Count == 0 && !shownLimit;
-        private bool shownLimit = false; // delete this when it outlives it debbuging usefulness
+        private bool IsAtLimit => upgraders.Count == 0;
 
         private void Start()
         {
-            upgraders = new List<Upgrader>();
+            upgraders = new List<UpgraderComposite>();
             for(int i = 0; i < upgradersGameObject.transform.childCount; i++)
             {
-                upgraders.Add(upgradersGameObject.transform.GetChild(i).gameObject.GetComponent<Upgrader>());
+                upgraders.Add(upgradersGameObject.transform.GetChild(i).gameObject.GetComponent<UpgraderComposite>());
             }
             metersUntilNextLevelUp = MetersUntilLevelUp;
         }
@@ -35,7 +35,7 @@ namespace LimboOfCeres
         {
             if (IsAtLimit)
             {
-                shownLimit = true;
+                upgradersGameObject.SetActive(false);
                 gameObject.SetActive(false);
                 return;
             }
@@ -55,11 +55,16 @@ namespace LimboOfCeres
         private void LevelUp()
         {
             upgradersIndex = Random.Range(0, upgraders.Count);
-            if (upgraders[upgradersIndex].Upgrade() == UpgradeStatus.FAILED &&
-                upgraders[upgradersIndex] is ILimited limited && limited.IsAtLimit)
+            if (upgraders[upgradersIndex].Upgrade() == UpgradeStatus.FAILED && upgraders[upgradersIndex].IsAtLimit)
             {
+                upgraders[upgradersIndex].transform.gameObject.SetActive(false);
                 upgraders.RemoveAt(upgradersIndex);
             }
+        }
+
+        private void OnDisable()
+        {
+            Debug.LogError("Game reached maximum difficulty!");
         }
     }
 }

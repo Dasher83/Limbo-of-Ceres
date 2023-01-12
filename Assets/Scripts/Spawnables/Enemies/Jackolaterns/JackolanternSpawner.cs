@@ -12,8 +12,6 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
     {
         [SerializeField]
         private BulletSpawner bulletsSpawner;
-        [SerializeField]
-        private BulletUpgrader bulletUpgrader;
         private Transform target = null;
         private SpriteRenderer floorSpriteRenderer = null;
         private SpriteRenderer ceilingSpriteRenderer = null;
@@ -34,7 +32,6 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         protected override void InitializeNewSpawnable()
         {
             this.newlyCreatedSpwanable.GetComponent<ShootBullet>().BulletSpawner = bulletsSpawner;
-            this.newlyCreatedSpwanable.GetComponent<ShootBullet>().BulletUpgrader = bulletUpgrader;
             this.newlyCreatedSpwanable.GetComponent<ShootBullet>().PlayerRespawnSafely = playerRespawnSafely;
             this.newlyCreatedSpwanable.GetComponent<ShootBullet>().LockedOnTarget = target;
             this.newlyCreatedSpwanable.GetComponent<FaceTarget>().LockedOnTarget = target;

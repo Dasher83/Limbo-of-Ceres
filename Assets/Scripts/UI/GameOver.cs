@@ -14,7 +14,7 @@ namespace LimboOfCeres.Scripts.UI
         [SerializeField] private GameObject inputNewHighScoreMenu;
         [SerializeField] private HighScoreTable highScore;
         [SerializeField] private Transform Seats;
-        [SerializeField] private PlayerData playerData;
+        [SerializeField] private PlayerDataScriptable playerData;
         [SerializeField] private TextMeshProUGUI scoreText;
         [SerializeField] private TextMeshProUGUI inputText;
         [SerializeField] private TMP_InputField inputField;

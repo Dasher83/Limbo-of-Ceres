@@ -6,8 +6,8 @@ namespace LimboOfCeres.Scripts.PlayerScritps
     public class PlayerDataContainer : MonoBehaviour
     {
         [SerializeField]
-        private PlayerData playerData;
+        private PlayerDataScriptable playerData;
 
-        public PlayerData PlayerData { get { return playerData; } }
+        public PlayerDataScriptable PlayerData { get { return playerData; } }
     }
 }
