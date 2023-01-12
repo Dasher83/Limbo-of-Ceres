@@ -89,7 +89,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
             }
         }
 
-        private float BulletGravityScale => Random.Range(bulletDataUpgrader.GravityScaleMinimum, bulletDataUpgrader.GravityScaleMinimum);
+        private float BulletGravityScale => Random.Range(bulletDataUpgrader.GravityScaleMinimum, bulletDataUpgrader.GravityScaleMaximum);
 
         private Vector3 ShootPosition { 
             get {

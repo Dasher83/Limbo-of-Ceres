@@ -60,6 +60,22 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
             }
         }
 
+        public float GravityScaleMaximum
+        {
+            get { return bulletsData.GravityScaleMaximum; }
+
+            private set
+            {
+                if (value > Constants.Projectiles.Bullet.GravityScaleMaximum.Maximum)
+                {
+                    bulletsData.GravityScaleMaximum = Constants.Projectiles.Bullet.GravityScaleMaximum.Maximum;
+                    return;
+                }
+
+                bulletsData.GravityScaleMaximum = value;
+            }
+        }
+
         protected override void Start()
         {
             base.Start();
@@ -73,7 +89,7 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
                 return UpgradeStatus.FAILED;
             }
 
-            attributeIndex = Random.Range(1, 4);
+            attributeIndex = Random.Range(1, 5);
 
             switch (attributeIndex)
             {
@@ -94,13 +110,20 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
                 case 3:
                     if (!GravityScaleMinimumIsAtLimit)
                     {
-                        Debug.LogError($"GravityScaleMinimum level up from {GravityScaleMinimum} to {GravityScaleMinimum * this.LevelUpFactor}");
                         GravityScaleMinimum *= this.LevelUpFactor;
+                        return UpgradeStatus.SUCCESSFUL;
+                    }
+                    break;
+                case 4:
+                    if (!GravityScaleMaximumIsAtLimit)
+                    {
+                        Debug.LogError($"GravityScaleMaximum level up from {GravityScaleMaximum} to {GravityScaleMaximum * this.LevelUpFactor}");
+                        GravityScaleMaximum *= this.LevelUpFactor;
                         return UpgradeStatus.SUCCESSFUL;
                     }
                     else
                     {
-                        Debug.LogError($"GravityScaleMinimum capped at {GravityScaleMinimum}");
+                        Debug.LogError($"GravityScaleMaximum capped at {GravityScaleMaximum}");
                     }
                     break;
             }
@@ -108,7 +131,9 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
             return UpgradeStatus.FAILED;
         }
 
-        public bool IsAtLimit => CurvedProbabilityIsAtLimit && BouncinessIsAtLimit && GravityScaleMinimumIsAtLimit;
+        public bool IsAtLimit =>
+            CurvedProbabilityIsAtLimit && BouncinessIsAtLimit &&
+            GravityScaleMinimumIsAtLimit && GravityScaleMaximumIsAtLimit;
 
         private bool CurvedProbabilityIsAtLimit => Mathf.Approximately(
             Constants.Projectiles.Bullet.CurvedProbability.Maximum, bulletsData.CurvedProbability);
@@ -118,5 +143,8 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
 
         private bool GravityScaleMinimumIsAtLimit => Mathf.Approximately(
             Constants.Projectiles.Bullet.GravityScaleMinimum.Maximum, bulletsData.GravityScaleMinimum);
+
+        private bool GravityScaleMaximumIsAtLimit => Mathf.Approximately(
+            Constants.Projectiles.Bullet.GravityScaleMaximum.Maximum, bulletsData.GravityScaleMaximum);
     }
 }
