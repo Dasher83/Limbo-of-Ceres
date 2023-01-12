@@ -140,17 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 171c221e62660954bb61c498c0c02b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &116155222 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2175351749688138474, guid: 3fd38c88d321b7c4bb9e210328e38a8e, type: 3}
-  m_PrefabInstance: {fileID: 1124944948}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca065cc677e6f6740929c4ad527582d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &295364929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1047,7 +1036,7 @@ PrefabInstance:
     - target: {fileID: 7363630895381158996, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
       propertyPath: bulletUpgrader
       value: 
-      objectReference: {fileID: 116155222}
+      objectReference: {fileID: 0}
     - target: {fileID: 7363630895381158996, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
       propertyPath: bulletsSpawner
       value: 
@@ -1059,7 +1048,7 @@ PrefabInstance:
     - target: {fileID: 7363630895381158996, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
       propertyPath: bulletDataUpgrader
       value: 
-      objectReference: {fileID: 116155222}
+      objectReference: {fileID: 0}
     - target: {fileID: 7363630895381158996, guid: 2d80bdeea4bdc614aaf2d441a26ff58b, type: 3}
       propertyPath: pumpkinBulletsSpawner
       value: 
@@ -1784,7 +1773,7 @@ PrefabInstance:
       objectReference: {fileID: 452569973}
     - target: {fileID: 8120543152943485205, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
       propertyPath: toDeactivateOnGameOver.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8120543152943485205, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
       propertyPath: toDeactivateOnGameOver.Array.data[0]
@@ -1794,6 +1783,10 @@ PrefabInstance:
       propertyPath: toDeactivateOnGameOver.Array.data[1]
       value: 
       objectReference: {fileID: 1363105970}
+    - target: {fileID: 8120543152943485205, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
+      propertyPath: toDeactivateOnGameOver.Array.data[2]
+      value: 
+      objectReference: {fileID: 1124944949}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0458d06acc281724c82154ee0837dc58, type: 3}
 --- !u!1001 &8944472602951488911

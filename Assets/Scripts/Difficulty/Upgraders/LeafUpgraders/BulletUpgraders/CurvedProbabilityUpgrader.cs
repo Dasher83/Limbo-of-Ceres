@@ -32,12 +32,10 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.BulletUpgrader
         {
             if (IsAtLimit)
             {
-                Debug.LogError($"CurvedProbability capped at {CurvedProbability}");
                 gameObject.SetActive(false);
                 return UpgradeStatus.FAILED;
             }
-            float x = CurvedProbability * this.LevelUpFactor > Constants.Projectiles.Bullet.CurvedProbability.Maximum ? Constants.Projectiles.Bullet.CurvedProbability.Maximum : CurvedProbability;
-            Debug.LogError($"CurvedProbability leveld up from {CurvedProbability} to {x}");
+
             CurvedProbability *= this.LevelUpFactor;
             return UpgradeStatus.SUCCESSFUL;
         }

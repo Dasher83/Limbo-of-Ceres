@@ -64,7 +64,7 @@ namespace LimboOfCeres
 
         private void OnDisable()
         {
-            Debug.LogError("Game reached maximum difficulty!");
+            if(IsAtLimit) Debug.LogError("Game reached maximum difficulty!");
         }
     }
 }
