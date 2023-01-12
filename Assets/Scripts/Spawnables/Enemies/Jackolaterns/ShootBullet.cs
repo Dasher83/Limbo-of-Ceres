@@ -89,19 +89,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
             }
         }
 
-        private float PumpkinGravityScale
-        {
-            get
-            {
-                if(Random.value <= bulletDataUpgrader.CurvedProbability)
-                {
-                    return Random.Range(
-                        Constants.Enemies.Jackolanterns.Pumpkin.GravityScaleMinimum,
-                        Constants.Enemies.Jackolanterns.Pumpkin.GravityScaleMaximum);
-                }
-                return 0f;
-            }
-        }
+        private float BulletGravityScale => Random.Range(bulletDataUpgrader.GravityScaleMinimum, bulletDataUpgrader.GravityScaleMinimum);
 
         private Vector3 ShootPosition { 
             get {
@@ -209,7 +197,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
                 ammoRequests--;
                 pumpkinInstance = bulletSpawner.RequestObject(ShootPosition);
                 pumpkinRigidBody2D = pumpkinInstance.GetComponent<Rigidbody2D>();
-                pumpkinRigidBody2D.gravityScale = PumpkinGravityScale;
+                pumpkinRigidBody2D.gravityScale = BulletGravityScale;
                 if(rb.gravityScale < 0)
                 {
                     pumpkinRigidBody2D.gravityScale *= -1;

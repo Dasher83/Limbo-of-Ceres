@@ -45,12 +45,6 @@ namespace LimboOfCeres.Scripts.Shared
                 public const float FireRateMinimum = 0.25f;
                 public const float FireRateMaximum = 0.375f;
                 public const float FloorSpeedBoost = 0.75f;
-
-                public static class Pumpkin
-                {
-                    public const float GravityScaleMinimum = -0.30f;
-                    public const float GravityScaleMaximum = 0.30f;
-                }
             }
         }
 
@@ -68,6 +62,18 @@ namespace LimboOfCeres.Scripts.Shared
                 {
                     public const float Minimum = 0.1f;
                     public const float Maximum = 8f;
+                }
+
+                public static class GravityScaleMinimum
+                {
+                    public const float Minimum = -0.1f;
+                    public const float Maximum = -0.3f;
+                }
+
+                public static class GravityScaleMaximum
+                {
+                    public const float Minimum = 0.1f;
+                    public const float Maximum = 0.30f;
                 }
             }
         }

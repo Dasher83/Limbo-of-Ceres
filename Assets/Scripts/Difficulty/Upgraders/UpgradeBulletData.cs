@@ -10,7 +10,7 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
     {
         [SerializeField]
         private BulletsDataScriptable bulletsData;
-        private float decisionNumber;
+        private int attributeIndex;
 
         public float CurvedProbability
         {
@@ -44,6 +44,22 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
             }
         }
 
+        public float GravityScaleMinimum
+        {
+            get { return bulletsData.GravityScaleMinimum; }
+
+            private set
+            {
+                if (value * -1 > Constants.Projectiles.Bullet.GravityScaleMinimum.Maximum * -1)
+                {
+                    bulletsData.GravityScaleMinimum = Constants.Projectiles.Bullet.GravityScaleMinimum.Maximum;
+                    return;
+                }
+
+                bulletsData.GravityScaleMinimum = value;
+            }
+        }
+
         protected override void Start()
         {
             base.Start();
@@ -57,26 +73,50 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
                 return UpgradeStatus.FAILED;
             }
 
-            decisionNumber = Random.Range(0, 2);
+            attributeIndex = Random.Range(1, 4);
 
-            if (decisionNumber < 1 && !BouncinessIsAtLimit)
+            switch (attributeIndex)
             {
-                Bounciness *= this.LevelUpFactor;
-                return UpgradeStatus.SUCCESSFUL;
-            }
-            if (decisionNumber > 1 && !CurvedProbabilityIsAtLimit)
-            {
-                CurvedProbability *= this.LevelUpFactor;
-                return UpgradeStatus.SUCCESSFUL;
+                case 1:
+                    if (!BouncinessIsAtLimit)
+                    {
+                        Bounciness *= this.LevelUpFactor;
+                        return UpgradeStatus.SUCCESSFUL;
+                    }
+                    break;
+                case 2:
+                    if (!CurvedProbabilityIsAtLimit)
+                    {
+                        CurvedProbability *= this.LevelUpFactor;
+                        return UpgradeStatus.SUCCESSFUL;
+                    }
+                    break;
+                case 3:
+                    if (!GravityScaleMinimumIsAtLimit)
+                    {
+                        Debug.LogError($"GravityScaleMinimum level up from {GravityScaleMinimum} to {GravityScaleMinimum * this.LevelUpFactor}");
+                        GravityScaleMinimum *= this.LevelUpFactor;
+                        return UpgradeStatus.SUCCESSFUL;
+                    }
+                    else
+                    {
+                        Debug.LogError($"GravityScaleMinimum capped at {GravityScaleMinimum}");
+                    }
+                    break;
             }
 
             return UpgradeStatus.FAILED;
         }
 
-        public bool IsAtLimit => CurvedProbabilityIsAtLimit && BouncinessIsAtLimit;
+        public bool IsAtLimit => CurvedProbabilityIsAtLimit && BouncinessIsAtLimit && GravityScaleMinimumIsAtLimit;
 
-        private bool CurvedProbabilityIsAtLimit => Mathf.Approximately(Constants.Projectiles.Bullet.CurvedProbability.Maximum, bulletsData.CurvedProbability);
+        private bool CurvedProbabilityIsAtLimit => Mathf.Approximately(
+            Constants.Projectiles.Bullet.CurvedProbability.Maximum, bulletsData.CurvedProbability);
 
-        private bool BouncinessIsAtLimit => Mathf.Approximately(Constants.Projectiles.Bullet.Bounciness.Maximum, bulletsData.Bounciness);
+        private bool BouncinessIsAtLimit => Mathf.Approximately(
+            Constants.Projectiles.Bullet.Bounciness.Maximum, bulletsData.Bounciness);
+
+        private bool GravityScaleMinimumIsAtLimit => Mathf.Approximately(
+            Constants.Projectiles.Bullet.GravityScaleMinimum.Maximum, bulletsData.GravityScaleMinimum);
     }
 }
