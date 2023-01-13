@@ -62,7 +62,27 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
             }
         }
 
-        public float GravityScaleMinimum { get { return gravityScaleMinimum; } set { gravityScaleMinimum = value; } }
+        public float GravityScaleMinimum
+        {
+            get { return gravityScaleMinimum; }
+
+            set
+            {
+                if (value * -1 > Constants.Projectiles.Bullet.GravityScaleMinimum.Maximum * -1)
+                {
+                    gravityScaleMinimum = Constants.Projectiles.Bullet.GravityScaleMinimum.Maximum;
+                    return;
+                }
+
+                if (value * -1 < Constants.Projectiles.Bullet.GravityScaleMinimum.Minimum * -1)
+                {
+                    gravityScaleMinimum = Constants.Projectiles.Bullet.GravityScaleMinimum.Minimum;
+                    return;
+                }
+
+                gravityScaleMinimum = value;
+            }
+        }
 
         public float GravityScaleMaximum { get { return gravityScaleMaximum; } set { gravityScaleMaximum = value; } }
     }

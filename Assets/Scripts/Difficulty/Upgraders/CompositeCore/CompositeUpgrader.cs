@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore
 {
-    public sealed class UpgraderComposite : Upgrader
+    public sealed class CompositeUpgrader : Upgrader
     {
         private List<Upgrader> children;
         private List<int> shuffledIndexes;

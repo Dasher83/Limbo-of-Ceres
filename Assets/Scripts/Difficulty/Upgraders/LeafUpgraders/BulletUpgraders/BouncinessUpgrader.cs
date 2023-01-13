@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.BulletUpgraders
 {
-    public class BouncinessUpgrader : UpgraderLeaf
+    public class BouncinessUpgrader : LeafUpgrader
     {
         [SerializeField]
         private BulletsDataScriptable bulletsData;
