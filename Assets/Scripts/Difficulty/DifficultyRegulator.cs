@@ -15,7 +15,7 @@ namespace LimboOfCeres
         [SerializeField]
         private GameObject upgradersGameObject;
 
-        private List<CompositeUpgrader> upgraders;
+        private List<Upgrader> upgraders;
         private float metersUntilNextLevelUp;
         private int upgradersIndex;
 
@@ -23,10 +23,10 @@ namespace LimboOfCeres
 
         private void Start()
         {
-            upgraders = new List<CompositeUpgrader>();
+            upgraders = new List<Upgrader>();
             for(int i = 0; i < upgradersGameObject.transform.childCount; i++)
             {
-                upgraders.Add(upgradersGameObject.transform.GetChild(i).gameObject.GetComponent<CompositeUpgrader>());
+                upgraders.Add(upgradersGameObject.transform.GetChild(i).gameObject.GetComponent<Upgrader>());
             }
             metersUntilNextLevelUp = MetersUntilLevelUp;
         }

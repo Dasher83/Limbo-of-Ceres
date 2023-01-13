@@ -5,10 +5,10 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
     [CreateAssetMenu(fileName = "BulletsDataScriptable", menuName = "ScriptableObjects/BulletsDataScriptable", order = 5)]
     public class BulletsDataScriptable : ScriptableObject
     {
-        [SerializeField] private float curvedProbability;
         [SerializeField] private float bounciness;
-        [SerializeField] private float gravityScaleMinimum;
+        [SerializeField] private float curvedProbability;
         [SerializeField] private float gravityScaleMaximum;
+        [SerializeField] private float gravityScaleMinimum;
 
         public void Initialize()
         {
