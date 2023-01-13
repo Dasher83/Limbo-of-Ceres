@@ -12,25 +12,9 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.BulletUpgrader
         [SerializeField]
         private BulletsDataScriptable bulletsData;
 
-        public float CurvedProbability
-        {
-            get { return bulletsData.CurvedProbability; }
-
-            private set
-            {
-                if (value > Constants.Projectiles.Bullet.CurvedProbability.Maximum)
-                {
-                    bulletsData.CurvedProbability = Constants.Projectiles.Bullet.CurvedProbability.Maximum;
-                    return;
-                }
-
-                bulletsData.CurvedProbability = value;
-            }
-        }
-
         protected override void UpgradeHook()
         {
-            CurvedProbability *= this.LevelUpFactor;
+            bulletsData.CurvedProbability *= this.LevelUpFactor;
         }
 
         public override bool IsAtLimit => Mathf.Approximately(
