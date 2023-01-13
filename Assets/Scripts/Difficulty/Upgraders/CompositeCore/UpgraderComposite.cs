@@ -15,24 +15,17 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore
 
         public override bool IsAtLimit => children.All(child => child.IsAtLimit);
 
-        public override UpgradeStatus Upgrade()
+        protected override void UpgradeHook()
         {
-            if (IsAtLimit) {
-                gameObject.SetActive(false);
-                return UpgradeStatus.FAILED;
-            }
-
             shuffledIndexes = Enumerable.Range(0, children.Count).OrderBy(_ => Random.value).ToList<int>();
 
             foreach (int index in shuffledIndexes)
             {
                 if (children[index].Upgrade() == UpgradeStatus.SUCCESSFUL)
                 {
-                    return UpgradeStatus.SUCCESSFUL;
+                    return;
                 }
             }
-
-            return UpgradeStatus.FAILED;
         }
 
         protected override void Start()

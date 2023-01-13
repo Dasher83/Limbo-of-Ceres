@@ -28,16 +28,9 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.BulletUpgrader
             }
         }
 
-        public override UpgradeStatus Upgrade()
+        protected override void UpgradeHook()
         {
-            if (IsAtLimit)
-            {
-                gameObject.SetActive(false);
-                return UpgradeStatus.FAILED;
-            }
-
             CurvedProbability *= this.LevelUpFactor;
-            return UpgradeStatus.SUCCESSFUL;
         }
 
         public override bool IsAtLimit => Mathf.Approximately(

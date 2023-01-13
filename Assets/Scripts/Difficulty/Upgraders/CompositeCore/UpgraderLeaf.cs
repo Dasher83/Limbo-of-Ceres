@@ -7,10 +7,5 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore
         protected override bool IsComposite => false;
 
         public override bool IsAtLimit => false;
-
-        public override UpgradeStatus Upgrade()
-        {
-            return UpgradeStatus.FAILED;
-        }
     }
 }

@@ -16,7 +16,19 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore
 
         protected abstract bool IsComposite { get; }
 
-        public abstract UpgradeStatus Upgrade();
+        public UpgradeStatus Upgrade()
+        {
+            if (IsAtLimit)
+            {
+                gameObject.SetActive(false);
+                return UpgradeStatus.FAILED;
+            }
+
+            UpgradeHook();
+            return UpgradeStatus.SUCCESSFUL;
+        }
+
+        protected virtual void UpgradeHook() { }
         
         protected virtual void Start()
         {

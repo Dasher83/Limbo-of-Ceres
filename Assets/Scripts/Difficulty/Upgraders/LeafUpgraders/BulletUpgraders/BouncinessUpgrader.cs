@@ -28,26 +28,9 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.BulletUpgrader
             }
         }
 
-        protected override void Start()
+        protected override void UpgradeHook()
         {
-            base.Start();
-            bulletsData.Initialize();
-        }
-
-        public override UpgradeStatus Upgrade()
-        {
-            if (IsAtLimit)
-            {
-                Debug.LogError($"Bounciness capped at {Bounciness}");
-                gameObject.SetActive(false);
-                return UpgradeStatus.FAILED;
-            }
-
-            float x = Bounciness * this.LevelUpFactor > Constants.Projectiles.Bullet.Bounciness.Maximum ? 
-                Constants.Projectiles.Bullet.Bounciness.Maximum : Bounciness;
-            Debug.LogError($"Bounciness leveld up from {Bounciness} to {x}");
             Bounciness *= this.LevelUpFactor;
-            return UpgradeStatus.SUCCESSFUL;
         }
 
         public override bool IsAtLimit => Mathf.Approximately(
