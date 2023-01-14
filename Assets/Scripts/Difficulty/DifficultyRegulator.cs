@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace LimboOfCeres
+namespace LimboOfCeres.Scripts.Difficulty.Upgraders
 {
     public class DifficultyRegulator : MonoBehaviour
     {
@@ -40,7 +40,6 @@ namespace LimboOfCeres
                 return;
             }
             metersUntilNextLevelUp -= playerData.DeltaMeters;
-            Debug.Log($"Meters until {metersUntilNextLevelUp}");
             if (metersUntilNextLevelUp < 0)
             {
                 LevelUp();
