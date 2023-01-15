@@ -13,7 +13,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Shared
         protected override void Start()
         {
             base.Start();
-            spawnTimer = new ResettableTimer(time: Random.Range(spawningData.MinimumRespawnTime, spawningData.MaximumRespawnTime));
+            spawnTimer = new ResettableTimer(time: Random.Range(spawningData.SpawnTimeMinimum, spawningData.SpawnTimeMaximum));
         }
 
         private void Update()
@@ -27,7 +27,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Shared
 
             Spawn();
             nextToBeSpawn = null;
-            spawnTimer.Reset(time: Random.Range(spawningData.MinimumRespawnTime, spawningData.MaximumRespawnTime));
+            spawnTimer.Reset(time: Random.Range(spawningData.SpawnTimeMinimum, spawningData.SpawnTimeMaximum));
         }
     }
 }

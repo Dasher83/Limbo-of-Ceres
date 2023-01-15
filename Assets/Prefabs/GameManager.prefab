@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 244905dc55d0b3b46add0b807796e42a, type: 2}
-  bulletsData: {fileID: 11400000, guid: 8edd96008cd95f54da45b3176cf5c1d4, type: 2}
+  initializables:
+  - {fileID: 11400000, guid: 244905dc55d0b3b46add0b807796e42a, type: 2}
+  - {fileID: 11400000, guid: 8edd96008cd95f54da45b3176cf5c1d4, type: 2}
+  - {fileID: 11400000, guid: 2f2892da7c09db64f9b47d40f65c778b, type: 2}
+  - {fileID: 11400000, guid: 1eddc6a9ad6005e45a2cb34edded52ea, type: 2}
   gameOverMenu: {fileID: 0}
   lifeBar: {fileID: 0}
   metersCounter: {fileID: 0}

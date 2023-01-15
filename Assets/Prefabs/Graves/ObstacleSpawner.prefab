@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7955689539093541734}
   - component: {fileID: 7955689539093541733}
   m_Layer: 0
-  m_Name: SmallObstaclesSpawner
+  m_Name: ObstacleSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 1349739426613462080, guid: acec30320676fa345a2aea38ba0db42d, type: 3}
-  spawningData: {fileID: 11400000, guid: fac81a6e607252c418b71792e915496f, type: 2}
+  spawningData: {fileID: 11400000, guid: 1eddc6a9ad6005e45a2cb34edded52ea, type: 2}
   floorSpriteRenderer: {fileID: 0}
   ceilingSpriteRenderer: {fileID: 0}
   sprites:

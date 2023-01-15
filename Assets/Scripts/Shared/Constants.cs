@@ -31,6 +31,39 @@ namespace LimboOfCeres.Scripts.Shared
             public const float CeilingSpawnProbability = 0.6f;
         }
 
+        public static class Spawners
+        {
+            public static class Jackolanterns
+            {
+                public static class SpawnTimeMinimum
+                {
+                    public const float Minimum = 1.2f;
+                    public const float Maximum = 1.8f;
+                }
+
+                public static class SpawnTimeMaximum
+                {
+                    public const float Minimum = 2.2f;
+                    public const float Maximum = 3.3f;
+                }
+            }
+
+            public static class Obstacles
+            {
+                public static class SpawnTimeMinimum
+                {
+                    public const float Minimum = 1f;
+                    public const float Maximum = 1.3f;
+                }
+
+                public static class SpawnTimeMaximum
+                {
+                    public const float Minimum = 1.9f;
+                    public const float Maximum = 3.8f;
+                }
+            }
+        }
+
         public static class Enemies
         {
             public static class Jackolanterns
@@ -124,7 +157,7 @@ namespace LimboOfCeres.Scripts.Shared
                 public const float Maximum = 100f;
             }
 
-            public const float LevelUpFactor = 1.1f;
+            public const float DefaultLevelUpFactor = 1.1f;
         }
     }
 }

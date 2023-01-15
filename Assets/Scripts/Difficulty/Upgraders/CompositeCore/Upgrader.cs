@@ -10,7 +10,7 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore
     {
         private float levelUpFactor;
 
-        protected float LevelUpFactor => levelUpFactor;
+        protected float LevelUpFactor { get { return levelUpFactor; } set { levelUpFactor = value; } }
 
         public abstract bool IsAtLimit { get; }
 
@@ -32,7 +32,7 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore
         
         protected virtual void Start()
         {
-            levelUpFactor = Constants.Difficulty.LevelUpFactor;
+            levelUpFactor = Constants.Difficulty.DefaultLevelUpFactor;
         }
     }
 }

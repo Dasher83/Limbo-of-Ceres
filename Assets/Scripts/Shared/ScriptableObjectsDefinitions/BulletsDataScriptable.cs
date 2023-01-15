@@ -1,9 +1,11 @@
+using LimboOfCeres.Scripts.Shared.Interfaces;
 using UnityEngine;
+
 
 namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
 {
     [CreateAssetMenu(fileName = "BulletsDataScriptable", menuName = "ScriptableObjects/BulletsDataScriptable", order = 5)]
-    public class BulletsDataScriptable : ScriptableObject
+    public class BulletsDataScriptable : ScriptableObject, IInitializable
     {
         [SerializeField] private float bounciness;
         [SerializeField] private float curvedProbability;

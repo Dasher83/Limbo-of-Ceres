@@ -12,7 +12,7 @@ namespace LimboOfCeres.Scripts.Managers
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private PlayerDataScriptable playerData;
-        [SerializeField] private BulletsDataScriptable bulletsData;
+        [SerializeField] private List<ScriptableObject> initializables;
         [SerializeField] private GameOver gameOverMenu;
         [SerializeField] private LifeBar lifeBar;
         [SerializeField] private MetersCounter metersCounter;
@@ -61,8 +61,10 @@ namespace LimboOfCeres.Scripts.Managers
             switch (state)
             {
                 case GameState.STARTING:
-                    playerData.Initialize();
-                    bulletsData.Initialize();
+                    foreach(IInitializable initializable in initializables)
+                    {
+                        initializable.Initialize();
+                    }
                     lifeBar.Durable = (IDurable)playerData;
                     break;
                 case GameState.PLAYING:
