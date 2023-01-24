@@ -10,19 +10,14 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.JackolanternSp
     {
         [SerializeField]
         private JackolanternSpawningDataScriptable spawningData;
+        private const float LevelUpFactor = 0.9f;
 
         protected override void OnUpgradeHook()
         {
-            spawningData.SpawnTimeMinimum *= this.LevelUpFactor;
+            spawningData.SpawnTimeMinimum *= LevelUpFactor;
         }
 
         public override bool IsAtLimit => Mathf.Approximately(
             Constants.Spawners.Jackolanterns.SpawnTimeMinimum.Minimum, spawningData.SpawnTimeMinimum);
-
-        protected override void Start()
-        {
-            base.Start();
-            this.LevelUpFactor = 0.9f;
-        }
     }
 }

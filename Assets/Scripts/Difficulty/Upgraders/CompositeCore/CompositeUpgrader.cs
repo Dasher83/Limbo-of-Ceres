@@ -28,9 +28,8 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore
             }
         }
 
-        protected override void Start()
+        private void Start()
         {
-            base.Start();
             children = new List<Upgrader>();
             for(int i = 0; i < transform.childCount; i++)
             {

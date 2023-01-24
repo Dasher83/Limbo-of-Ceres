@@ -8,10 +8,6 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore
 {
     public abstract class Upgrader : MonoBehaviour
     {
-        private float levelUpFactor;
-
-        protected float LevelUpFactor { get { return levelUpFactor; } set { levelUpFactor = value; } }
-
         public abstract bool IsAtLimit { get; }
 
         protected abstract bool IsComposite { get; }
@@ -33,11 +29,6 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore
         protected virtual void OnLimitReachedHook()
         {
             gameObject.SetActive(false);
-        }
-
-        protected virtual void Start()
-        {
-            levelUpFactor = Constants.Difficulty.DefaultLevelUpFactor;
         }
     }
 }
