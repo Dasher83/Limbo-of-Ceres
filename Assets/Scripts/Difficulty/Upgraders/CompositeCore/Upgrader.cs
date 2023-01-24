@@ -20,7 +20,7 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore
         {
             if (IsAtLimit)
             {
-                gameObject.SetActive(false);
+                OnLimitReachedHook();
                 return UpgradeStatus.FAILED;
             }
 
@@ -29,6 +29,11 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore
         }
 
         protected virtual void OnUpgradeHook() { }
+
+        protected virtual void OnLimitReachedHook()
+        {
+            gameObject.SetActive(false);
+        }
 
         protected virtual void Start()
         {
