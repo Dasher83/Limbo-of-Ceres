@@ -11,7 +11,7 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.BulletUpgrader
         [SerializeField]
         private BulletsDataScriptable bulletsData;
 
-        protected override void UpgradeHook()
+        protected override void OnUpgradeHook()
         {
             bulletsData.GravityScaleMinimum *= this.LevelUpFactor;
         }

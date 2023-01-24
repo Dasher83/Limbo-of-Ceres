@@ -24,12 +24,12 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore
                 return UpgradeStatus.FAILED;
             }
 
-            UpgradeHook();
+            OnUpgradeHook();
             return UpgradeStatus.SUCCESSFUL;
         }
 
-        protected virtual void UpgradeHook() { }
-        
+        protected virtual void OnUpgradeHook() { }
+
         protected virtual void Start()
         {
             levelUpFactor = Constants.Difficulty.DefaultLevelUpFactor;

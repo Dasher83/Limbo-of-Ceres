@@ -15,7 +15,7 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore
 
         public override bool IsAtLimit => children.All(child => child.IsAtLimit);
 
-        protected override void UpgradeHook()
+        protected override void OnUpgradeHook()
         {
             shuffledIndexes = Enumerable.Range(0, children.Count).OrderBy(_ => Random.value).ToList<int>();
 

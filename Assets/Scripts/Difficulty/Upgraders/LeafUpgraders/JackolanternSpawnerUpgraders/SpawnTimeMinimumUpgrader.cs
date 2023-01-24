@@ -11,7 +11,7 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.JackolanternSp
         [SerializeField]
         private JackolanternSpawningDataScriptable spawningData;
 
-        protected override void UpgradeHook()
+        protected override void OnUpgradeHook()
         {
             spawningData.SpawnTimeMinimum *= this.LevelUpFactor;
         }
