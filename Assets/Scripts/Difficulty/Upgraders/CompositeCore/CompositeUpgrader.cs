@@ -11,8 +11,6 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore
         private List<Upgrader> children;
         private List<int> shuffledIndexes;
 
-        protected override bool IsComposite => true;
-
         public override bool IsAtLimit => children.All(child => child.IsAtLimit);
 
         protected override void OnUpgradeHook()

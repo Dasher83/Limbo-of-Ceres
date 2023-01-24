@@ -10,8 +10,6 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore
     {
         public abstract bool IsAtLimit { get; }
 
-        protected abstract bool IsComposite { get; }
-
         public UpgradeStatus Upgrade()
         {
             if (IsAtLimit)
