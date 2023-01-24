@@ -1,4 +1,5 @@
 using LimboOfCeres.Scripts.Shared.Interfaces;
+using LimboOfCeres.Scripts.Shared.Structs;
 using UnityEngine;
 
 
@@ -11,10 +12,8 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
         [SerializeField]
         protected float spawnTimeMaximum;
 
-        protected float spawnTimeMinimumMinimum;
-        protected float spawnTimeMinimumMaximum;
-        protected float spawnTimeMaximumMinimum;
-        protected float spawnTimeMaximumMaximum;
+        protected Range<float> spawnTimeMinimumRange;
+        protected Range<float> spawnTimeMaximumRange;
 
         public abstract void Initialize();
 
@@ -27,15 +26,15 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
 
             set
             {
-                if (value > this.spawnTimeMinimumMaximum)
+                if (this.spawnTimeMinimumRange.Maximum.CompareTo(value) < 0)
                 {
-                    spawnTimeMinimum = this.spawnTimeMinimumMinimum;
+                    spawnTimeMinimum = this.spawnTimeMinimumRange.Maximum;
                     return;
                 }
 
-                if (value < this.spawnTimeMinimumMinimum)
+                if (this.spawnTimeMinimumRange.Minimum.CompareTo(value) > 0)
                 {
-                    spawnTimeMinimum = this.spawnTimeMinimumMinimum;
+                    spawnTimeMinimum = this.spawnTimeMinimumRange.Minimum;
                     return;
                 }
 
@@ -52,14 +51,14 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
 
             set
             {
-                if (value > this.spawnTimeMaximumMaximum)
+                if (this.spawnTimeMaximumRange.Maximum.CompareTo(value) < 0)
                 {
-                    spawnTimeMaximum = this.spawnTimeMaximumMaximum;
+                    spawnTimeMaximum = this.spawnTimeMaximumRange.Maximum;
                 }
 
-                if (value < this.spawnTimeMaximumMinimum)
+                if (this.spawnTimeMaximumRange.Minimum.CompareTo(value) > 0)
                 {
-                    spawnTimeMaximum = this.spawnTimeMaximumMinimum;
+                    spawnTimeMaximum = this.spawnTimeMaximumRange.Minimum;
                 }
 
                 spawnTimeMaximum = value;

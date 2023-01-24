@@ -1,3 +1,4 @@
+using LimboOfCeres.Scripts.Shared.Structs;
 using UnityEngine;
 
 
@@ -10,10 +11,14 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
         {
             this.spawnTimeMinimum = Constants.Spawners.Jackolanterns.SpawnTimeMinimum.Maximum;
             this.spawnTimeMaximum = Constants.Spawners.Jackolanterns.SpawnTimeMaximum.Maximum;
-            this.spawnTimeMinimumMinimum = Constants.Spawners.Jackolanterns.SpawnTimeMinimum.Minimum;
-            this.spawnTimeMinimumMaximum = Constants.Spawners.Jackolanterns.SpawnTimeMinimum.Maximum;
-            this.spawnTimeMaximumMinimum = Constants.Spawners.Jackolanterns.SpawnTimeMaximum.Minimum;
-            this.spawnTimeMaximumMaximum = Constants.Spawners.Jackolanterns.SpawnTimeMaximum.Maximum;
+
+            this.spawnTimeMinimumRange = new Range<float>(
+                minimum: Constants.Spawners.Jackolanterns.SpawnTimeMinimum.Minimum,
+                maximum: Constants.Spawners.Jackolanterns.SpawnTimeMinimum.Maximum);
+
+            this.spawnTimeMaximumRange = new Range<float>(
+                minimum: Constants.Spawners.Jackolanterns.SpawnTimeMaximum.Minimum,
+                maximum: Constants.Spawners.Jackolanterns.SpawnTimeMaximum.Maximum);
         }
     }
 }

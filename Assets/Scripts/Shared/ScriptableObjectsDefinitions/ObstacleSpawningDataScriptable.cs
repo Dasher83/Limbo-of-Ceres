@@ -10,10 +10,6 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
         {
             this.spawnTimeMinimum = Constants.Spawners.Obstacles.SpawnTimeMinimum.Maximum;
             this.spawnTimeMaximum = Constants.Spawners.Obstacles.SpawnTimeMaximum.Maximum;
-            this.spawnTimeMinimumMinimum = Constants.Spawners.Obstacles.SpawnTimeMinimum.Minimum;
-            this.spawnTimeMinimumMaximum = Constants.Spawners.Obstacles.SpawnTimeMinimum.Maximum;
-            this.spawnTimeMaximumMinimum = Constants.Spawners.Obstacles.SpawnTimeMaximum.Minimum;
-            this.spawnTimeMaximumMaximum = Constants.Spawners.Obstacles.SpawnTimeMaximum.Maximum;
         }
     }
 }
