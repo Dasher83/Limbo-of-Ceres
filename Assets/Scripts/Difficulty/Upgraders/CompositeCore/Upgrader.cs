@@ -22,7 +22,7 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore
             return UpgradeStatus.SUCCESSFUL;
         }
 
-        protected virtual void OnUpgradeHook() { }
+        protected abstract void OnUpgradeHook();
 
         protected virtual void OnLimitReachedHook()
         {
