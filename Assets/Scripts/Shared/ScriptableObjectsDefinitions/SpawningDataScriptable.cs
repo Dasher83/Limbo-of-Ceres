@@ -54,11 +54,13 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
                 if (this.spawnTimeMaximumRange.Maximum.CompareTo(value) < 0)
                 {
                     spawnTimeMaximum = this.spawnTimeMaximumRange.Maximum;
+                    return;
                 }
 
                 if (this.spawnTimeMaximumRange.Minimum.CompareTo(value) > 0)
                 {
                     spawnTimeMaximum = this.spawnTimeMaximumRange.Minimum;
+                    return;
                 }
 
                 spawnTimeMaximum = value;
