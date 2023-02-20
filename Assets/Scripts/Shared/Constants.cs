@@ -78,6 +78,11 @@ namespace LimboOfCeres.Scripts.Shared
                 public const float FireRateMinimum = 0.25f;
                 public const float FireRateMaximum = 0.375f;
                 public const float FloorSpeedBoost = 0.75f;
+                public static class FireForceMinimum
+                {
+                    public const float Minimum = 200f;
+                    public const float Maximum = 400f;
+                }
             }
         }
 

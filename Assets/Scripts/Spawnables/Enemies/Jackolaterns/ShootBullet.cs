@@ -14,8 +14,6 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         [SerializeField]
         private float range;
         [SerializeField]
-        private float fireForceMinimum;
-        [SerializeField]
         private float fireForceMaximum;
         [SerializeField]
         private Color cooldownColor;
@@ -23,6 +21,8 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         private GameObject pumpkinPrefab;
         [SerializeField]
         private BulletsDataScriptable bulletsData;
+        [SerializeField] private JackolanternScriptable _jackolanternData;
+
         private Transform lockedOnTarget;
         private ResettableTimer aimTimer;
         private ResettableTimer fireTimer;
@@ -48,7 +48,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         {
             get
             {
-                return Random.Range(fireForceMinimum, fireForceMaximum);
+                return Random.Range(_jackolanternData.FireForceMinimum, fireForceMaximum);
             }
         }
 
