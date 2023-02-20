@@ -9,14 +9,20 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
     public class JackolanternScriptable : ScriptableObject, IInitializable
     {
         [SerializeField] private float _fireForceMinimum;
+        [SerializeField] private float _fireForceMaximum;
         private Range<float> _fireForceMinimumRange;
+        private Range<float> _fireForceMaximumRange;
 
         public void Initialize()
         {
             _fireForceMinimum = Constants.Enemies.Jackolanterns.FireForceMinimum.Minimum;
+            _fireForceMaximum = Constants.Enemies.Jackolanterns.FireForceMaximum.Minimum;
             _fireForceMinimumRange = new Range<float>(
                 minimum: Constants.Enemies.Jackolanterns.FireForceMinimum.Minimum,
                 maximum: Constants.Enemies.Jackolanterns.FireForceMinimum.Maximum);
+            _fireForceMaximumRange = new Range<float>(
+                minimum: Constants.Enemies.Jackolanterns.FireForceMaximum.Minimum,
+                maximum: Constants.Enemies.Jackolanterns.FireForceMaximum.Maximum);
         }
 
         public float FireForceMinimum
@@ -43,5 +49,32 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
                 _fireForceMinimum = value;
             }
         }
+
+        public float FireForceMaximum
+        {
+            get
+            {
+                return _fireForceMaximum;
+            }
+
+            set
+            {
+                if (_fireForceMaximumRange.Maximum.CompareTo(value) < 0)
+                {
+                    _fireForceMaximum = _fireForceMaximumRange.Maximum;
+                    return;
+                }
+
+                if (_fireForceMaximumRange.Minimum.CompareTo(value) > 0)
+                {
+                    _fireForceMaximum = _fireForceMaximumRange.Minimum;
+                    return;
+                }
+
+                _fireForceMaximum = value;
+            }
+        }
+
+        public float FireForceRandom => Random.Range(_fireForceMaximum, _fireForceMaximum);
     }
 }

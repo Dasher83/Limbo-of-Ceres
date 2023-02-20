@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 6697561579001222568}
   - component: {fileID: 8100188970112405598}
   m_Layer: 0
-  m_Name: BouncinessUpgrader
+  m_Name: Bounciness
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 1911753731678511572}
   - component: {fileID: 3625812121975697450}
   m_Layer: 0
-  m_Name: GravityScaleMaximumUpgrader
+  m_Name: GravityScaleMaximum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 4293411889856081675}
   - component: {fileID: 5480811127888814121}
   m_Layer: 0
-  m_Name: JackolanternSpawnerUpgrader
+  m_Name: JackolanternSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 2551035667373197338}
   - component: {fileID: 5854662463745540424}
   m_Layer: 0
-  m_Name: GravityScaleMinimumUpgrader
+  m_Name: GravityScaleMinimum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 5085233143128233139}
   - component: {fileID: 1974899259615188830}
   m_Layer: 0
-  m_Name: JackolanternUpgrader
+  m_Name: Jackolantern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,6 +335,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4160514321563613993}
+  - {fileID: 4055971705518131575}
   m_Father: {fileID: 2175351750211569499}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -361,7 +362,7 @@ GameObject:
   - component: {fileID: 4901402980207982924}
   - component: {fileID: 1272548723389814711}
   m_Layer: 0
-  m_Name: BulletUpgrader
+  m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,7 +410,7 @@ GameObject:
   - component: {fileID: 8764336273092648686}
   - component: {fileID: 1977231225099023957}
   m_Layer: 0
-  m_Name: CurvedProbabilityUpgrader
+  m_Name: CurvedProbability
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,6 +444,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletsData: {fileID: 11400000, guid: 8edd96008cd95f54da45b3176cf5c1d4, type: 2}
+--- !u!1 &6891952732344289875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4055971705518131575}
+  - component: {fileID: 7327516048123057160}
+  m_Layer: 0
+  m_Name: FireForceMaximum
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4055971705518131575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891952732344289875}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5085233143128233139}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7327516048123057160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891952732344289875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 759afcffce93cbe46a9ac02736cf6dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jackolanternData: {fileID: 11400000, guid: 944e8d5603c39a44abfeec713da717ed, type: 2}
 --- !u!1 &9067753386857752171
 GameObject:
   m_ObjectHideFlags: 0

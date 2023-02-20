@@ -44,14 +44,6 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 
         public PlayerRespawnSafely PlayerRespawnSafely { set { playerRespawnSafely = value; } }
 
-        private float FireForce
-        {
-            get
-            {
-                return Random.Range(_jackolanternData.FireForceMinimum, fireForceMaximum);
-            }
-        }
-
         private float AimRate
         {
             get
@@ -216,7 +208,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
                     newPhysicsMaterial2D.bounciness = bulletsData.Bounciness;
                     pumpkinRigidBody2D.sharedMaterial = newPhysicsMaterial2D;
                 }
-                pumpkinRigidBody2D.AddForce(FireForce * Random.Range(0.75f, 1.00f) * directionToAim);
+                pumpkinRigidBody2D.AddForce(_jackolanternData.FireForceRandom * Random.Range(0.75f, 1.00f) * directionToAim);
             }
         }
 

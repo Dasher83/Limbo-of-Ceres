@@ -83,6 +83,11 @@ namespace LimboOfCeres.Scripts.Shared
                     public const float Minimum = 200f;
                     public const float Maximum = 400f;
                 }
+                public static class FireForceMaximum
+                {
+                    public const float Minimum = 350f;
+                    public const float Maximum = 700f;
+                }
             }
         }
 
