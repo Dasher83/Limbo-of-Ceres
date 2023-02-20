@@ -72,14 +72,6 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
             }
         }
 
-        private int NextAmmoRequests
-        {
-            get
-            {
-                return Random.Range(Constants.Enemies.Jackolanterns.AmmoRequestsMinimum, Constants.Enemies.Jackolanterns.AmmoRequestsMaximum + 1);
-            }
-        }
-
         private float BulletGravityScale {
             get
             {
@@ -130,7 +122,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
             aimTimer = new ResettableTimer(AimRate);
             fireTimer = new ResettableTimer(FireRate);
             originalColor = spriteRender.color;
-            ammoRequests = NextAmmoRequests;
+            ammoRequests = _jackolanternData.AmmoRequestsMinimum;
         }
 
         private void Update()
@@ -214,7 +206,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 
         void OnDisable()
         {
-            ammoRequests = NextAmmoRequests;
+            ammoRequests = _jackolanternData.AmmoRequests;
         }
 
         private void OnDrawGizmosSelected()

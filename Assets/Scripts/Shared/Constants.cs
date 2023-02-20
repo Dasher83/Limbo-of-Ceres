@@ -71,7 +71,6 @@ namespace LimboOfCeres.Scripts.Shared
                 public const float DefaultGravityScale = 10f;
                 public const float CeilingSpawnProbability = 0.6f;
                 public const float DiplomaticThreshold = 3.8f;
-                public const int AmmoRequestsMinimum = 4;
                 public const int AmmoRequestsMaximum = 8;
                 public const float AimRateMinimum = 0.25f;
                 public const float AimRateMaximum = 0.375f;
@@ -87,6 +86,12 @@ namespace LimboOfCeres.Scripts.Shared
                 {
                     public const float Minimum = 350f;
                     public const float Maximum = 700f;
+                }
+
+                public static class AmmoRequestsMinimum
+                {
+                    public const int Minimum = 2;
+                    public const int Maximum = 4;
                 }
             }
         }
