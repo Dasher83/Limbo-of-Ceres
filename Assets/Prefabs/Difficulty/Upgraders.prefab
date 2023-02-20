@@ -214,6 +214,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletsData: {fileID: 11400000, guid: 8edd96008cd95f54da45b3176cf5c1d4, type: 2}
+--- !u!1 &3143215158235073681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6521889592346599457}
+  - component: {fileID: 7769511194205163427}
+  m_Layer: 0
+  m_Name: AmmoRequestsMaximum
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6521889592346599457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3143215158235073681}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5085233143128233139}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7769511194205163427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3143215158235073681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65496daca4de5f47ac5d87d6ae28cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jackolanternData: {fileID: 11400000, guid: 944e8d5603c39a44abfeec713da717ed, type: 2}
 --- !u!1 &3254132161703171456
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,6 +427,7 @@ Transform:
   - {fileID: 4160514321563613993}
   - {fileID: 4055971705518131575}
   - {fileID: 7282754634156925524}
+  - {fileID: 6521889592346599457}
   m_Father: {fileID: 2175351750211569499}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
