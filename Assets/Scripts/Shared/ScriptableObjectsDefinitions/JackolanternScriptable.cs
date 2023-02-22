@@ -14,6 +14,7 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
         [SerializeField] private int _ammoRequestsMinimum;
         [SerializeField] private int _ammoRequestsMaximum;
         [SerializeField] private float _aimRateMinimum;
+        [SerializeField] private float _aimRateMaximum;
 
         private ILimitedGetterUtility<int> _intLimitedGetter;
         private ILimitedGetterUtility<float> _floatLimitedGetter;
@@ -25,6 +26,7 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
             _ammoRequestsMinimum = Constants.Enemies.Jackolanterns.AmmoRequestsMinimum.Minimum;
             _ammoRequestsMaximum = Constants.Enemies.Jackolanterns.AmmoRequestsMaximum.Minimum;
             _aimRateMinimum = Constants.Enemies.Jackolanterns.AimRateMinimum.Maximum;
+            _aimRateMaximum = Constants.Enemies.Jackolanterns.AimRateMaximum.Maximum;
 
             _intLimitedGetter = new LimitedGetterUtility<int>();
             _floatLimitedGetter = new LimitedGetterUtility<float>();
@@ -114,6 +116,22 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
             }
         }
 
-        public float AimRate => Random.Range(_aimRateMinimum, Constants.Enemies.Jackolanterns.AimRateMinimum.Maximum);
+        public float AimRateMaximum
+        {
+            get
+            {
+                return _aimRateMaximum;
+            }
+
+            set
+            {
+                _aimRateMaximum = _floatLimitedGetter.GetWithinLimits(
+                    unlimitedValue: value,
+                    minimum: Constants.Enemies.Jackolanterns.AimRateMaximum.Minimum,
+                    maximum: Constants.Enemies.Jackolanterns.AimRateMaximum.Maximum);
+            }
+        }
+
+        public float AimRate => Random.Range(_aimRateMinimum, _aimRateMaximum);
     }
 }
