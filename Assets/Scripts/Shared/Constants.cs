@@ -71,7 +71,6 @@ namespace LimboOfCeres.Scripts.Shared
                 public const float DefaultGravityScale = 10f;
                 public const float CeilingSpawnProbability = 0.6f;
                 public const float DiplomaticThreshold = 3.8f;
-                public const float FireRateMinimum = 0.25f;
                 public const float FireRateMaximum = 0.375f;
                 public const float FloorSpeedBoost = 0.75f;
                 public static class FireForceMinimum
@@ -107,6 +106,12 @@ namespace LimboOfCeres.Scripts.Shared
                 {
                     public const float Minimum = 0.375f;
                     public const float Maximum = 1.5f;
+                }
+
+                public static class FireRateMinimum
+                {
+                    public const float Minimum = 0.25f;
+                    public const float Maximum = 1f;
                 }
             }
         }

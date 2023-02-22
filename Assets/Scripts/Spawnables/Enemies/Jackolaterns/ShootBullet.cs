@@ -62,11 +62,9 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
             {
                 if (rb.gravityScale > 0)
                 {
-                    return Random.Range(
-                        Constants.Enemies.Jackolanterns.FireRateMinimum,
-                        Constants.Enemies.Jackolanterns.FireRateMaximum) * Constants.Enemies.Jackolanterns.FloorSpeedBoost;
+                    return _jackolanternData.FireRate * Constants.Enemies.Jackolanterns.FloorSpeedBoost;
                 }
-                return Random.Range(Constants.Enemies.Jackolanterns.FireRateMinimum, Constants.Enemies.Jackolanterns.FireRateMaximum);
+                return _jackolanternData.FireRate;
             }
         }
 
