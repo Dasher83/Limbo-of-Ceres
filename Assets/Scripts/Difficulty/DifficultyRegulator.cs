@@ -48,8 +48,8 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
         }
 
         private float MetersUntilLevelUp => Random.Range(
-            Constants.Difficulty.MetersUntilLevelUp.Minimum,
-            Constants.Difficulty.MetersUntilLevelUp.Maximum);
+            Constants.Difficulty.MetersUntilLevelUp.Minimum / 8,
+            Constants.Difficulty.MetersUntilLevelUp.Maximum / 8);
 
         private void LevelUp()
         {
