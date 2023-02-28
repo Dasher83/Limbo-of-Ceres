@@ -15,6 +15,7 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
         [SerializeField] private float _aimRateMinimum;
         public LimitedNumericProperty<float> AimRateMaximum;
         [SerializeField] private float _fireRateMinimum;
+        public LimitedNumericProperty<float> FireRateMaximum;
 
         private INumericLimiter<int> _intLimitedGetter;
         private INumericLimiter<float> _floatLimitedGetter;
@@ -33,6 +34,11 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
                 maximum: Constants.Enemies.Jackolanterns.AimRateMaximum.Maximum);
 
             _fireRateMinimum = Constants.Enemies.Jackolanterns.FireRateMinimum.Maximum;
+
+            FireRateMaximum = new LimitedNumericProperty<float>(
+                initialValue: Constants.Enemies.Jackolanterns.FireRateMaximum.Maximum,
+                minimum: Constants.Enemies.Jackolanterns.FireRateMaximum.Minimum,
+                maximum: Constants.Enemies.Jackolanterns.FireRateMaximum.Maximum);
 
             _intLimitedGetter = new NumericLimiter<int>();
             _floatLimitedGetter = new NumericLimiter<float>();
@@ -140,6 +146,6 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
             }
         }
 
-        public float FireRate => Random.Range(_fireRateMinimum, Constants.Enemies.Jackolanterns.FireRateMaximum);
+        public float FireRate => Random.Range(_fireRateMinimum, FireRateMaximum.LimitedValue);
     }
 }
