@@ -3,10 +3,12 @@ using LimboOfCeres.Scripts.TimeScripts;
 using LimboOfCeres.Scripts.Utils;
 using UnityEngine;
 
+
 namespace LimboOfCeres.Scripts.Spawnables.ExtraLife
 {
     public class SpawnExtraLife : MonoBehaviour
     {
+        [SerializeField] private ExtraLifeScriptable extraLifeData;
         private SpriteRenderer floorSpriteRenderer = null;
         private SpriteRenderer ceilingSpriteRenderer = null;
         private ResettableTimer spawnTimer;
@@ -34,7 +36,7 @@ namespace LimboOfCeres.Scripts.Spawnables.ExtraLife
 
         private void Start()
         {
-            spawnTimer = new ResettableTimer(Random.Range(Constants.ExtraLife.MinimumRespawnTime, Constants.ExtraLife.MaximumRespawnTime));
+            spawnTimer = new ResettableTimer(extraLifeData.SpawnRate);
             extraLife = gameObject.transform.GetChild(0).gameObject;
             extraLifeRenderer = extraLife.GetComponent<SpriteRenderer>();
             floorSpriteRenderer = GameObject.Find(Constants.GameObjects.MainFloor).GetComponent<SpriteRenderer>();

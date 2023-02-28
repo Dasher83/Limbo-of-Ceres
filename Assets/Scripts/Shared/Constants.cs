@@ -175,10 +175,15 @@ namespace LimboOfCeres.Scripts.Shared
         public static class ExtraLife
         {
             public const float HorizontalPositionOffsetFactor = 0.8f;
-            public const float MinimumRespawnTime = 20f;
             public const float MaximumRespawnTime = 30f;
             public const float VerticalSpawnOffset = 1.7f;
             public const float MovementSpeed = 3.5f;
+
+            public static class SpawnRateMinimum
+            {
+                public const float Minimum = 10f;
+                public const float Maximum = 20f;
+            }
         }
 
         public static class GameObjects

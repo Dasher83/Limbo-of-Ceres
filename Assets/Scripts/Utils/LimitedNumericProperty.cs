@@ -32,5 +32,9 @@ namespace LimboOfCeres.Scripts.Utils
                 unlimitedValue: value,
                 minimum: _minimum, maximum: _maximum);
         }
+
+        public T Minimum => _minimum;
+
+        public T Maximum => _maximum;
     }
 }
