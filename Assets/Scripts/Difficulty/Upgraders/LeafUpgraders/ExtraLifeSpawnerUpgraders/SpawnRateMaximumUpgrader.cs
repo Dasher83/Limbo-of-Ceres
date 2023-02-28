@@ -5,17 +5,17 @@ using UnityEngine;
 
 namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.ExtraLifeSpawner
 {
-    public class SpawnRateMinimumUpgrader : LeafUpgrader
+    public class SpawnRateMaximumUpgrader : LeafUpgrader
     {
         [SerializeField] private ExtraLifeScriptable _extraLifeData;
 
         protected override void OnUpgradeHook()
         {
-            _extraLifeData.SpawnRateMinimum.LimitedValue *= Constants.Difficulty.DefaultLevelUpFactor;
+            _extraLifeData.SpawnRateMaximum.LimitedValue *= Constants.Difficulty.DefaultLevelUpFactor;
         }
 
         public override bool IsAtLimit => Mathf.Approximately(
-            _extraLifeData.SpawnRateMinimum.LimitedValue,
-            _extraLifeData.SpawnRateMinimum.Maximum);
+            _extraLifeData.SpawnRateMaximum.LimitedValue,
+            _extraLifeData.SpawnRateMaximum.Maximum);
     }
 }

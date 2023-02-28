@@ -184,6 +184,12 @@ namespace LimboOfCeres.Scripts.Shared
                 public const float Minimum = 10f;
                 public const float Maximum = 20f;
             }
+
+            public static class SpawnRateMaximum
+            {
+                public const float Minimum = 30f;
+                public const float Maximum = 40f;
+            }
         }
 
         public static class GameObjects

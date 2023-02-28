@@ -16,11 +16,16 @@ namespace LimboOfCeres
         public void Initialize()
         {
             SpawnRateMinimum = new LimitedNumericProperty<float>(
-                initialValue: Constants.ExtraLife.SpawnRateMinimum.Maximum,
+                initialValue: Constants.ExtraLife.SpawnRateMinimum.Minimum,
                 minimum: Constants.ExtraLife.SpawnRateMinimum.Minimum,
                 maximum: Constants.ExtraLife.SpawnRateMinimum.Maximum);
+
+            SpawnRateMaximum = new LimitedNumericProperty<float>(
+                initialValue: Constants.ExtraLife.SpawnRateMaximum.Minimum,
+                minimum: Constants.ExtraLife.SpawnRateMaximum.Minimum,
+                maximum: Constants.ExtraLife.SpawnRateMaximum.Maximum);
         }
 
-        public float SpawnRate => Random.Range(SpawnRateMinimum.LimitedValue, Constants.ExtraLife.MaximumRespawnTime);
+        public float SpawnRate => Random.Range(SpawnRateMinimum.LimitedValue, SpawnRateMaximum.LimitedValue);
     }
 }
