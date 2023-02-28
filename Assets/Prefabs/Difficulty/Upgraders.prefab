@@ -797,6 +797,7 @@ Transform:
   m_Children:
   - {fileID: 1356824489346416458}
   - {fileID: 8642177867022942743}
+  - {fileID: 2162240598339970685}
   m_Father: {fileID: 2175351750211569499}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -857,6 +858,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jackolanternData: {fileID: 11400000, guid: 944e8d5603c39a44abfeec713da717ed, type: 2}
+--- !u!1 &8807073824538729234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2162240598339970685}
+  - component: {fileID: 4261799878114095881}
+  m_Layer: 0
+  m_Name: MovementSpeed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2162240598339970685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8807073824538729234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9071248808089245240}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4261799878114095881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8807073824538729234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1ac24d98f1c9e04aab41ce8d0760bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _extraLifeData: {fileID: 11400000, guid: b6d64bd80f0a7bc428338046e84daf21, type: 2}
 --- !u!1 &9067753386857752171
 GameObject:
   m_ObjectHideFlags: 0

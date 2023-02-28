@@ -24,8 +24,14 @@ namespace LimboOfCeres
                 initialValue: Constants.ExtraLife.SpawnRateMaximum.Minimum,
                 minimum: Constants.ExtraLife.SpawnRateMaximum.Minimum,
                 maximum: Constants.ExtraLife.SpawnRateMaximum.Maximum);
+
+            MovementSpeed = new LimitedNumericProperty<float>(
+                initialValue: Constants.ExtraLife.MovementSpeed.Minimum,
+                minimum: Constants.ExtraLife.MovementSpeed.Minimum,
+                maximum: Constants.ExtraLife.MovementSpeed.Maximum);
         }
 
         public float SpawnRate => Random.Range(SpawnRateMinimum.LimitedValue, SpawnRateMaximum.LimitedValue);
+
     }
 }

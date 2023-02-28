@@ -177,7 +177,6 @@ namespace LimboOfCeres.Scripts.Shared
             public const float HorizontalPositionOffsetFactor = 0.8f;
             public const float MaximumRespawnTime = 30f;
             public const float VerticalSpawnOffset = 1.7f;
-            public const float MovementSpeed = 3.5f;
 
             public static class SpawnRateMinimum
             {
@@ -189,6 +188,12 @@ namespace LimboOfCeres.Scripts.Shared
             {
                 public const float Minimum = 30f;
                 public const float Maximum = 40f;
+            }
+
+            public static class MovementSpeed
+            {
+                public const float Minimum = 3.5f;
+                public const float Maximum = 7f;
             }
         }
 
