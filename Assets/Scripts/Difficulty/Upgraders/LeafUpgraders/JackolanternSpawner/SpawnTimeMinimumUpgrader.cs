@@ -4,19 +4,19 @@ using LimboOfCeres.Scripts.Shared;
 using UnityEngine;
 
 
-namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.JackolanternSpawnerUpgraders
+namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.JackolanternSpawner
 {
-    public class SpawnTimeMaximumUpgrader : LeafUpgrader
+    public class SpawnTimeMinimumUpgrader : LeafUpgrader
     {
         [SerializeField] private JackolanternSpawnerScriptable _spawnerData;
 
         protected override void OnUpgradeHook()
         {
-            _spawnerData.SpawnTimeMaximum.LimitedValue *= Constants.Difficulty.DefaultInverseLevelUpFactor;
+            _spawnerData.SpawnTimeMinimum.LimitedValue *= Constants.Difficulty.DefaultInverseLevelUpFactor;
         }
 
         public override bool IsAtLimit => Mathf.Approximately(
-            _spawnerData.SpawnTimeMaximum.Minimum,
-            _spawnerData.SpawnTimeMaximum.LimitedValue);
+            _spawnerData.SpawnTimeMinimum.Minimum,
+            _spawnerData.SpawnTimeMinimum.LimitedValue);
     }
 }

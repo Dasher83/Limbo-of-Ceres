@@ -4,19 +4,19 @@ using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using UnityEngine;
 
 
-namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders
+namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.Jackolanterns
 {
-    public class FireRateMinimumUpgrader : LeafUpgrader
+    public class AimRateMinimumUpgrader : LeafUpgrader
     {
         [SerializeField] private JackolanternScriptable _jackolanternData;
 
         protected override void OnUpgradeHook()
         {
-            _jackolanternData.FireRateMinimum.LimitedValue *= Constants.Difficulty.DefaultInverseLevelUpFactor;
+            _jackolanternData.AimRateMinimum.LimitedValue *= Constants.Difficulty.DefaultInverseLevelUpFactor;
         }
 
         public override bool IsAtLimit => Mathf.Approximately(
-            _jackolanternData.FireRateMinimum.Minimum,
-            _jackolanternData.FireRateMinimum.LimitedValue);
+            _jackolanternData.AimRateMinimum.Minimum,
+            _jackolanternData.AimRateMinimum.LimitedValue);
     }
 }

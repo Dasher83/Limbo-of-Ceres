@@ -4,19 +4,19 @@ using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using UnityEngine;
 
 
-namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.BulletUpgraders
+namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.Bullets
 {
-    public class CurvedProbabilityUpgrader : LeafUpgrader
+    public class GravityScaleMaximumUpgrader : LeafUpgrader
     {
         [SerializeField] private BulletsScriptable _bulletsData;
 
         protected override void OnUpgradeHook()
         {
-            _bulletsData.CurvedProbability.LimitedValue *= Constants.Difficulty.DefaultLevelUpFactor;
+            _bulletsData.GravityScaleMaximum.LimitedValue *= Constants.Difficulty.DefaultLevelUpFactor;
         }
 
         public override bool IsAtLimit => Mathf.Approximately(
-            _bulletsData.CurvedProbability.Maximum,
-            _bulletsData.CurvedProbability.LimitedValue);
+            _bulletsData.GravityScaleMaximum.Maximum,
+            _bulletsData.GravityScaleMaximum.LimitedValue);
     }
 }

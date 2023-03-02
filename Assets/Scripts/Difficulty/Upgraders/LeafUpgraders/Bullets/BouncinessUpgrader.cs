@@ -3,7 +3,7 @@ using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using UnityEngine;
 
 
-namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.BulletUpgraders
+namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.Bullets
 {
     public class BouncinessUpgrader : LeafUpgrader
     {

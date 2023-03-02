@@ -4,7 +4,7 @@ using LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore;
 using UnityEngine;
 
 
-namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.BulletUpgraders
+namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.Bullets
 {
     public class GravityScaleMinimumUpgrader : LeafUpgrader
     {
