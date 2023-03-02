@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
 {
-    [CreateAssetMenu(fileName = "ScrollingSpeedData", menuName = "ScriptableObjects/ScrollingSpeedScriptableObject", order = 1)]
-    public class ScrollingSpeedScriptableObject : ScriptableObject
+    [CreateAssetMenu(fileName = "ScrollingSpeedData", menuName = "ScriptableObjects/ScrollingSpeedScriptable", order = 1)]
+    public class ScrollingSpeedScriptable : ScriptableObject
     {
         [SerializeField]
         private float scrollingSpeed;
