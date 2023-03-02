@@ -12,12 +12,12 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders
         private JackolanternScriptable _jackolanternData;
 
         public override bool IsAtLimit => Mathf.Approximately(
-            _jackolanternData.FireRateMinimum,
+            _jackolanternData.FireRateMinimum.LimitedValue,
             Constants.Enemies.Jackolanterns.FireRateMinimum.Minimum);
 
         protected override void OnUpgradeHook()
         {
-            _jackolanternData.FireRateMinimum *= Constants.Difficulty.DefaultInverseLevelUpFactor;
+            _jackolanternData.FireRateMinimum.LimitedValue *= Constants.Difficulty.DefaultInverseLevelUpFactor;
         }
     }
 }

@@ -12,10 +12,10 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.JackolanternUp
 
         protected override void OnUpgradeHook()
         {
-            _jackolanternData.AmmoRequestsMaximum += 1;
+            _jackolanternData.AmmoRequestsMaximum.LimitedValue += 1;
         }
 
         public override bool IsAtLimit => Mathf.Approximately(
-            Constants.Enemies.Jackolanterns.AmmoRequestsMaximum.Maximum, _jackolanternData.AmmoRequestsMaximum);
+            Constants.Enemies.Jackolanterns.AmmoRequestsMaximum.Maximum, _jackolanternData.AmmoRequestsMaximum.LimitedValue);
     }
 }
