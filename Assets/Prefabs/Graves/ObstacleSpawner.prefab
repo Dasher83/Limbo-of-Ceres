@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 1349739426613462080, guid: acec30320676fa345a2aea38ba0db42d, type: 3}
-  spawningData: {fileID: 11400000, guid: 1eddc6a9ad6005e45a2cb34edded52ea, type: 2}
+  spawnerData: {fileID: 11400000, guid: 1eddc6a9ad6005e45a2cb34edded52ea, type: 2}
   floorSpriteRenderer: {fileID: 0}
   ceilingSpriteRenderer: {fileID: 0}
   sprites:

@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb64311ed8e17c42928887e55e64cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawningData: {fileID: 11400000, guid: 2f2892da7c09db64f9b47d40f65c778b, type: 2}
+  spawnerData: {fileID: 11400000, guid: 2f2892da7c09db64f9b47d40f65c778b, type: 2}
 --- !u!1 &1330102874658966766
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da1dc597b7d6db41a8328de2264ccfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawningData: {fileID: 11400000, guid: 2f2892da7c09db64f9b47d40f65c778b, type: 2}
+  spawnerData: {fileID: 11400000, guid: 2f2892da7c09db64f9b47d40f65c778b, type: 2}
 --- !u!1 &9124811904852523482
 GameObject:
   m_ObjectHideFlags: 0

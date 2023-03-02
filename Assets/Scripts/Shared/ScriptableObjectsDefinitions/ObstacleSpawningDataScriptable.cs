@@ -1,15 +1,23 @@
+using LimboOfCeres.Scripts.Utils;
 using UnityEngine;
 
 
 namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
 {
-    [CreateAssetMenu(fileName = "ObstacleSpawningData", menuName = "ScriptableObjects/ObstacleSpawningData", order = 5)]
-    public class ObstacleSpawningDataScriptable : SpawningDataScriptable
+    [CreateAssetMenu(fileName = "ObstacleSpawnerData", menuName = "ScriptableObjects/ObstacleSpawnerScriptable", order = 5)]
+    public class ObstacleSpawningDataScriptable : SpawnerScriptable
     {
         public override void Initialize()
         {
-            this.spawnTimeMinimum = Constants.Spawners.Obstacles.SpawnTimeMinimum.Maximum;
-            this.spawnTimeMaximum = Constants.Spawners.Obstacles.SpawnTimeMaximum.Maximum;
+            this.SpawnTimeMinimum = new LimitedNumericProperty<float>(
+                initialValue: Constants.Spawners.Obstacles.SpawnTimeMinimum.Maximum,
+                minimum: Constants.Spawners.Obstacles.SpawnTimeMinimum.Minimum,
+                maximum: Constants.Spawners.Obstacles.SpawnTimeMinimum.Maximum);
+
+            this.SpawnTimeMaximum = new LimitedNumericProperty<float>(
+                initialValue: Constants.Spawners.Obstacles.SpawnTimeMaximum.Maximum,
+                minimum: Constants.Spawners.Obstacles.SpawnTimeMaximum.Minimum,
+                maximum: Constants.Spawners.Obstacles.SpawnTimeMaximum.Maximum);
         }
     }
 }

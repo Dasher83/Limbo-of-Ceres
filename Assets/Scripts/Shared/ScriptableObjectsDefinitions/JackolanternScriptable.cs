@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
 {
-    [CreateAssetMenu(fileName = "JackolanternData", menuName = "ScriptableObjects/JackolanternData", order = 5)]
+    [CreateAssetMenu(fileName = "JackolanternData", menuName = "ScriptableObjects/JackolanternScriptable", order = 5)]
     public class JackolanternScriptable : ScriptableObject, IInitializable
     {
         public LimitedNumericProperty<float> FireForceMinimum;
