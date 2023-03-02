@@ -1,4 +1,5 @@
 using LimboOfCeres.Scripts.Shared.Interfaces;
+using LimboOfCeres.Scripts.Utils;
 using UnityEngine;
 
 
@@ -7,105 +8,34 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
     [CreateAssetMenu(fileName = "BulletsData", menuName = "ScriptableObjects/BulletsScriptable", order = 5)]
     public class BulletsScriptable : ScriptableObject, IInitializable
     {
-        [SerializeField] private float bounciness;
-        [SerializeField] private float curvedProbability;
-        [SerializeField] private float gravityScaleMaximum;
-        [SerializeField] private float gravityScaleMinimum;
+        public LimitedNumericProperty<float> Bounciness;
+        public LimitedNumericProperty<float> CurvedProbability;
+        public LimitedNumericProperty<float> GravityScaleMinimum;
+        public LimitedNumericProperty<float> GravityScaleMaximum;
 
         public void Initialize()
         {
-            this.curvedProbability = Constants.Projectiles.Bullet.CurvedProbability.Minimum;
-            this.bounciness = Constants.Projectiles.Bullet.Bounciness.Minimum;
-            this.gravityScaleMinimum = Constants.Projectiles.Bullet.GravityScaleMinimum.Minimum;
-            this.gravityScaleMaximum = Constants.Projectiles.Bullet.GravityScaleMaximum.Minimum;
+            CurvedProbability = new LimitedNumericProperty<float>(
+                initialValue: Constants.Projectiles.Bullet.CurvedProbability.Minimum,
+                minimum: Constants.Projectiles.Bullet.CurvedProbability.Minimum,
+                maximum: Constants.Projectiles.Bullet.CurvedProbability.Maximum);
+
+            Bounciness = new LimitedNumericProperty<float>(
+                initialValue: Constants.Projectiles.Bullet.Bounciness.Minimum,
+                minimum: Constants.Projectiles.Bullet.Bounciness.Minimum,
+                maximum: Constants.Projectiles.Bullet.Bounciness.Maximum);
+
+            GravityScaleMinimum = new LimitedNumericProperty<float>(
+                initialValue: Constants.Projectiles.Bullet.GravityScaleMinimum.Minimum,
+                minimum: Constants.Projectiles.Bullet.GravityScaleMinimum.Minimum,
+                maximum: Constants.Projectiles.Bullet.GravityScaleMinimum.Maximum);
+
+            GravityScaleMaximum = new LimitedNumericProperty<float>(
+                initialValue: Constants.Projectiles.Bullet.GravityScaleMaximum.Minimum,
+                minimum: Constants.Projectiles.Bullet.GravityScaleMaximum.Minimum,
+                maximum: Constants.Projectiles.Bullet.GravityScaleMaximum.Maximum);
         }
 
-        public float CurvedProbability
-        {
-            get { return curvedProbability; }
-
-            set
-            {
-                if (value > Constants.Projectiles.Bullet.CurvedProbability.Maximum)
-                {
-                    curvedProbability = Constants.Projectiles.Bullet.CurvedProbability.Maximum;
-                    return;
-                }
-
-                if(value < Constants.Projectiles.Bullet.CurvedProbability.Minimum)
-                {
-                    curvedProbability = Constants.Projectiles.Bullet.CurvedProbability.Minimum;
-                    return;
-                }
-
-                curvedProbability = value;
-            }
-        }
-
-        public float Bounciness
-        {
-            get { return bounciness; }
-
-            set
-            {
-                if (value > Constants.Projectiles.Bullet.Bounciness.Maximum)
-                {
-                    bounciness = Constants.Projectiles.Bullet.Bounciness.Maximum;
-                    return;
-                }
-
-                if (value < Constants.Projectiles.Bullet.Bounciness.Minimum)
-                {
-                    bounciness = Constants.Projectiles.Bullet.Bounciness.Minimum;
-                    return;
-                }
-
-                bounciness = value;
-            }
-        }
-
-        public float GravityScaleMinimum
-        {
-            get { return gravityScaleMinimum; }
-
-            set
-            {
-                if (value * -1 > Constants.Projectiles.Bullet.GravityScaleMinimum.Maximum * -1)
-                {
-                    gravityScaleMinimum = Constants.Projectiles.Bullet.GravityScaleMinimum.Maximum;
-                    return;
-                }
-
-                if (value * -1 < Constants.Projectiles.Bullet.GravityScaleMinimum.Minimum * -1)
-                {
-                    gravityScaleMinimum = Constants.Projectiles.Bullet.GravityScaleMinimum.Minimum;
-                    return;
-                }
-
-                gravityScaleMinimum = value;
-            }
-        }
-
-        public float GravityScaleMaximum
-        {
-            get { return gravityScaleMaximum; }
-
-            set
-            {
-                if (value > Constants.Projectiles.Bullet.GravityScaleMaximum.Maximum)
-                {
-                    gravityScaleMaximum = Constants.Projectiles.Bullet.GravityScaleMaximum.Maximum;
-                    return;
-                }
-
-                if (value < Constants.Projectiles.Bullet.GravityScaleMaximum.Minimum)
-                {
-                    gravityScaleMaximum = Constants.Projectiles.Bullet.GravityScaleMaximum.Minimum;
-                    return;
-                }
-
-                gravityScaleMaximum = value;
-            }
-        }
+        public float GravityScale => Random.Range(GravityScaleMinimum.LimitedValue, GravityScaleMaximum.LimitedValue);
     }
 }

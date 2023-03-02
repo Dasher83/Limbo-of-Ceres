@@ -139,8 +139,8 @@ namespace LimboOfCeres.Scripts.Shared
 
                 public static class GravityScaleMinimum
                 {
-                    public const float Minimum = -0.1f;
-                    public const float Maximum = -0.3f;
+                    public const float Minimum = -0.3f;
+                    public const float Maximum = -0.1f;
                 }
 
                 public static class GravityScaleMaximum

@@ -13,10 +13,10 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.BulletUpgrader
 
         protected override void OnUpgradeHook()
         {
-            bulletsData.GravityScaleMaximum *= Constants.Difficulty.DefaultLevelUpFactor;
+            bulletsData.GravityScaleMaximum.LimitedValue *= Constants.Difficulty.DefaultLevelUpFactor;
         }
 
         public override bool IsAtLimit => Mathf.Approximately(
-            Constants.Projectiles.Bullet.GravityScaleMaximum.Maximum, bulletsData.GravityScaleMaximum);
+            Constants.Projectiles.Bullet.GravityScaleMaximum.Maximum, bulletsData.GravityScaleMaximum.LimitedValue);
     }
 }

@@ -13,10 +13,10 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.BulletUpgrader
 
         protected override void OnUpgradeHook()
         {
-            bulletsData.Bounciness *= 1.8f;
+            bulletsData.Bounciness.LimitedValue *= 1.8f;
         }
 
         public override bool IsAtLimit => Mathf.Approximately(
-            Constants.Projectiles.Bullet.Bounciness.Maximum, bulletsData.Bounciness);
+            Constants.Projectiles.Bullet.Bounciness.Maximum, bulletsData.Bounciness.LimitedValue);
     }
 }

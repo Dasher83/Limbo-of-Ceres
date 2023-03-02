@@ -1,6 +1,5 @@
 using LimboOfCeres.Scripts.Difficulty.Upgraders.CompositeCore;
 using LimboOfCeres.Scripts.Shared;
-using LimboOfCeres.Scripts.Shared.Enums;
 using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using UnityEngine;
 
@@ -14,10 +13,10 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.BulletUpgrader
 
         protected override void OnUpgradeHook()
         {
-            bulletsData.CurvedProbability *= Constants.Difficulty.DefaultLevelUpFactor;
+            bulletsData.CurvedProbability.LimitedValue *= Constants.Difficulty.DefaultLevelUpFactor;
         }
 
         public override bool IsAtLimit => Mathf.Approximately(
-            Constants.Projectiles.Bullet.CurvedProbability.Maximum, bulletsData.CurvedProbability);
+            Constants.Projectiles.Bullet.CurvedProbability.Maximum, bulletsData.CurvedProbability.LimitedValue);
     }
 }

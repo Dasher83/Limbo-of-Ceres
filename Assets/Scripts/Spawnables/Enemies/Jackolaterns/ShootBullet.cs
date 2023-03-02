@@ -19,8 +19,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         private Color cooldownColor;
         [SerializeField]
         private GameObject pumpkinPrefab;
-        [SerializeField]
-        private BulletsScriptable bulletsData;
+        [SerializeField] private BulletsScriptable _bulletsData;
         [SerializeField] private JackolanternScriptable _jackolanternData;
 
         private Transform lockedOnTarget;
@@ -71,9 +70,9 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         private float BulletGravityScale {
             get
             {
-                if(Random.value > bulletsData.CurvedProbability)
+                if(Random.value > _bulletsData.CurvedProbability.LimitedValue)
                 {
-                    return Random.Range(bulletsData.GravityScaleMinimum, bulletsData.GravityScaleMaximum);
+                    return _bulletsData.GravityScale;
                 }
                 return 0;
             }
@@ -190,10 +189,10 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
                 {
                     pumpkinRigidBody2D.gravityScale *= -1;
                 }
-                if(pumpkinRigidBody2D.sharedMaterial.bounciness != bulletsData.Bounciness)
+                if(pumpkinRigidBody2D.sharedMaterial.bounciness != _bulletsData.Bounciness.LimitedValue)
                 {
                     newPhysicsMaterial2D = new PhysicsMaterial2D();
-                    newPhysicsMaterial2D.bounciness = bulletsData.Bounciness;
+                    newPhysicsMaterial2D.bounciness = _bulletsData.Bounciness.LimitedValue;
                     pumpkinRigidBody2D.sharedMaterial = newPhysicsMaterial2D;
                 }
                 pumpkinRigidBody2D.AddForce(_jackolanternData.FireForceRandom * Random.Range(0.75f, 1.00f) * directionToAim);
