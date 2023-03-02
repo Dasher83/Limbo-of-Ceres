@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
 {
-    [CreateAssetMenu(fileName = "PlayerData", menuName = "ScriptableObjects/PlayerDataScriptable", order = 2)]
-    public class PlayerDataScriptable : ScriptableObject, IDurable, IDamageable, IRestorable, IInitializable
+    [CreateAssetMenu(fileName = "PlayerData", menuName = "ScriptableObjects/PlayerScriptable", order = 2)]
+    public class PlayerScriptable : ScriptableObject, IDurable, IDamageable, IRestorable, IInitializable
     {
         [SerializeField] private int lives;
         private float currentMeters;

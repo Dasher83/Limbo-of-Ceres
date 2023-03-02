@@ -11,7 +11,7 @@ namespace LimboOfCeres.Scripts.Managers
 {
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private PlayerDataScriptable playerData;
+        [SerializeField] private PlayerScriptable playerData;
         [SerializeField] private List<ScriptableObject> initializables;
         [SerializeField] private GameOver gameOverMenu;
         [SerializeField] private LifeBar lifeBar;
@@ -27,17 +27,6 @@ namespace LimboOfCeres.Scripts.Managers
         
         void Update()
         {
-            // Debugger
-            if (Input.GetKeyDown(KeyCode.H))
-            {
-                playerData.ReceiveRestauration(1);
-            }
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                playerData.ReceiveDamage(1);
-            }
-            // Debugger
-
             if (currentState == GameState.STARTING)
             {
                 SetState(GameState.PLAYING);

@@ -11,7 +11,7 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
     public class DifficultyRegulator : MonoBehaviour
     {
         [SerializeField]
-        private PlayerDataScriptable playerData;
+        private PlayerScriptable playerData;
         [SerializeField]
         private GameObject upgradersGameObject;
 

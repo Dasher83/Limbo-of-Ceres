@@ -2,11 +2,12 @@ using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using UnityEngine;
 using TMPro;
 
+
 namespace LimboOfCeres.Scripts.UI
 {
     public class MetersCounter : MonoBehaviour
     {
-        [SerializeField] private PlayerDataScriptable playerData;
+        [SerializeField] private PlayerScriptable playerData;
         [SerializeField] private ScrollingSpeedScriptableObject scrollingSpeedFloor;
         private TextMeshProUGUI metersText;
 

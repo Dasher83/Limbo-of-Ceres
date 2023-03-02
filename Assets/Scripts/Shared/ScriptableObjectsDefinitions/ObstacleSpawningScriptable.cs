@@ -5,7 +5,7 @@ using UnityEngine;
 namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
 {
     [CreateAssetMenu(fileName = "ObstacleSpawnerData", menuName = "ScriptableObjects/ObstacleSpawnerScriptable", order = 5)]
-    public class ObstacleSpawningDataScriptable : SpawnerScriptable
+    public class ObstacleSpawningScriptable : SpawnerScriptable
     {
         public override void Initialize()
         {
