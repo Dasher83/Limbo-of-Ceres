@@ -15,7 +15,7 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.ExtraLifeSpawn
         }
 
         public override bool IsAtLimit => Mathf.Approximately(
-            _extraLifeData.SpawnRateMaximum.LimitedValue,
-            _extraLifeData.SpawnRateMaximum.Maximum);
+            _extraLifeData.SpawnRateMaximum.Maximum,
+            _extraLifeData.SpawnRateMaximum.LimitedValue);
     }
 }

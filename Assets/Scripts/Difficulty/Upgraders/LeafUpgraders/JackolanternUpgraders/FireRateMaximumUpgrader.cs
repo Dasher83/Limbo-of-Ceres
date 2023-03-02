@@ -8,16 +8,15 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders
 {
     public class FireRateMaximumUpgrader : LeafUpgrader
     {
-        [SerializeField]
-        private JackolanternScriptable _jackolanternData;
-
-        public override bool IsAtLimit => Mathf.Approximately(
-            _jackolanternData.FireRateMaximum.LimitedValue,
-            Constants.Enemies.Jackolanterns.FireRateMaximum.Minimum);
+        [SerializeField] private JackolanternScriptable _jackolanternData;
 
         protected override void OnUpgradeHook()
         {
             _jackolanternData.FireRateMaximum.LimitedValue *= Constants.Difficulty.DefaultInverseLevelUpFactor;
         }
+
+        public override bool IsAtLimit => Mathf.Approximately(
+            _jackolanternData.FireRateMaximum.Minimum,
+            _jackolanternData.FireRateMaximum.LimitedValue);
     }
 }

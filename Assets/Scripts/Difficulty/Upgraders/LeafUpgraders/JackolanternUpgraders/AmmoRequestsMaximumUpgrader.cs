@@ -16,6 +16,7 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.JackolanternUp
         }
 
         public override bool IsAtLimit => Mathf.Approximately(
-            Constants.Enemies.Jackolanterns.AmmoRequestsMaximum.Maximum, _jackolanternData.AmmoRequestsMaximum.LimitedValue);
+            _jackolanternData.AmmoRequestsMaximum.Maximum,
+            _jackolanternData.AmmoRequestsMaximum.LimitedValue);
     }
 }

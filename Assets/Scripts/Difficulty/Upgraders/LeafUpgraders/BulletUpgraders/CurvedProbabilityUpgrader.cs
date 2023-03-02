@@ -8,15 +8,15 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.BulletUpgrader
 {
     public class CurvedProbabilityUpgrader : LeafUpgrader
     {
-        [SerializeField]
-        private BulletsScriptable bulletsData;
+        [SerializeField] private BulletsScriptable _bulletsData;
 
         protected override void OnUpgradeHook()
         {
-            bulletsData.CurvedProbability.LimitedValue *= Constants.Difficulty.DefaultLevelUpFactor;
+            _bulletsData.CurvedProbability.LimitedValue *= Constants.Difficulty.DefaultLevelUpFactor;
         }
 
         public override bool IsAtLimit => Mathf.Approximately(
-            Constants.Projectiles.Bullet.CurvedProbability.Maximum, bulletsData.CurvedProbability.LimitedValue);
+            _bulletsData.CurvedProbability.Maximum,
+            _bulletsData.CurvedProbability.LimitedValue);
     }
 }

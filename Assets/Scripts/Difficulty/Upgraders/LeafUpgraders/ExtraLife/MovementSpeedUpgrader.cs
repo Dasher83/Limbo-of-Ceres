@@ -9,13 +9,13 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.ExtraLife
     {
         [SerializeField] private ExtraLifeScriptable _extraLifeData;
 
-        public override bool IsAtLimit => Mathf.Approximately(
-            _extraLifeData.MovementSpeed.LimitedValue,
-            _extraLifeData.MovementSpeed.Maximum);
-
         protected override void OnUpgradeHook()
         {
             _extraLifeData.MovementSpeed.LimitedValue *= Constants.Difficulty.DefaultLevelUpFactor;
         }
+
+        public override bool IsAtLimit => Mathf.Approximately(
+            _extraLifeData.MovementSpeed.Maximum,
+            _extraLifeData.MovementSpeed.LimitedValue);
     }
 }

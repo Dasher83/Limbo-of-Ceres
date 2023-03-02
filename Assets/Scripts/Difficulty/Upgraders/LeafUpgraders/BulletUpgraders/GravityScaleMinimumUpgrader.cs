@@ -8,15 +8,15 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.BulletUpgrader
 {
     public class GravityScaleMinimumUpgrader : LeafUpgrader
     {
-        [SerializeField]
-        private BulletsScriptable bulletsData;
+        [SerializeField] private BulletsScriptable _bulletsData;
 
         protected override void OnUpgradeHook()
         {
-            bulletsData.GravityScaleMinimum.LimitedValue *= Constants.Difficulty.DefaultInverseLevelUpFactor;
+            _bulletsData.GravityScaleMinimum.LimitedValue *= Constants.Difficulty.DefaultInverseLevelUpFactor;
         }
 
         public override bool IsAtLimit => Mathf.Approximately(
-            Constants.Projectiles.Bullet.GravityScaleMinimum.Maximum, bulletsData.GravityScaleMinimum.LimitedValue);
+            _bulletsData.GravityScaleMinimum.Maximum,
+            _bulletsData.GravityScaleMinimum.LimitedValue);
     }
 }
