@@ -12,11 +12,11 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.JackolanternSp
 
         protected override void OnUpgradeHook()
         {
-            _spawnerData.SpawnTimeMinimum.LimitedValue *= Constants.Difficulty.DefaultInverseLevelUpFactor;
+            _spawnerData.SpawnRateMinimum.LimitedValue *= Constants.Difficulty.DefaultInverseLevelUpFactor;
         }
 
         public override bool IsAtLimit => Mathf.Approximately(
-            _spawnerData.SpawnTimeMinimum.Minimum,
-            _spawnerData.SpawnTimeMinimum.LimitedValue);
+            _spawnerData.SpawnRateMinimum.Minimum,
+            _spawnerData.SpawnRateMinimum.LimitedValue);
     }
 }

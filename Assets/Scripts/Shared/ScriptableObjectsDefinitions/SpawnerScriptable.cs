@@ -7,11 +7,11 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
 {
     public abstract class SpawnerScriptable : ScriptableObject, IInitializable
     {
-        public LimitedNumericProperty<float> SpawnTimeMinimum;
-        public LimitedNumericProperty<float> SpawnTimeMaximum;
+        public LimitedNumericProperty<float> SpawnRateMinimum;
+        public LimitedNumericProperty<float> SpawnRateMaximum;
 
         public abstract void Initialize();
 
-        public float SpawnTime => Random.Range(SpawnTimeMinimum.LimitedValue, SpawnTimeMaximum.LimitedValue);
+        public float SpawnRate => Random.Range(SpawnRateMinimum.LimitedValue, SpawnRateMaximum.LimitedValue);
     }
 }

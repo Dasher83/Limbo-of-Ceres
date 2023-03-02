@@ -9,12 +9,12 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
     {
         public override void Initialize()
         {
-            this.SpawnTimeMinimum = new LimitedNumericProperty<float>(
+            this.SpawnRateMinimum = new LimitedNumericProperty<float>(
                 initialValue: Constants.Spawners.Obstacles.SpawnTimeMinimum.Maximum,
                 minimum: Constants.Spawners.Obstacles.SpawnTimeMinimum.Minimum,
                 maximum: Constants.Spawners.Obstacles.SpawnTimeMinimum.Maximum);
 
-            this.SpawnTimeMaximum = new LimitedNumericProperty<float>(
+            this.SpawnRateMaximum = new LimitedNumericProperty<float>(
                 initialValue: Constants.Spawners.Obstacles.SpawnTimeMaximum.Maximum,
                 minimum: Constants.Spawners.Obstacles.SpawnTimeMaximum.Minimum,
                 maximum: Constants.Spawners.Obstacles.SpawnTimeMaximum.Maximum);

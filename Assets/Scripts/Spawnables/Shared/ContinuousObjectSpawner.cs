@@ -14,7 +14,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Shared
         protected override void Start()
         {
             base.Start();
-            spawnTimer = new ResettableTimer(time: spawnerData.SpawnTime);
+            spawnTimer = new ResettableTimer(time: spawnerData.SpawnRate);
         }
 
         private void Update()
@@ -28,7 +28,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Shared
 
             Spawn();
             nextToBeSpawn = null;
-            spawnTimer.Reset(time: spawnerData.SpawnTime);
+            spawnTimer.Reset(time: spawnerData.SpawnRate);
         }
     }
 }
