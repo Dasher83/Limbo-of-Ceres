@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace LimboOfCeres
 {
-    [CreateAssetMenu(fileName = "ExtraLifeData", menuName = "ScriptableObjects/ExtraLifeData", order = 6)]
+    [CreateAssetMenu(fileName = "ExtraLifeData", menuName = "ScriptableObjects/ExtraLifeScriptable", order = 6)]
     public class ExtraLifeScriptable : ScriptableObject, IInitializable
     {
         public LimitedNumericProperty<float> SpawnRateMinimum;
