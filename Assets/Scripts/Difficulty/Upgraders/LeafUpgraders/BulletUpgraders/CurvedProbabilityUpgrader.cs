@@ -10,7 +10,7 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.BulletUpgrader
     public class CurvedProbabilityUpgrader : LeafUpgrader
     {
         [SerializeField]
-        private BulletsDataScriptable bulletsData;
+        private BulletsScriptable bulletsData;
 
         protected override void OnUpgradeHook()
         {

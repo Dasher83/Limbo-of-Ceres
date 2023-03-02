@@ -20,7 +20,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
         [SerializeField]
         private GameObject pumpkinPrefab;
         [SerializeField]
-        private BulletsDataScriptable bulletsData;
+        private BulletsScriptable bulletsData;
         [SerializeField] private JackolanternScriptable _jackolanternData;
 
         private Transform lockedOnTarget;

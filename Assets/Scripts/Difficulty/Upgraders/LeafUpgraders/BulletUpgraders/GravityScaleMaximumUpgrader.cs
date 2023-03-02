@@ -9,7 +9,7 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders.LeafUpgraders.BulletUpgrader
     public class GravityScaleMaximumUpgrader : LeafUpgrader
     {
         [SerializeField]
-        private BulletsDataScriptable bulletsData;
+        private BulletsScriptable bulletsData;
 
         protected override void OnUpgradeHook()
         {
