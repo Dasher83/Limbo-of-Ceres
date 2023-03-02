@@ -60,10 +60,5 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
                 upgraders.RemoveAt(upgradersIndex);
             }
         }
-
-        private void OnDisable()
-        {
-            if(IsAtLimit) Debug.LogError("Game reached maximum difficulty!");
-        }
     }
 }
