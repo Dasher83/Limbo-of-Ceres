@@ -117,7 +117,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
             aimTimer = new ResettableTimer(AimRate);
             fireTimer = new ResettableTimer(FireRate);
             originalColor = spriteRender.color;
-            ammoRequests = _jackolanternData.AmmoRequestsMinimum.LimitedValue;
+            ammoRequests = _jackolanternData.AmmoRequests;
         }
 
         private void Update()
