@@ -4,13 +4,14 @@ using UnityEngine;
 using LimboOfCeres.Scripts.Spawnables.Enemies.Shared;
 using LimboOfCeres.Scripts.PlayerScritps;
 using LimboOfCeres.Scripts.Spawnables.Shared;
+using LimboOfCeres.Scripts.Difficulty.Upgraders;
 
 namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 {
     public class JackolanternSpawner : ContinuousObjectSpawner
     {
         [SerializeField]
-        private PumpkinBulletSpawner pumpkinBulletsSpawner;
+        private BulletSpawner bulletsSpawner;
         private Transform target = null;
         private SpriteRenderer floorSpriteRenderer = null;
         private SpriteRenderer ceilingSpriteRenderer = null;
@@ -30,10 +31,10 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 
         protected override void InitializeNewSpawnable()
         {
-            this.newlyCreatedSpwanable.GetComponent<ShootPumpkin>().PumpkinBulletSpawner = pumpkinBulletsSpawner;
-            this.newlyCreatedSpwanable.GetComponent<ShootPumpkin>().PlayerRespawnSafely = playerRespawnSafely;
+            this.newlyCreatedSpwanable.GetComponent<ShootBullet>().BulletSpawner = bulletsSpawner;
+            this.newlyCreatedSpwanable.GetComponent<ShootBullet>().PlayerRespawnSafely = playerRespawnSafely;
+            this.newlyCreatedSpwanable.GetComponent<ShootBullet>().LockedOnTarget = target;
             this.newlyCreatedSpwanable.GetComponent<FaceTarget>().LockedOnTarget = target;
-            this.newlyCreatedSpwanable.GetComponent<ShootPumpkin>().LockedOnTarget = target;
         }
 
         protected override void PositionSpawnable()

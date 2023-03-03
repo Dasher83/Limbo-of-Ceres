@@ -106,10 +106,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 192
   range: 20
-  fireForceMinimum: 200
-  fireForceMaximum: 350
+  fireForceMaximum: 700
   cooldownColor: {r: 0.16078432, g: 1, b: 0, a: 1}
   pumpkinPrefab: {fileID: 2091393193384232770, guid: 7d47b7ddebb82fb49bbbfbcb4462eec0, type: 3}
+  _bulletsData: {fileID: 11400000, guid: 8edd96008cd95f54da45b3176cf5c1d4, type: 2}
+  _jackolanternData: {fileID: 11400000, guid: 944e8d5603c39a44abfeec713da717ed, type: 2}
 --- !u!50 &4670997851035706759
 Rigidbody2D:
   serializedVersion: 4

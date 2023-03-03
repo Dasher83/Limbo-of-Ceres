@@ -31,6 +31,39 @@ namespace LimboOfCeres.Scripts.Shared
             public const float CeilingSpawnProbability = 0.6f;
         }
 
+        public static class Spawners
+        {
+            public static class Jackolanterns
+            {
+                public static class SpawnTimeMinimum
+                {
+                    public const float Minimum = 1.2f;
+                    public const float Maximum = 1.8f;
+                }
+
+                public static class SpawnTimeMaximum
+                {
+                    public const float Minimum = 2.2f;
+                    public const float Maximum = 3.3f;
+                }
+            }
+
+            public static class Obstacles
+            {
+                public static class SpawnTimeMinimum
+                {
+                    public const float Minimum = 1f;
+                    public const float Maximum = 1.3f;
+                }
+
+                public static class SpawnTimeMaximum
+                {
+                    public const float Minimum = 1.9f;
+                    public const float Maximum = 3.8f;
+                }
+            }
+        }
+
         public static class Enemies
         {
             public static class Jackolanterns
@@ -38,19 +71,82 @@ namespace LimboOfCeres.Scripts.Shared
                 public const float DefaultGravityScale = 10f;
                 public const float CeilingSpawnProbability = 0.6f;
                 public const float DiplomaticThreshold = 3.8f;
-                public const int AmmoRequestsMinimum = 2;
-                public const int AmmoRequestsMaximum = 4;
-                public const float AimRateMinimum = 1f;
-                public const float AimRateMaximum = 1.5f;
-                public const float FireRateMinimum = 1f;
-                public const float FireRateMaximum = 1.5f;
                 public const float FloorSpeedBoost = 0.75f;
-                public const float StraightPumkinProbability = 0.62f;
-
-                public static class Pumpkin
+                public static class FireForceMinimum
                 {
-                    public const float GravityScaleMinimum = 0f;
-                    public const float GravityScaleMaximum = 0.15f;
+                    public const float Minimum = 200f;
+                    public const float Maximum = 400f;
+                }
+                public static class FireForceMaximum
+                {
+                    public const float Minimum = 350f;
+                    public const float Maximum = 700f;
+                }
+
+                public static class AmmoRequestsMinimum
+                {
+                    public const int Minimum = 2;
+                    public const int Maximum = 4;
+                }
+
+                public static class AmmoRequestsMaximum
+                {
+                    public const int Minimum = 4;
+                    public const int Maximum = 8;
+                }
+
+                public static class AimRateMinimum
+                {
+                    public const float Minimum = 0.25f;
+                    public const float Maximum = 1.00f;
+                }
+
+                public static class AimRateMaximum
+                {
+                    public const float Minimum = 0.375f;
+                    public const float Maximum = 1.5f;
+                }
+
+                public static class FireRateMinimum
+                {
+                    public const float Minimum = 0.25f;
+                    public const float Maximum = 1f;
+                }
+
+                public static class FireRateMaximum
+                {
+                    public const float Minimum = 0.375f;
+                    public const float Maximum = 1.5f;
+                }
+            }
+        }
+
+        public static class Projectiles
+        {
+            public static class Bullet
+            {
+                public static class CurvedProbability
+                {
+                    public const float Minimum = 0.38f;
+                    public const float Maximum = 0.69f;
+                }
+
+                public static class Bounciness
+                {
+                    public const float Minimum = 0.1f;
+                    public const float Maximum = 8f;
+                }
+
+                public static class GravityScaleMinimum
+                {
+                    public const float Minimum = -0.3f;
+                    public const float Maximum = -0.1f;
+                }
+
+                public static class GravityScaleMaximum
+                {
+                    public const float Minimum = 0.1f;
+                    public const float Maximum = 0.30f;
                 }
             }
         }
@@ -76,21 +172,29 @@ namespace LimboOfCeres.Scripts.Shared
             public const float InBetweenSongsPauseLength = 0.3f;
         }
 
-        public static class Animations
-        {
-            public const float HeartAnimTime = 0.22f;
-            public const float ShakeAnim = 0.1f;
-            public const float VanishAnimTime = 0.02f;
-            public const float AppearAnimTime = 0.08f;
-        }
-
         public static class ExtraLife
         {
             public const float HorizontalPositionOffsetFactor = 0.8f;
-            public const float MinimumRespawnTime = 20f;
             public const float MaximumRespawnTime = 30f;
             public const float VerticalSpawnOffset = 1.7f;
-            public const float MovementSpeed = 3.5f;
+
+            public static class SpawnRateMinimum
+            {
+                public const float Minimum = 10f;
+                public const float Maximum = 20f;
+            }
+
+            public static class SpawnRateMaximum
+            {
+                public const float Minimum = 30f;
+                public const float Maximum = 40f;
+            }
+
+            public static class MovementSpeed
+            {
+                public const float Minimum = 3.5f;
+                public const float Maximum = 7f;
+            }
         }
 
         public static class GameObjects
@@ -99,6 +203,18 @@ namespace LimboOfCeres.Scripts.Shared
             public const string MainCeiling = "MainCeiling";
             public const string PumpkinBulletsSpawner = "PumpkinBulletsSpawner";
             public const string PauseMenu = "PauseMenu";
+        }
+
+        public static class Difficulty
+        {
+            public static class MetersUntilLevelUp
+            {
+                public const float Minimum = 10f;
+                public const float Maximum = 100f;
+            }
+
+            public const float DefaultLevelUpFactor = 1.1f;
+            public const float DefaultInverseLevelUpFactor = 0.9f;
         }
     }
 }

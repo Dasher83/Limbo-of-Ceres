@@ -2,18 +2,19 @@ using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using LimboOfCeres.Scripts.TimeScripts;
 using UnityEngine;
 
+
 namespace LimboOfCeres.Scripts.Spawnables.Shared
 {
     public class ContinuousObjectSpawner : ObjectSpawner
     {
         [SerializeField]
-        private SpawningDataScriptable spawningData;
+        private SpawnerScriptable spawnerData;
         private ResettableTimer spawnTimer;
 
         protected override void Start()
         {
             base.Start();
-            spawnTimer = new ResettableTimer(time: Random.Range(spawningData.MinimumRespawnTime, spawningData.MaximumRespawnTime));
+            spawnTimer = new ResettableTimer(time: spawnerData.SpawnRate);
         }
 
         private void Update()
@@ -27,7 +28,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Shared
 
             Spawn();
             nextToBeSpawn = null;
-            spawnTimer.Reset(time: Random.Range(spawningData.MinimumRespawnTime, spawningData.MaximumRespawnTime));
+            spawnTimer.Reset(time: spawnerData.SpawnRate);
         }
     }
 }

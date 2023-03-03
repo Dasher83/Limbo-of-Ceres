@@ -8,7 +8,7 @@ namespace LimboOfCeres.Scripts.Scrolling
     {
         private Rigidbody2D _rb;
         [SerializeField]
-        private ScrollingSpeedScriptableObject scrollingSpeedData;
+        private ScrollingSpeedScriptable scrollingSpeedData;
 
         private void Start()
         {
