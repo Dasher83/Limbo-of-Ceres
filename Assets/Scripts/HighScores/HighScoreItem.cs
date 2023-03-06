@@ -1,4 +1,4 @@
-namespace QuarkAcademyJam1Team1.Scripts.HighScores
+namespace LimboOfCeres.Scripts.HighScores
 {
     [System.Serializable]
     public class HighScoreItem

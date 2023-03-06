@@ -1,7 +1,7 @@
-using QuarkAcademyJam1Team1.Scripts.Shared.Interfaces;
+using LimboOfCeres.Scripts.Shared.Interfaces;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
+namespace LimboOfCeres.Scripts.PlayerScritps
 {
     public class PlayerRestore : MonoBehaviour, IRestorable
     {

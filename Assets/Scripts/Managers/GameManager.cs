@@ -1,20 +1,22 @@
-using QuarkAcademyJam1Team1.Scripts.AudioScripts;
-using QuarkAcademyJam1Team1.Scripts.Shared.Enums;
-using QuarkAcademyJam1Team1.Scripts.Shared.Interfaces;
-using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
-using QuarkAcademyJam1Team1.Scripts.UI;
+using LimboOfCeres.Scripts.AudioScripts;
+using LimboOfCeres.Scripts.Shared.Enums;
+using LimboOfCeres.Scripts.Shared.Interfaces;
+using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
+using LimboOfCeres.Scripts.UI;
+using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace QuarkAcademyJam1Team1.Scripts.Managers
+namespace LimboOfCeres.Scripts.Managers
 {
     public class GameManager : MonoBehaviour
     {
-        [SerializeField] private PlayerData playerData;
+        [SerializeField] private PlayerScriptable playerData;
+        [SerializeField] private List<ScriptableObject> initializables;
         [SerializeField] private GameOver gameOverMenu;
         [SerializeField] private LifeBar lifeBar;
         [SerializeField] private MetersCounter metersCounter;
-        [SerializeField] private GameObject pauseButton;
+        [SerializeField] private List<GameObject> toDeactivateOnGameOver;
 
         private GameState currentState;
 
@@ -25,17 +27,6 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
         
         void Update()
         {
-            // Debugger
-            if (Input.GetKeyDown(KeyCode.H))
-            {
-                playerData.ReceiveRestauration(1);
-            }
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                playerData.ReceiveDamage(1);
-            }
-            // Debugger
-
             if (currentState == GameState.STARTING)
             {
                 SetState(GameState.PLAYING);
@@ -59,7 +50,10 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
             switch (state)
             {
                 case GameState.STARTING:
-                    playerData.Initialize();
+                    foreach(IInitializable initializable in initializables)
+                    {
+                        initializable.Initialize();
+                    }
                     lifeBar.Durable = (IDurable)playerData;
                     break;
                 case GameState.PLAYING:
@@ -70,16 +64,19 @@ namespace QuarkAcademyJam1Team1.Scripts.Managers
                     // TODO : fall animation
                     AudioPlayer.instance.StopSong();
                     Time.timeScale = 0f;
-                    HideIuInGameOver();
+                    DeactivateOnGameOver();
                     gameOverMenu.StartGameOver();
                     break;
             }
         }
 
-        private void HideIuInGameOver()
+        private void DeactivateOnGameOver()
         {
             metersCounter.gameObject.SetActive(false);
-            pauseButton.SetActive(false);
+            foreach(GameObject toBeDeactivated in toDeactivateOnGameOver)
+            {
+                toBeDeactivated.SetActive(false);
+            }
         }
     }
 }

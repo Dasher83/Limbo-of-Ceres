@@ -45,7 +45,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 244905dc55d0b3b46add0b807796e42a, type: 2}
+  initializables:
+  - {fileID: 11400000, guid: 244905dc55d0b3b46add0b807796e42a, type: 2}
+  - {fileID: 11400000, guid: 8edd96008cd95f54da45b3176cf5c1d4, type: 2}
+  - {fileID: 11400000, guid: 2f2892da7c09db64f9b47d40f65c778b, type: 2}
+  - {fileID: 11400000, guid: 1eddc6a9ad6005e45a2cb34edded52ea, type: 2}
+  - {fileID: 11400000, guid: 944e8d5603c39a44abfeec713da717ed, type: 2}
+  - {fileID: 11400000, guid: b6d64bd80f0a7bc428338046e84daf21, type: 2}
   gameOverMenu: {fileID: 0}
   lifeBar: {fileID: 0}
   metersCounter: {fileID: 0}
-  pauseButton: {fileID: 0}
+  toDeactivateOnGameOver: []

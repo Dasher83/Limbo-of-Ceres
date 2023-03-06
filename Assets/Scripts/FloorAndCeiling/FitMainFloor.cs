@@ -1,9 +1,9 @@
-using QuarkAcademyJam1Team1.Scripts.Shared;
-using QuarkAcademyJam1Team1.Scripts.Shared.Enums;
-using QuarkAcademyJam1Team1.Scripts.Utils;
+using LimboOfCeres.Scripts.Shared;
+using LimboOfCeres.Scripts.Shared.Enums;
+using LimboOfCeres.Scripts.Utils;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.FloorAndCeiling
+namespace LimboOfCeres.Scripts.FloorAndCeiling
 {
     public class FitMainFloor : MonoBehaviour
     {

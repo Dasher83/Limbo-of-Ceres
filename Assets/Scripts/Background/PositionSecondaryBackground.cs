@@ -1,7 +1,7 @@
-using QuarkAcademyJam1Team1.Scripts.Utils;
+using LimboOfCeres.Scripts.Utils;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.Background
+namespace LimboOfCeres.Scripts.Background
 {
     public class PositionSecondaryBackground : MonoBehaviour
     {

@@ -30,7 +30,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2809815628155315804}
+  - {fileID: 5879046331725200486}
   - {fileID: 2368781213394349409}
   - {fileID: 3881592680580711151}
   m_Father: {fileID: 0}
@@ -181,7 +181,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 238805153720775184, guid: 19c116b27f3ee284299faa58c990be95, type: 3}
   m_PrefabInstance: {fileID: 2562532739797622641}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &5638896523098962247
+--- !u!1001 &4118976796685067133
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -222,7 +222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7547781117398900507, guid: 6a08c14e182491940b3881b7552cde4f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 403.48
+      value: 280
       objectReference: {fileID: 0}
     - target: {fileID: 7547781117398900507, guid: 6a08c14e182491940b3881b7552cde4f, type: 3}
       propertyPath: m_SizeDelta.y
@@ -258,7 +258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7547781117398900507, guid: 6a08c14e182491940b3881b7552cde4f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00012207031
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7547781117398900507, guid: 6a08c14e182491940b3881b7552cde4f, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -278,10 +278,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a08c14e182491940b3881b7552cde4f, type: 3}
---- !u!224 &2809815628155315804 stripped
+--- !u!224 &5879046331725200486 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7547781117398900507, guid: 6a08c14e182491940b3881b7552cde4f, type: 3}
-  m_PrefabInstance: {fileID: 5638896523098962247}
+  m_PrefabInstance: {fileID: 4118976796685067133}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7129761700321037197
 PrefabInstance:

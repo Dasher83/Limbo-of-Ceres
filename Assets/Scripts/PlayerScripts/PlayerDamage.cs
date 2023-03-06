@@ -1,8 +1,8 @@
-using QuarkAcademyJam1Team1.Scripts.Shared.Interfaces;
-using QuarkAcademyJam1Team1.Scripts.TimeScripts;
+using LimboOfCeres.Scripts.Shared.Interfaces;
+using LimboOfCeres.Scripts.TimeScripts;
 using UnityEngine;
 
-namespace QuarkAcademyJam1Team1.Scripts.PlayerScritps
+namespace LimboOfCeres.Scripts.PlayerScritps
 {
     public class PlayerDamage : MonoBehaviour, IDamageable
     {

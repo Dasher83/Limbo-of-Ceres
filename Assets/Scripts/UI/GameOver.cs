@@ -1,12 +1,11 @@
-using QuarkAcademyJam1Team1.Scripts.Shared.ScriptableObjectsDefinitions;
-using QuarkAcademyJam1Team1.Scripts.HighScores;
-using QuarkAcademyJam1Team1.Scripts.Shared;
+using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
+using LimboOfCeres.Scripts.HighScores;
+using LimboOfCeres.Scripts.Shared;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using System;
 using TMPro;
 
-namespace QuarkAcademyJam1Team1.Scripts.UI
+namespace LimboOfCeres.Scripts.UI
 {
     public class GameOver : MonoBehaviour
     {
@@ -14,7 +13,7 @@ namespace QuarkAcademyJam1Team1.Scripts.UI
         [SerializeField] private GameObject inputNewHighScoreMenu;
         [SerializeField] private HighScoreTable highScore;
         [SerializeField] private Transform Seats;
-        [SerializeField] private PlayerData playerData;
+        [SerializeField] private PlayerScriptable playerData;
         [SerializeField] private TextMeshProUGUI scoreText;
         [SerializeField] private TextMeshProUGUI inputText;
         [SerializeField] private TMP_InputField inputField;

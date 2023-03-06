@@ -1,4 +1,4 @@
-namespace QuarkAcademyJam1Team1.Scripts.Shared.Interfaces
+namespace LimboOfCeres.Scripts.Shared.Interfaces
 {
     public interface IRestorable
     {

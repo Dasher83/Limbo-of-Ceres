@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9577f24bafbfc234fa53000363ec6486, type: 3}
   m_Name: CeilingScrollingSpeedData
   m_EditorClassIdentifier: 
-  scrollingSpeed: -2
+  scrollingSpeed: -4
