@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - Floor&Ceiling
   - Menu
+  - Shield
   layers:
   - Default
   - TransparentFX

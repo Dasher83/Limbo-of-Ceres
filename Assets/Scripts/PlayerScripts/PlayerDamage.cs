@@ -1,44 +1,48 @@
+using LimboOfCeres.Scripts.Shared;
 using LimboOfCeres.Scripts.Shared.Interfaces;
-using LimboOfCeres.Scripts.TimeScripts;
 using UnityEngine;
+
 
 namespace LimboOfCeres.Scripts.PlayerScritps
 {
     public class PlayerDamage : MonoBehaviour, IDamageable
     {
-        private IDamageable damageable;
-        private PlayerFlicker playerFlicker;
-        private PlayerRespawnSafely playerRespawnSafely;
-        private int damagedCaused;
+        private IDamageable _damageable;
+        private PlayerFlicker _playerFlicker;
+        private PlayerRespawnSafely _playerRespawnSafely;
+        private Toggable _playerShield;
+        private int _damagedCaused;
 
         private void Start()
         {
-            damageable = gameObject.GetComponent<PlayerDataContainer>().PlayerData;
-            playerFlicker = gameObject.GetComponent<PlayerFlicker>();
-            playerRespawnSafely = gameObject.GetComponent<PlayerRespawnSafely>();
+            _damageable = gameObject.GetComponent<PlayerDataContainer>().PlayerData;
+            _playerFlicker = gameObject.GetComponent<PlayerFlicker>();
+            _playerRespawnSafely = gameObject.GetComponent<PlayerRespawnSafely>();
+            _playerShield = gameObject.GetComponentInChildren<Toggable>();
+            _playerShield.gameObject.SetActive(false);
         }
 
         private void Update()
         {
-            if(!playerRespawnSafely.IsPlayerProtected && playerFlicker.IsFlickering)
+            if(!_playerRespawnSafely.IsPlayerProtected && _playerFlicker.IsFlickering)
             {
-                playerFlicker.StopFlickering();
+                _playerFlicker.StopFlickering();
             }
         }
 
         public int ReceiveDamage(int damage)
         {
-            if (!playerRespawnSafely.IsPlayerProtected)
+            if (!_playerRespawnSafely.IsPlayerProtected && !_playerShield.gameObject.activeSelf)
             {
-                damagedCaused = damageable.ReceiveDamage(damage);
-                playerFlicker.StartFlickering();
-                playerRespawnSafely.GetToSafety();
+                _damagedCaused = _damageable.ReceiveDamage(damage);
+                _playerFlicker.StartFlickering();
+                _playerRespawnSafely.GetToSafety();
             }
             else
             {
                 return 0;
             }
-            return damagedCaused;
+            return _damagedCaused;
         }
     }
 }

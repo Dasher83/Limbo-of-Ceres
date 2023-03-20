@@ -158,6 +158,7 @@ namespace LimboOfCeres.Scripts.Shared
             public const string Enemy = "Enemy";
             public const string Projectile = "Projectile";
             public const string Menu = "Menu";
+            public const string Shield = "Shield";
         }
 
         public static class HighScores

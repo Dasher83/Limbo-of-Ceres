@@ -3,6 +3,7 @@ using LimboOfCeres.Scripts.Shared;
 using LimboOfCeres.Scripts.Shared.Interfaces;
 using UnityEngine;
 
+
 namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
 {
     public class BulletDestruction : MonoBehaviour
@@ -17,7 +18,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Enemies.Jackolanterns
                 }
             }
 
-            if (!collision.gameObject.CompareTag(Constants.Tags.Projectile))
+            if (!collision.gameObject.CompareTag(Constants.Tags.Projectile) && !collision.collider.gameObject.CompareTag(Constants.Tags.Shield))
             {
                 gameObject.SetActive(false);
             }
