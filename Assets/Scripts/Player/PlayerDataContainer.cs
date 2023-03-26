@@ -1,7 +1,7 @@
 using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using UnityEngine;
 
-namespace LimboOfCeres.Scripts.PlayerScritps
+namespace LimboOfCeres.Scripts.Player
 {
     public class PlayerDataContainer : MonoBehaviour
     {

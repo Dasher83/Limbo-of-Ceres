@@ -1,7 +1,7 @@
 using LimboOfCeres.Scripts.Shared.Interfaces;
 using UnityEngine;
 
-namespace LimboOfCeres.Scripts.PlayerScritps
+namespace LimboOfCeres.Scripts.Player
 {
     public class PlayerRestore : MonoBehaviour, IRestorable
     {

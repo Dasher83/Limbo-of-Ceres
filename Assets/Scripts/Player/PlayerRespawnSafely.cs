@@ -5,7 +5,7 @@ using System.Collections;
 using System.Linq;
 using UnityEngine;
 
-namespace LimboOfCeres.Scripts.PlayerScritps
+namespace LimboOfCeres.Scripts.Player
 {
     public class PlayerRespawnSafely : MonoBehaviour
     {

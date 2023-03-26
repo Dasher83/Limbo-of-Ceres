@@ -2,7 +2,7 @@ using LimboOfCeres.Scripts.Shared;
 using LimboOfCeres.Scripts.Utils;
 using UnityEngine;
 
-namespace LimboOfCeres.Scripts.PlayerScritps
+namespace LimboOfCeres.Scripts.Player
 {
     public class PlayerPositionReseter : MonoBehaviour
     {

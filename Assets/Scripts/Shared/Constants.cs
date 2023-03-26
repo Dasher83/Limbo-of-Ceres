@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+
+
 namespace LimboOfCeres.Scripts.Shared
 {
     public static class Constants
@@ -121,34 +124,39 @@ namespace LimboOfCeres.Scripts.Shared
             }
         }
 
-        public static class Projectiles
+        public static class Bullet
         {
-            public static class Bullet
+            public static class CurvedProbability
             {
-                public static class CurvedProbability
-                {
-                    public const float Minimum = 0.38f;
-                    public const float Maximum = 0.69f;
-                }
-
-                public static class Bounciness
-                {
-                    public const float Minimum = 0.1f;
-                    public const float Maximum = 8f;
-                }
-
-                public static class GravityScaleMinimum
-                {
-                    public const float Minimum = -0.3f;
-                    public const float Maximum = -0.1f;
-                }
-
-                public static class GravityScaleMaximum
-                {
-                    public const float Minimum = 0.1f;
-                    public const float Maximum = 0.30f;
-                }
+                public const float Minimum = 0.38f;
+                public const float Maximum = 0.69f;
             }
+
+            public static class Bounciness
+            {
+                public const float Minimum = 0.1f;
+                public const float Maximum = 8f;
+            }
+
+            public static class GravityScaleMinimum
+            {
+                public const float Minimum = -0.3f;
+                public const float Maximum = -0.1f;
+            }
+
+            public static class GravityScaleMaximum
+            {
+                public const float Minimum = 0.1f;
+                public const float Maximum = 0.30f;
+            }
+        }
+
+        public static class ReflectedBullet
+        {
+            public static List<string> TagsToCompareForDestruction = new List<string>() {
+                Tags.Enemy,
+                Tags.Obstacle
+            };
         }
 
         public static class Tags

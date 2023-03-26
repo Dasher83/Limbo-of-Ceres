@@ -16,24 +16,24 @@ namespace LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions
         public void Initialize()
         {
             CurvedProbability = new LimitedNumericProperty<float>(
-                initialValue: Constants.Projectiles.Bullet.CurvedProbability.Minimum,
-                minimum: Constants.Projectiles.Bullet.CurvedProbability.Minimum,
-                maximum: Constants.Projectiles.Bullet.CurvedProbability.Maximum);
+                initialValue: Constants.Bullet.CurvedProbability.Minimum,
+                minimum: Constants.Bullet.CurvedProbability.Minimum,
+                maximum: Constants.Bullet.CurvedProbability.Maximum);
 
             Bounciness = new LimitedNumericProperty<float>(
-                initialValue: Constants.Projectiles.Bullet.Bounciness.Minimum,
-                minimum: Constants.Projectiles.Bullet.Bounciness.Minimum,
-                maximum: Constants.Projectiles.Bullet.Bounciness.Maximum);
+                initialValue: Constants.Bullet.Bounciness.Minimum,
+                minimum: Constants.Bullet.Bounciness.Minimum,
+                maximum: Constants.Bullet.Bounciness.Maximum);
 
             GravityScaleMinimum = new LimitedNumericProperty<float>(
-                initialValue: Constants.Projectiles.Bullet.GravityScaleMinimum.Minimum,
-                minimum: Constants.Projectiles.Bullet.GravityScaleMinimum.Minimum,
-                maximum: Constants.Projectiles.Bullet.GravityScaleMinimum.Maximum);
+                initialValue: Constants.Bullet.GravityScaleMinimum.Minimum,
+                minimum: Constants.Bullet.GravityScaleMinimum.Minimum,
+                maximum: Constants.Bullet.GravityScaleMinimum.Maximum);
 
             GravityScaleMaximum = new LimitedNumericProperty<float>(
-                initialValue: Constants.Projectiles.Bullet.GravityScaleMaximum.Minimum,
-                minimum: Constants.Projectiles.Bullet.GravityScaleMaximum.Minimum,
-                maximum: Constants.Projectiles.Bullet.GravityScaleMaximum.Maximum);
+                initialValue: Constants.Bullet.GravityScaleMaximum.Minimum,
+                minimum: Constants.Bullet.GravityScaleMaximum.Minimum,
+                maximum: Constants.Bullet.GravityScaleMaximum.Maximum);
         }
 
         public float GravityScale => Random.Range(GravityScaleMinimum.LimitedValue, GravityScaleMaximum.LimitedValue);

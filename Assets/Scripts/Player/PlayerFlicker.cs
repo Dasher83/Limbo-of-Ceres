@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace LimboOfCeres.Scripts.PlayerScritps
+namespace LimboOfCeres.Scripts.Player
 {
     public class PlayerFlicker : MonoBehaviour
     {

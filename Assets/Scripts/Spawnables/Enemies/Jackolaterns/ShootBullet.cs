@@ -1,4 +1,5 @@
-using LimboOfCeres.Scripts.PlayerScritps;
+using LimboOfCeres.Scripts.Bullets;
+using LimboOfCeres.Scripts.Player;
 using LimboOfCeres.Scripts.Shared;
 using LimboOfCeres.Scripts.Shared.ScriptableObjectsDefinitions;
 using LimboOfCeres.Scripts.TimeScripts;

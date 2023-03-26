@@ -2,7 +2,7 @@ using LimboOfCeres.Scripts.Shared;
 using LimboOfCeres.Scripts.Utils;
 using UnityEngine;
 using LimboOfCeres.Scripts.Spawnables.Enemies.Shared;
-using LimboOfCeres.Scripts.PlayerScritps;
+using LimboOfCeres.Scripts.Player;
 using LimboOfCeres.Scripts.Spawnables.Shared;
 using LimboOfCeres.Scripts.Difficulty.Upgraders;
 
