@@ -1,4 +1,4 @@
-using LimboOfCeres.Scripts.Shared;
+using LimboOfCeres.Scripts.PowerUps;
 using LimboOfCeres.Scripts.Shared.Interfaces;
 using UnityEngine;
 
@@ -10,7 +10,7 @@ namespace LimboOfCeres.Scripts.Player
         private IDamageable _damageable;
         private PlayerFlicker _playerFlicker;
         private PlayerRespawnSafely _playerRespawnSafely;
-        private Toggable _playerShield;
+        private Shield _playerShield;
         private int _damagedCaused;
 
         private void Start()
@@ -18,7 +18,7 @@ namespace LimboOfCeres.Scripts.Player
             _damageable = gameObject.GetComponent<PlayerDataContainer>().PlayerData;
             _playerFlicker = gameObject.GetComponent<PlayerFlicker>();
             _playerRespawnSafely = gameObject.GetComponent<PlayerRespawnSafely>();
-            _playerShield = gameObject.GetComponentInChildren<Toggable>();
+            _playerShield = gameObject.GetComponentInChildren<Shield>();
             _playerShield.gameObject.SetActive(false);
         }
 

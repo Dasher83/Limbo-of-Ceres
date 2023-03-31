@@ -151,6 +151,14 @@ namespace LimboOfCeres.Scripts.Shared
             }
         }
 
+        public static class Shield
+        {
+            public static List<string> TagsToCompareForDestruction = new List<string>() {
+                Tags.Enemy,
+                Tags.Obstacle
+            };
+        }
+
         public static class ReflectedBullet
         {
             public static List<string> TagsToCompareForDestruction = new List<string>() {
