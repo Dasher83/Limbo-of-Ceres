@@ -15,7 +15,7 @@ namespace LimboOfCeres.Scripts.Spawnables.Obstacles
                 return;
             }
 
-            if (collision.gameObject.CompareTag(Constants.Tags.Player))
+            if (collision.collider.gameObject.CompareTag(Constants.Tags.Player))
             {
                 AudioPlayer.instance.PlaySoundEffect(SoundEffectsEnum.WALL_HIT);
                 collision.gameObject.GetComponent<IDamageable>().ReceiveDamage(1);
