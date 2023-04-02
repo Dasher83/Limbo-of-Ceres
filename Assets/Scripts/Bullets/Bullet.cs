@@ -13,6 +13,8 @@ namespace LimboOfCeres.Scripts.Bullets
         private SpriteRenderer _spriteRenderer;
         private bool _isReflected;
 
+        public bool IsReflected => _isReflected;
+
         private void Start()
         {
             _isReflected = false;

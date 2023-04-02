@@ -1,3 +1,4 @@
+using LimboOfCeres.Scripts.Bullets;
 using LimboOfCeres.Scripts.Shared;
 using LimboOfCeres.Scripts.TimeScripts;
 using LimboOfCeres.Scripts.Utils;
@@ -52,8 +53,9 @@ namespace LimboOfCeres.Scripts.Player
                     distance: Constants.Player.SafetyBubble.TravelDistance,
                     layerMask: dontIgnoreMe);
                 isSafeToGetOut = recoveryTimer.OutOfTime && !hits.Any(
-                    h => h.collider.gameObject.CompareTag(Constants.Tags.Projectile) || 
-                    h.collider.gameObject.CompareTag(Constants.Tags.Enemy));
+                    h => (h.collider.gameObject.CompareTag(Constants.Tags.Projectile) &&
+                        h.collider.gameObject.GetComponent<Bullet>().IsReflected == false) ||
+                        h.collider.gameObject.CompareTag(Constants.Tags.Enemy));
                 yield return new WaitForEndOfFrame();
             }
             LeaveSafety();
