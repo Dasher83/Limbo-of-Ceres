@@ -13,6 +13,8 @@ namespace LimboOfCeres.Scripts.Bullets
         private SpriteRenderer _spriteRenderer;
         private bool _isReflected;
 
+        public bool IsReflected => _isReflected;
+
         private void Start()
         {
             _isReflected = false;
@@ -21,7 +23,9 @@ namespace LimboOfCeres.Scripts.Bullets
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.collider.gameObject.CompareTag(Constants.Tags.Shield))
+            if (collision.collider.gameObject.CompareTag(Constants.Tags.Shield) ||
+                (collision.collider.gameObject.CompareTag(Constants.Tags.Projectile) &&
+                collision.collider.gameObject.GetComponent<Bullet>().IsReflected))
             {
                 _spriteRenderer.color = _reflectedColor;
                 _isReflected = true;
