@@ -54,6 +54,11 @@ namespace LimboOfCeres.Scripts.Difficulty.Upgraders
         private void LevelUp()
         {
             upgradersIndex = Random.Range(0, upgraders.Count);
+            if (upgraders[upgradersIndex].gameObject.activeSelf == false)
+            {
+                upgraders.RemoveAt(upgradersIndex);
+                return;
+            }
             if (upgraders[upgradersIndex].Upgrade() == UpgradeStatus.FAILED && upgraders[upgradersIndex].IsAtLimit)
             {
                 upgraders[upgradersIndex].transform.gameObject.SetActive(false);
